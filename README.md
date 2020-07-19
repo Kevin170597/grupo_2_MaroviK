@@ -6,10 +6,10 @@ sitio.
 - Una breve descripción del público al que apunta el sitio.
 
 - Una breve descripción de los integrantes del equipo.
-    -Vilma Garcia
-    -Rossmery Garcia
-    -Micaela Mattia
-    -Kevin Mendoza
+    - Vilma Garcia
+    - Rossmery Garcia
+    - Micaela Mattia
+    - Kevin Mendoza
 
 ===================================
 
