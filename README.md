@@ -9,7 +9,7 @@ sitio.
     - Vilma Garcia
     - Rossmery Garcia
     - Micaela Mattia
-    - Kevin Mendoza
+    - Kevin Mendoza, 23 años.
 
 ===================================
 
