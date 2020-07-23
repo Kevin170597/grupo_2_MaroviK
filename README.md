@@ -82,7 +82,7 @@ Por la distibución visual de las secciones del Home. La disposición central qu
 
 Por las proporciones de la ventana y su simple diseño para iniciar sesión o registrarse. No es demasiado grande, como para invadir todo el espacio y resultar invasivo y tampoco demasiado pequeño como para que no se aprecie. 
 
-[walmart.com.ar](htts://walmart.com.ar)  
+[walmart.com.ar](https://walmart.com.ar)  
 [carrefour.com.ar](https://carrefour.com.ar)
 
 Muchas sitios tenían el footer demaciado alto para nuestro gusto. Éstas páginas nos ayudaron a encontrar un equilibrio para determinar el tamaño y el diseño del mismo. 
