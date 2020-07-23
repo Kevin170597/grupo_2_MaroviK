@@ -62,6 +62,9 @@ Lo que más amo: los perros y el tomate:)
 Lo que más disfruto: ver peliculas/series con mis hermanos y escuhar música.("la música sana y alegra el alma").
 
 ## Kevin Mendoza
+Tengo 23 años, soy de Lanús. 
+Estudiante de programación Web y de Diseño Web.
+Estudié Operador de PC en UNLa y me gusta la informática en general.
 
 ## Micaela Mattia
 
