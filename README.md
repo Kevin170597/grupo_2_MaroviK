@@ -67,6 +67,10 @@ Estudiante de programación Web y de Diseño Web.
 Estudié Operador de PC en UNLa y me gusta la informática en general.
 
 ## Micaela Mattia
+Tengo 27 años, vivo en villa jardin (lanus oeste).
+Me gusta compartir tiempo en familia con mi esposo y mis hijas, soy mamá de tres nenas. (TIANA, RENATA Y VICTORIA).
+Estudie y me recibi de peluquera, hace 7 años que me dedico a esto.
+Mi meta ahora es meterme de lleno en el mundo de la programación y poder desarrollarme y trabajar en esto!
 
 ## Vilma Garcia 
 
