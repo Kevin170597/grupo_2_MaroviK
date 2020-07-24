@@ -72,10 +72,11 @@ Me gusta compartir tiempo en familia con mi esposo y mis hijas, soy mamá de tre
 Estudie y me recibi de peluquera, hace 7 años que me dedico a esto.
 Mi meta ahora es meterme de lleno en el mundo de la programación y poder desarrollarme y trabajar en esto!
 
-## Vilma Garcia 
+## Vilma Garcia
+Tengo 24 años soy de Lugano.
+Estudiante de Programacion Web.
+Acuariana :)
 
-
-___
 
 # Sitios de Referencia 
 
