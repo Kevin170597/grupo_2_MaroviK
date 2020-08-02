@@ -98,3 +98,7 @@ Muchas sitios tenían el footer demaciado alto para nuestro gusto. Éstas págin
 [compumundo.com.ar](https://compumundo.com.ar)
 
 Por el diseño del detalle de sus productos, que lo vemos ideal para nuestra sección de electro.
+
+
+# Enlace al tablero de organización.
+* Trello: (https://trello.com/invite/b/Ml7pcvTy/dbb95879c034cb249db375049fb0e442/bienvenido-a-trello)
