@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <!-- ETIQUETAS META PARA CONFIGURAR LA VISUALIZACIÓN DEL LA PAGINA -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>
+        MaroviK
+    </title>
+    <!-- ETIQUETAS LINK PARA VINCULAR CON ONTAWESOME Y BOOTSTRAP-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+      <!-- Iconos -->
+    <script src="https://kit.fontawesome.com/e1661b9dce.js" crossorigin="anonymous"></script>
+    <link href="https://file.myfontastic.com/56iAMnJ5W4ohZQR6E7f8tE/icons.css" rel="stylesheet">
+    <link rel='stylesheet' href='../public/stylesheets/registro.css' />
+
+</head>
+
+<body>
+
+    <!--HEADER: CABECERA Y MENÚ DE NAVEGACIÓN-->
+
+    <header class="container-fluid">
+
+        <!--caja contenedora de boostrap-->
+        <div class="container">
+
+            <!--caja que contiene el logotipo, el buscador y botón con un link-->
+            <div class="row">
+
+                <!--caja que contiene el logotipo-->
+                <div class="col-5 col-md-2 col-lg-2 logo">
+                    <a href=""><img src="../public/images/logomarovik2.svg" alt=""></a>
+                </div>
+
+                <!--caja que contiene el formulario-->
+                <div class="col-7 col-md-6 col-lg-6">
+                    <!--<form action=" ">
+                        <input type="text " placeholder="Buscar productos, marcas y más ">
+                        <button><i class="fas fa-search "></i></button>
+                    </form>-->
+                    <form action="" method="get" class="search-form">
+                        <input type="text" name="search" placeholder="Buscar productos" class="search-form_input">
+                        <button type="submit" class="search-form_button"><i class="fas fa-search"></i></button>
+                    </form>
+                </div>
+
+                <!--barra de menu: login y registro-->
+                <div class="col-12 col-md-4 col-lg-4 cuotas">
+                    <ul class="usuario">
+                        <li>
+                            <a href=" ">Registrarse <img width="20" src="https://img.icons8.com/color/48/000000/user-location.png"/></a>
+                        </li>
+                        <li>
+                            <a href=" ">Iniciar sesión <img width="20" src="https://img.icons8.com/fluent/48/000000/login-rounded-right.png"/></a>
+                        </li>
+                        <li>
+                            <a href=" ">Carrito <img width="20" src="https://img.icons8.com/fluent/48/000000/shopping-cart-loaded.png"/></a>
+                        </li>
+                    </ul>
+                    
+                </div>
+            </div>
+            
+            <!--<div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Dropdown button
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <a class="dropdown-item" href="#">Action</a>
+                  <a class="dropdown-item" href="#">Another action</a>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                </div>
+            </div>-->
+            <div class="col-2 cont-burger dropdown">
+                <botton class="btn btn-secondary dropdown-toggle" type="button" id="burger-menu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Categorias</botton>
+        
+                <div class="dropdown-menu cont-menu-categorias" aria-labelledby="burger-menu">
+        
+                    <a href="#" class="dropdown-item"><i class="icon-tecnologia"></i>Tecnología</a>
+                    <a href="#" class="dropdown-item"><i class="icon-electrodomesticos"></i>Electrodomésticos</a>
+                    <a href="#" class="dropdown-item"><i class="icon-bebes"></i>Bebés y Niños</a>
+                    <a href="#" class="dropdown-item"><i class="icon-libreria"></i>Librería</a>
+                    <a href="#" class="dropdown-item"><i class="icon-almacen"></i>Almacén</a>
+                    <a href="#" class="dropdown-item"><i class="icon-bebidas"></i>Bebidas</a>
+                    <a href="#" class="dropdown-item"><i class="icon-frutas"></i>Frutas y Verduras</a>
+                    <a href="#" class="dropdown-item"><i class="icon-carnes"></i>Carnes</a>
+                    <a href="#" class="dropdown-item"><i class="icon-pescados"></i>Pescados y Mariscos</a>
+                    <a href="#" class="dropdown-item"><i class="icon-queso"></i>Quesos y Fiambres</a>
+                    <a href="#" class="dropdown-item"><i class="icon-lacteos"></i>Lácteos</a>
+                    <a href="#" class="dropdown-item"><i class="icon-congelados"></i>Congelados</a>
+                    <a href="#" class="dropdown-item"><i class="icon-perfumeria"></i>Perfumería</a>
+                    <a href="#" class="dropdown-item"><i class="icon-limpieza"></i>Limpieza</a>
+                    <a href="#" class="dropdown-item"><i class="icon-mascotas"></i>Mascotas</a>
+                </div>
+        
+            </div>
+        </div>  
+        
+            
+    </header>
+
+    <!--SECCIONES: PRODUCTOS-->
+
+    <h1>Registrate</h1>
+    <div class="formulario">
+        <form action="resultado.html" method="POST">
+            
+              <label for="nombre">Email: </label>
+              <input type="text" id="nombre" name="nombre"> <br>
+            
+      
+            
+              <label for="email">Contraseña: </label>
+              <input type="email" id="nombre" name="email"> <br>
+            
+            
+            
+              <label for="contraseña">Repetí contraseña: </label>
+              <input type="password" id="nombre" name="password"> <br>
+            
+          </form>
+    </div>
+
+    <div class="captcha container">
+        <label><input type="checkbox"> No soy un robot  </label><img width="50" alt="RecaptchaLogo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/RecaptchaLogo.svg/128px-RecaptchaLogo.svg.png">
+    </div>
+
+    <div class="boton container">
+        <button>Continuar</button>
+        <p>¿Ya tenés una cuenta?</p>
+        <a href="">Iniciar Sesión</a>
+    </div>
+    
+
+
+    <!--FOOTER: PIE DE PAGINA-->
+    <footer class="container-fluid">
+
+        <!--caja con el contenido principal de footer-->
+        <div class="row footer">
+
+            <!--contiene pago con tarjeta-->
+            <div class="col-12 col-lg-3">
+                <article>
+                    <img src="https://img.icons8.com/ultraviolet/40/000000/questions.png"/>
+                    <h4>¿Cómo comprar?</h4>
+                    <p>Si tenés alguna duda ingresá acá.</p>
+                </article>
+            </div>
+
+            <!--contiene envio gratis-->
+            <div class="col-12 col-lg-3">
+                <article>
+                    <img width="40" src="https://img.icons8.com/cotton/64/000000/worldwide-location--v2.png"/>
+                    <h4>Tiendas.</h4>
+                    <p>Conocé tu tienda mas cercana acá.</p>
+                </article>
+            </div>
+
+            <!--contiene seguridad-->
+            <div class="col-12 col-lg-3">
+                <article>
+                    <img src="https://img.icons8.com/ultraviolet/40/000000/add-contact-to-company.png"/>
+                    <h4>Nosotros.</h4>
+                    <p>Nuestra historia. </p>
+                    <p>Trabajá con nosotoros. </p>
+                </article>
+            </div>
+            <div class="col-12 col-lg-3">
+                <article>
+                    <img width="40" src="https://img.icons8.com/officel/80/000000/sort-by-follow-up-date.png"/>
+                    <h4>Seguinos en nuestras redes.</h4>
+                    <img src="https://img.icons8.com/ios-glyphs/30/000000/facebook.png"/>
+                    <img src="https://img.icons8.com/ios-glyphs/30/000000/instagram-new.png"/>
+                    <img src="https://img.icons8.com/ios-glyphs/30/000000/twitter.png"/> <br>
+                </article>
+            </div>
+
+            <!--contiene copyright-->
+            <div class="col-12">
+                <p class="copyright">Copyright © 1999-2020 MaroviK S.R.L.</p>
+            </div>
+        </div>
+        <!--finaliza div.row-->
+
+    </footer>
+    <!--FINALIZA FOOTER: PIE DE PAGINA-->
+    </div>
+
+    <!--scripts de bootstrap-->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js " integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj " crossorigin="anonymous "></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js " integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo " crossorigin="anonymous "></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js " integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI " crossorigin="anonymous "></script>
+</body>
+
+</html>
