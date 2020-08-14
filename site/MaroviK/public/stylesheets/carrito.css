@@ -9,6 +9,12 @@
    --color-verde: #39b54a;
    --color-celeste: #41c4ec;
 }
+[class^="icon-"]{
+   margin-right: 10px;
+   font-size: 1.5em;
+   position: relative;
+   top: .2em;
+}
 
 .carrusel{
    width: 90%;

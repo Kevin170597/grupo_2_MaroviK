@@ -10,38 +10,54 @@
 
     <div class="contenido"></div>
 
-     <h2> Formulario de carga del producto</h2>
-     <h4>Completa los datos del producto para agregar</h4>
+     <h1>AGREGAR PRODUCTO</h1>
+     <!-- <h2>Completa los datos del producto que deseas agregar</h2> -->
 
-       <!--formulario de carga-->
-      <form action="">
-         <div>
-             <label for=""> Nombre: </label>
-             <input type="text" name="nombre">
-         </div>
 
-         <div>
-             <label for="Precio"> Precio: </label>
-             <input type="number" name="Precio">
-         </div>
+     <div class="formulario">
+        <form action="#"method="POST">
+            
 
-         <div>
-             <label for="">Categoria</label>
-             <select type="categoria" id="">
-                <option value="seleccionar"> Seleccionar</option>
-                <option value="Electrodomesticos">Electrodomesticos</option>
-                <option value="Bebes y niños">Bebes y niños</option>
-                <option value="Alimentos">Alimentos</option>
-                <option value="Libreria">Libreria</option>
+            <label for="Precio">Selecciona categoria: </label>
+            <select type="categoria" id="">
+                <option value="tecnologia">Tecnolgía</option>
+                <option value="Electrodomesticos">Electrodomésticos</option>
+                <option value="Bebes y niños">Bebes y Niños</option>
+                <option value="Libreria">Librería</option>
+                <option value="Alimentos">Almacén</option>
+                <option value="Bebidas">Bebidas</option>
+                <option value="Frutas y Verduras">Frutas y Verduras</option>
+                <option value="Carnes">Carnes</option>
+                <option value="Perscados y mariscos">Pescados y Mariscos</option>
+                <option value="Quesos y fiambres">Quesos y Fiambres</option>
+                <option value="lacteos">Lacteos</option>
+                <option value="congelados">Congelados</option>
                 <option value="Perfumeria">Perfumeria</option>
                 <option value="Limpieza">Limpieza</option>
                 <option value="Mascota">Mascota</option>
             </select>
-         </div>
-         <div>
-             <textarea name="Descripcion" id="" cols="30" rows="10"></textarea>
-         </div>
-      </form>
+
+
+            <label for="nombreProduct">Nombre del producto: </label>
+            <input type="text" id="nombreProduct" placeholder="Nombre del producto" name="nombreProduct">
+
+            <label for="Descripcion">Descripción: </label>
+            <input type="text"  placeholder="Descripcion" name="descripcion">
+      
+            <label for="Precio"> Precio: </label>
+            <input type="number"  placeholder="Precio" name="Precio">
+            
+            <label for="stock">Stock: </label>
+            <input type="number"  placeholder="Stock" id="stock" name="stock">
+            
+            <label for="imagen">Subir imagen: </label>
+            <input type="img"  placeholder="Subir imagen"id="imagen" name="imagen">
+               
+          </form>
+
+        <div class="boton container">
+            <button>Cargar producto</button>
+        </div>  
     </div>
 
 </body>
