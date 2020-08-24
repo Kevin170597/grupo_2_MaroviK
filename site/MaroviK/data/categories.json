@@ -1,0 +1,155 @@
+[
+{
+    "id": 1,
+    "title": "Tecnogía",
+    "category": "tecnologia",
+    "subcategory": [
+        "notebooks-y-pc",
+        "celulares-y-tablets",
+        "smart-tv-audio-y-video",
+        "gaming"
+    ],
+    "title_subcategory": [
+        "Notebooks y Pc",
+        "Celulares y Tablets",
+        "Smart TV  Audio y Video",
+        "Gaming"
+    ],
+    "image": ""
+},
+{
+    "id": 2,
+    "title": "Electrodomésticos",
+    "category": "electrodomesticos",
+    "subcategory": [
+        "lavado",
+        "heladeras-freezers-y-cavas",
+        "cocinas-y-hornos",
+        "climatización",
+        "termotanques-y-calefones",
+        "pequeños-de-hogar",
+        "pequeños-de-cocina"
+
+    ],
+    "title_subcategory": [
+            "Lavado",
+            "Heladeras Freezers y Cavas",
+            "Cocinas y Hornos",
+            "Climatización",
+            "Termotanques y Calefones",
+            "Pequeños de Hogar",
+            "Pequeños de Cocina"
+    ],
+    "image": ""
+},
+{
+    "id": 3,
+    "title": "Bebés y Niños",
+    "category": "bebes-y-ninos",
+    "subcategory": [
+        "alimentacion",
+        "cuidado-del-bebe",
+        "panales",
+        "mamaderas-chupetes-y-baberos"
+    ],
+    "title_subcategory": [
+        "Alimentación",
+        "Cuidado del Bebé",
+        "Pañales",
+        "Mamaderas Chupetes Y Baberos"
+    ],
+    "image": ""
+},
+{
+    "id": 4,
+    "title": "Librería",
+    "category": "libreria",
+    "subcategory": [
+        "carpetas",
+        "escritura",
+        "cuadernos-y-repuestos",
+        "mochilas-y-cartucheras"
+    ],
+    "title_subcategory": [
+        "Carpetas",
+        "Escritura",
+        "Cuadernos y Repuestos",
+        "Mochilas y Cartucheras"
+    ],
+    "image": ""
+}
+{
+    "id": 5,
+    "title": "Almacén",
+    "category": "almacen",
+    "subcategory": [
+        "aceites-y-vinagres",
+        "aderezos",
+        "arroz-y-legumbres",
+        "conservas",
+        "desayuno-y-merienda",
+        "golosinas-y-chocolates",
+        "harinas",
+        "pastas-secas-y-salsas",
+        "sal-y-condimentos"
+    ],
+    "title_subcategory": [
+        "Aceites y Vinagres",
+        "Aderezos",
+        "Arroz y Legumbres",
+        "Conservas",
+        "Desayuno y Merienda",
+        "Golosinas y Chocolates",
+        "Harinas",
+        "Pastas Secas y Salsas",
+        "Sal y Condimentos"
+    ],
+    "image": ""
+},
+{
+    "id": 6,
+    "title": "Bebidas",
+    "category": "bebidas",
+    "subcategory": [
+        "aguas",
+        "aperitivos",
+        "bebidas-blancas",
+        "champagnes",
+        "cervezas",
+        "energizantes",
+        "gaseosas",
+        "jugos",
+        "licores",
+        "vinos"
+    ],
+    "title_subcategory": [
+        "Aguas",
+        "Aperitivos",
+        "Bebidas-blancas",
+        "Champagnes",
+        "Cervezas",
+        "Energizantes",
+        "Gaseosas",
+        "Jugos",
+        "Licores",
+        "Vinos"
+    ],
+    "image": ""
+},
+{
+    "id": 7,
+    "title": "Frutas y Verdutras",
+    "category": "frutas-y-verduras",
+    "subcategory": [
+        "frutas",
+        "legumbres-granos-y-semillas",
+        "verduras"
+    ],
+    "title_subcategory": [
+        "Frutas",
+        "Legumbres Granos y Semillas",
+        "Verduras"
+    ],
+    "image": ""
+}
+]
