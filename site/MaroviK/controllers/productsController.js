@@ -10,7 +10,7 @@ module.exports = {
         let products_for_category = productsDataBase.filter(product => {
             return(product.category == category);
         });
-        res.render ('products');
+        res.render ('categoria');
 
     }
 }
