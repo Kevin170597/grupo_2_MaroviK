@@ -108,25 +108,27 @@
             
             <section>
                 
-                <div class="row productos">
+                <div class="productos">
                     <div class="banner">
                         <img src="/images/categories/<%- categoria.image %> " alt="" class="img-fluid">
                     </div>
-                    <div class="col-12 col-md-6 col-lg-4">
+                    <div class="subcategorias col-12 row">
+                        <div class="col-12 col-md-6 col-lg-3">
     
-                        <% categoria.subcategories.forEach(subcategoria => {%>
-                        <div class="contenido">
-    
-                            <figure>
-                                <a href="./productDetail.html"><img src="/images/categories/<%= subcategoria.image %> " alt=" "></a>
-                            </figure>
-                            <ul> 
-                                <li><a href=""><%= subcategoria.title %> </a></li>
-                                <li><a href="">Ver más</a></li>
-                            </ul>
+                            <% categoria.subcategories.forEach(subcategoria => {%>
+                            <div class="contenido">
+        
+                                <figure>
+                                    <a href="./productDetail.html"><img src="/images/categories/<%= subcategoria.image %> " alt=" "></a>
+                                </figure>
+                                <ul> 
+                                    <li><a href=""><%= subcategoria.title %> </a></li>
+                                    <li><a href="">Ver más</a></li>
+                                </ul>
+                            </div>
+                            <% }) %> 
+                            
                         </div>
-                        <% }) %> 
-                        
                     </div>
                     
                 </div>

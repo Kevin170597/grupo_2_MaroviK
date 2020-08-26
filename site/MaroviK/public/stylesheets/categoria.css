@@ -185,8 +185,14 @@ h4{
 .productos {
     display: flex;
     flex-wrap: wrap;
+    
     padding: 0px;
     margin-top: 30px;
+}
+.subcategorias{
+    background-color: #39b54a;
+    
+    
 }
 
 section .titulo h2 {
@@ -199,7 +205,6 @@ section .titulo h2 {
 section .contenido {
     background-color: white;
     margin-bottom: 30px;
-    
     border-radius: 5px;
     padding: 5px;
     text-align: center;
