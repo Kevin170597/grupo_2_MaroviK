@@ -161,6 +161,7 @@ header nav ul {
 .filtro{
     padding-left: 30px;
     margin-top: 10px;
+    border-right: solid 1px rgb(179, 178, 178);
 }
 
 .filtro .burger{
@@ -203,6 +204,11 @@ section .contenido {
     padding: 5px;
     text-align: center;
     
+}
+
+section .contenido ul{
+    text-align: center;
+    margin-right: 15px;
 }
 
 
