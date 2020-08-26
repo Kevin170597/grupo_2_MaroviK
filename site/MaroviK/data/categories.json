@@ -26,7 +26,7 @@
         "title": "Gaming",
         "image": "img-categoria-tecnologia-gaming.jpg"
     }],
-    "banner_image": "img-banner-categoria-tecnologia.jpg"
+    "image": "img-banner-categoria-tecnologia.jpg"
 },
 {
     "id": 2,
@@ -71,7 +71,7 @@
         "title": "Pequeños de Cocina",
         "image": "img-categoria-electrodomesticos-pequenos-de-cocina.jpg"
     }],
-    "banner-image": "img-banner-categoria-electrodomesticos.jpeg"
+    "image": "img-banner-categoria-electrodomesticos.jpeg"
 },
 {
     "id": 3,
@@ -100,7 +100,7 @@
         "title": "Mamaderas Chupetes Y Baberos",
         "image": "img-categoria-bebes-y-ninos-mamaderas-chupetes-y-baberos.jpg"
     }],
-    "banner-image": "img-banner-categoria-bebes-y-ninos.jpg"
+    "image": "img-banner-categoria-bebes-y-ninos.jpg"
 },
 {
     "id": 4,
@@ -129,7 +129,7 @@
         "title": "Mochilas y Cartucheras",
         "image": "img-categoria-libreria-mochilas-y-cartucheras.jpg"
     }],
-    "banner-image": "img-banner-categoria-libreria.jpg"
+    "image": "img-banner-categoria-libreria.jpg"
 },
 {
     "id": 5,
@@ -184,7 +184,7 @@
         "image": "img-categoria-almacen-sal-y-condimentos.jpg"
 
     }],  
-    "banner-image": "img-banner-categoria-almacen.jpg"
+    "image": "img-banner-categoria-almacen.jpg"
 },
 {
     "id": 6,
@@ -243,7 +243,7 @@
         "title": "Vinos",
         "image": "img-categoria-bebidas-vinos.jpg"
     }],
-    "banner-image": "img-banner-categoria-bebidas.jpg"
+    "image": "img-banner-categoria-bebidas.jpg"
 },
 {
     "id": 7,
@@ -266,7 +266,7 @@
         "title": "Verduras",
         "image": "img-categoria-frutas-y-verduras-verduras.jpg"  
     }],
-    "banner-image": "img-banner-categoria-frutas-y-verduras.jpg"
+    "image": "img-banner-categoria-frutas-y-verduras.jpg"
 },
 {
     "id": 8,
@@ -294,7 +294,7 @@
         "title": "Pollos",
         "image": "img-categoria-carnes-pollos.jpg"
     }],
-    "banner-image": "img-banner-categoria-carnes.jpg"
+    "image": "img-banner-categoria-carnes.jpg"
     },
     {
     "id": 9,
@@ -312,7 +312,7 @@
         "title": "Pescados",
         "image": "img-categoria-pescados-y-mariscos-pescados.jpg"
     }],
-    "banner-image": "img-banner-categoria-pescados-y-mariscos.jpg"
+    "image": "img-banner-categoria-pescados-y-mariscos.jpg"
     },
     {
         "id": 10,
@@ -346,7 +346,7 @@
             "title": "Salchichas",
             "image": ""
         }],
-        "banner-image": ""
+        "image": ""
     },
     {
         "id": 11,
@@ -380,7 +380,7 @@
             "title": "Yogures",
             "image": ""
         }],
-        "banner-image": ""
+        "image": ""
     },
     {
         "id": 12,
@@ -409,7 +409,7 @@
             "title": "Papas",
             "image": ""
         }],
-        "banner-image": ""
+        "image": ""
     },
     {
         "id": 13,
@@ -443,7 +443,7 @@
             "title": "Maquillaje",
             "image": ""
         }],
-        "banner-image": ""
+        "image": ""
     },
     {
         "id": 14,
@@ -482,7 +482,7 @@
             "title": "Limpieza de pisos y muebles",
             "image": ""
         }],
-        "banner-image": ""
+        "image": ""
     },
     {
         "id": 15,
@@ -511,6 +511,6 @@
             "title": "Otros Animales",
             "image": ""
         }],
-        "banner-image": ""
+        "image": ""
     }
 ]
