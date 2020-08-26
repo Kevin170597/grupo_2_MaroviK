@@ -112,11 +112,11 @@
                     <div class="banner">
                         <img src="/images/categories/<%- categoria.image %> " alt="" class="img-fluid">
                     </div>
-                    <div class="subcategorias col-12">
-                        <div class="col-12 col-md-6 col-lg-4">
+                    <div class="subcategorias row col-12">
+                        <!--<div class="col-12 col-md-6 col-lg-4">-->
     
                             <% categoria.subcategories.forEach(subcategoria => {%>
-                            <div class="contenido">
+                            <div class="contenido col-12 col-md-6 col-lg-4">
         
                                 <figure>
                                     <a href="./productDetail.html"><img src="/images/categories/<%= subcategoria.image %> " alt=" "></a>
@@ -128,7 +128,8 @@
                             </div>
                             <% }) %> 
                             
-                        </div>
+                        <!--</div>-->
+                        
                         
                     </div>
                     
