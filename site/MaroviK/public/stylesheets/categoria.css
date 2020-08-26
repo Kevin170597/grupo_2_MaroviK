@@ -200,10 +200,15 @@ section .titulo h2 {
     padding: 30px;
 }
 
+.subcategorias{
+    display: flex;
+    flex-direction: row;
+}
+
 section .contenido {
     background-color: white;
     margin-bottom: 30px;
-    margin-left: 5px;
+    margin-left: 10px;
     border-radius: 5px;
     padding: 5px;
     text-align: center;
