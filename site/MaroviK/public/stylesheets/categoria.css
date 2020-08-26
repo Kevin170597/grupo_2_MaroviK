@@ -150,6 +150,14 @@ header nav ul {
 }
 
 
+.banner img{
+    display: flex;
+    margin-left: 200px;
+    margin-bottom: 20px;
+    width: 70%;
+    height: 50vh;
+}
+
 .filtro{
     padding-left: 30px;
     margin-top: 10px;
@@ -190,6 +198,7 @@ section .titulo h2 {
 section .contenido {
     background-color: white;
     margin-bottom: 30px;
+    
     border-radius: 5px;
     padding: 5px;
     text-align: center;
@@ -200,7 +209,8 @@ section .contenido {
 
 
 section .contenido figure img {
-    width: 60%;
+    width: 90%;
+    margin-top: 10px;
 }
 
 section article {
