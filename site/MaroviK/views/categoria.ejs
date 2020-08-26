@@ -92,15 +92,13 @@
                 <div class="collapse navbar-collapse row" id="navbarSupportedContent">
                 
                     <ul>
-                        <h4>Tecnologia</h4>
-                        <li><a href="">Notebooks y PC</a></li>
-                        <li><a href="">Celulares y tablets</a></li>
-                        <li><a href="">Smart TV Audio y Video</a></li>
-                        <li><a href="">Gaming</a></li>
-                    </ul>
-                    
-                    <ul>
-                        
+                        <h4><%= categoria.title %></h4>
+
+                        <% categoria.subcategories.forEach(subcategoria => {%>
+                            
+                                <li><a href=""><%= subcategoria.title %> </a></li>
+                       
+                        <% }) %> 
                     </ul>
                 </div>
             </nav>
