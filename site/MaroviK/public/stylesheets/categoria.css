@@ -202,12 +202,16 @@ section .titulo h2 {
 
 .subcategorias{
     display: flex;
-    flex-direction: row;
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+    justify-content: center;
+    
 }
 
 section .contenido {
     background-color: white;
-    margin-bottom: 30px;
+    margin-bottom: 15px;
     margin-left: 10px;
     border-radius: 5px;
     padding: 5px;
@@ -219,7 +223,6 @@ section .contenido ul{
     text-align: center;
     margin-right: 15px;
 }
-
 
 
 
