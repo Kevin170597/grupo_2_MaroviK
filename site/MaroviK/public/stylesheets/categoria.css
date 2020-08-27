@@ -205,7 +205,6 @@ section .titulo h2 {
     box-sizing: border-box;
     margin: 0px;
     padding: 0px;
-    justify-content: center;
     
 }
 
@@ -216,7 +215,7 @@ section .contenido {
     border-radius: 5px;
     padding: 5px;
     text-align: center;
-    
+    width: 100%;
 }
 
 section .contenido ul{
@@ -318,6 +317,9 @@ section article i {
         display: flex;
         flex-direction: column;
     }
+    section .contenido {
+        width: 100%;
+    }
 }
 
 
@@ -342,5 +344,8 @@ section article i {
     }
     .filtro{
         padding-left: 0px;
+    }
+    section .contenido {
+        width: 290px;
     }
 }
