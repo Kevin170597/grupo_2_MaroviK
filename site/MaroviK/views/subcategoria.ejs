@@ -96,11 +96,11 @@
             
             <section>
                 
-                <% productos.forEach(producto => {%>
-                <div class="row productos">
+                
+                <div class="productos">
     
-                    <div class="col-12 col-md-6 col-lg-3">
-    
+                    <div class="subcategorias row col-12">
+                        <% productos.forEach(producto => {%>
                         <div class="contenido">
     
                             <figure>
@@ -116,10 +116,10 @@
     
                             
                         </div>
-                        
+                        <% }) %>
                     </div>
                 </div>
-                <% }) %> 
+                 
     
             </section>
     
