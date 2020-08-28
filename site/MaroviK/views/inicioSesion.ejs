@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<%- include("partials/head") %> 
+
+<body>
+
+   
+    <!--SECCIONES: PRODUCTOS-->
+
+    <h1>Iniciar Sesión</h1>
+    <div class="formulario">
+        <form action="resultado.html" method="POST">
+            
+            <label for="nombre">Email: </label>
+            <input type="text" id="nombre" name="nombre"> <br>
+            
+      
+            
+            <label for="email">Contraseña: </label>
+            <input type="password" id="nombre" name="email"> <br>
+            
+            
+            
+          <div class="recordar">
+            <label><input type="checkbox">Recordar contraseña  </label>
+          </div>
+
+          <div class="boton container">
+            <button type="submit">Ingresar</button><br>
+          </div>
+      
+            <a href="register.html">¿TodavÍa no tenes una cuenta? Registrate ahora</a>
+   
+        </form>
+ </div>
+
+    <%- include("partials/footer") %> 
+</body>
+
+</html>
