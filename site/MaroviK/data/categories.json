@@ -9,13 +9,24 @@
         "smart-tv-audio-y-video",
         "gaming"
     ],
-    "title_subcategory": [
-        "Notebooks y Pc",
-        "Celulares y Tablets",
-        "Smart TV  Audio y Video",
-        "Gaming"
-    ],
-    "image": ""
+    "subcategories": [{
+
+        "title": "Notebooks y Pc",
+        "image": "img-categoria-tecnologia-notebooks-y-pc.jpg"
+    },
+    {
+        "title": "Celulares y Tablets",
+        "image": "img-categoria-tecnologia-celulares-y-tablets.jpg"
+    },
+    {
+        "title": "Smart TV  Audio y Video",
+        "image": "img-categoria-tecnologia-smart-tv-audio-y-video.jpg"
+    },
+    {
+        "title": "Gaming",
+        "image": "img-categoria-tecnologia-gaming.jpg"
+    }],
+    "image": "img-banner-categoria-tecnologia.jpg"
 },
 {
     "id": 2,
@@ -31,16 +42,36 @@
         "pequeños-de-cocina"
 
     ],
-    "title_subcategory": [
-            "Lavado",
-            "Heladeras Freezers y Cavas",
-            "Cocinas y Hornos",
-            "Climatización",
-            "Termotanques y Calefones",
-            "Pequeños de Hogar",
-            "Pequeños de Cocina"
-    ],
-    "image": ""
+    "subcategories":[{
+
+        "title": "Lavado",
+        "image": "img-categoria-electrodomestico-lavado.jpg"
+    },
+    {
+        "title": "Heladeras Freezers y Cavas",
+        "image": "img-categoria-electromesticos-heladeras-freezer-y-canvas.jpg"
+    },
+    {
+        "title": "Cocinas y Hornos",
+        "image": "img-categoria-electrodomesticos-cocinas-y-hornos.jpg"
+    },
+    {
+        "title": "Climatización",
+        "image": "img-categoria-electrodomesticos-climatizacion.jpg"
+    },
+    {
+        "title": "Termotanques y Calefones",
+        "image": "img-categoria-electrodomesticos-termotanques-y-calefones.jpg"
+    },
+    {
+        "title": "Pequeños de Hogar",
+        "image": "img-categoria-electrodomesticos-pequenos-de-hogar.jpg"
+    },
+    {
+        "title": "Pequeños de Cocina",
+        "image": "img-categoria-electrodomesticos-pequenos-de-cocina.jpg"
+    }],
+    "image": "img-banner-categoria-electrodomesticos.jpeg"
 },
 {
     "id": 3,
@@ -52,13 +83,24 @@
         "panales",
         "mamaderas-chupetes-y-baberos"
     ],
-    "title_subcategory": [
-        "Alimentación",
-        "Cuidado del Bebé",
-        "Pañales",
-        "Mamaderas Chupetes Y Baberos"
-    ],
-    "image": ""
+    "subcategories": [{
+
+        "title": "Alimentación",
+        "image": "img-categoria-bebes-y-ninos-alimentacion.jpg"
+    },
+    {
+        "title": "Cuidado del Bebé",
+        "image": "img-categoria-bebes-y-ninos-cuidado-del-bebe.jpg"
+    },
+    {
+        "title": "Pañales",
+        "image": "img-categoria-bebes-y-ninos-panales.jpg"
+    },
+    {
+        "title": "Mamaderas Chupetes Y Baberos",
+        "image": "img-categoria-bebes-y-ninos-mamaderas-chupetes-y-baberos.jpg"
+    }],
+    "image": "img-banner-categoria-bebes-y-ninos.jpg"
 },
 {
     "id": 4,
@@ -70,13 +112,24 @@
         "cuadernos-y-repuestos",
         "mochilas-y-cartucheras"
     ],
-    "title_subcategory": [
-        "Carpetas",
-        "Escritura",
-        "Cuadernos y Repuestos",
-        "Mochilas y Cartucheras"
-    ],
-    "image": ""
+    "subcategories": [{
+
+        "titile": "Carpetas",
+        "image": "img-categoria-libreria-carpetas.jpg"
+    },
+    {
+        "titile": "Escritura",
+        "image": "img-categoria-libreria-escritura.jpg"
+    },
+    {
+        "title": "Cuadernos y Repuestos",
+        "image": "img-categoria-libreria-cuadernos-y-repuestos.jpg"
+    },
+    {
+        "title": "Mochilas y Cartucheras",
+        "image": "img-categoria-libreria-mochilas-y-cartucheras.jpg"
+    }],
+    "image": "img-banner-categoria-libreria.jpg"
 },
 {
     "id": 5,
@@ -93,18 +146,45 @@
         "pastas-secas-y-salsas",
         "sal-y-condimentos"
     ],
-    "title_subcategory": [
-        "Aceites y Vinagres",
-        "Aderezos",
-        "Arroz y Legumbres",
-        "Conservas",
-        "Desayuno y Merienda",
-        "Golosinas y Chocolates",
-        "Harinas",
-        "Pastas Secas y Salsas",
-        "Sal y Condimentos"
-    ],
-    "image": ""
+    "subcategories": [{
+
+        "title": "Aceites y Vinagres",
+        "image": "img-categoria-almacen-aceites-y-vinagres.jpg"
+    },
+    {
+        "title": "Aderezos",
+        "image": "img-categoria-almacen-aderezos.jpg"
+    },
+    {
+        "title": "Arroz y Legumbres",
+        "image": "img-categoria-almacen-arroz-y-legumbres.jpg"
+    },
+    {
+        "title": "Conservas",
+        "image": "img-categoria-almacen-conservas.jpg"
+    },
+    {
+        "title": "Desayuno y Merienda",
+        "image": "img-categoria-almacen-desayuno-y-merienda.jpg"
+    },
+    {
+        "title": "Golosinas y Chocolates",
+        "image": "img-categoria-almacen-chocolates-y-golosinas.jpg"
+    },
+    {
+        "title": "Harinas",
+        "image": "img-categoria-almacen-harinas.jpg"
+    },
+    {
+        "title": "Pastas Secas y Salsas",
+        "image": "img-categoria-almacen-pastas-secas-y-salsas.jpg"
+    },
+    {
+        "title": "Sal y Condimentos",
+        "image": "img-categoria-almacen-sal-y-condimentos.jpg"
+
+    }],  
+    "image": "img-banner-categoria-almacen.jpg"
 },
 {
     "id": 6,
@@ -122,19 +202,48 @@
         "licores",
         "vinos"
     ],
-    "title_subcategory": [
-        "Aguas",
-        "Aperitivos",
-        "Bebidas-blancas",
-        "Champagnes",
-        "Cervezas",
-        "Energizantes",
-        "Gaseosas",
-        "Jugos",
-        "Licores",
-        "Vinos"
-    ],
-    "image": ""
+    "subcategories": [{
+
+        "title": "Aguas",
+        "image": "img-categoria-bebidas-aguas.jpg"
+    },
+    {
+        "title": "Aperitivos",
+        "image": ""
+    },
+    {
+        "title": "Bebidas Blancas",
+        "image": "img-categoria-bebidas-bebidas-blancas.jpg"
+    },
+    {
+        "title": "Champagnes",
+        "image": "img-categoria-bebidas-champagnes.jpg"
+    },
+    {
+        "title": "Cervezas",
+        "image": "img-categoria-bebidas-cervezas.jpg"
+    },
+    {
+        "title": "Energizantes",
+        "image": ""
+    },
+    {
+        "title": "Gaseosas",
+        "image": "img-categoria-bebidas-gaseosas.jpg"
+    },
+    {
+        "title": "Jugos",
+        "image": "img-categoria-bebidas-jugos.jpg"
+    },
+    {
+        "title": "Licores",
+        "image": "img-categoria-bebidas-licores.jpg"
+    },
+    {
+        "title": "Vinos",
+        "image": "img-categoria-bebidas-vinos.jpg"
+    }],
+    "image": "img-banner-categoria-bebidas.jpg"
 },
 {
     "id": 7,
@@ -145,12 +254,19 @@
         "legumbres-granos-y-semillas",
         "verduras"
     ],
-    "title_subcategory": [
-        "Frutas",
-        "Legumbres Granos y Semillas",
-        "Verduras"
-    ],
-    "image": ""
+    "subcategories": [{
+        "title": "Frutas",
+        "image": "img-categoria-frutas-y-verduras-frutas.jpg"
+    },
+    {
+        "title": "Legumbres Granos y Semillas",
+        "image": "img-categoria-frutas-y-verduras-legumbres-granos-y-semillas.jpg" 
+    },
+    {
+        "title": "Verduras",
+        "image": "img-categoria-frutas-y-verduras-verduras.jpg"  
+    }],
+    "image": "img-banner-categoria-frutas-y-verduras.jpg"
 },
 {
     "id": 8,
@@ -162,13 +278,23 @@
         "embutidos",
         "pollos"
     ],
-    "title_subcategory": [
-        "Carne Vacuna",
-        "Carne de Cerdo",
-        "Embutidos",
-        "Pollos"
-    ],
-    "image": ""
+    "subcategories": [{
+        "title": "Carne Vacuna",
+        "image": "img-categoria-carnes-carne-vacuna.jpg"
+    },
+    {
+        "title": "Carne de Cerdo",
+        "image": "img-categoria-carnes-carne-de-cerdo.jpg"
+    },
+    {
+        "title": "Embutidos",
+        "image": "img-categoria-carnes-embutidos.jpg"
+    },
+    {
+        "title": "Pollos",
+        "image": "img-categoria-carnes-pollos.jpg"
+    }],
+    "image": "img-banner-categoria-carnes.jpg"
     },
     {
     "id": 9,
@@ -178,11 +304,15 @@
         "mariscos",
         "pescados"
     ],
-    "title_subcategory": [
-        "Mariscos",
-        "Pescados"
-    ],
-    "image": ""
+    "subcategories": [{
+        "title": "Mariscos",
+        "image": "img-categoria-pescados-y-mariscos-mariscos.jpg"
+    },
+    {
+        "title": "Pescados",
+        "image": "img-categoria-pescados-y-mariscos-pescados.jpg"
+    }],
+    "image": "img-banner-categoria-pescados-y-mariscos.jpg"
     },
     {
         "id": 10,
@@ -195,13 +325,27 @@
             "dulces",
             "salchichas"
         ],
-        "title_subcategory": [
-            "Quesos",
-            "Fiambres",
-            "Picadas",
-            "Dulces",
-            "Salchichas"
-        ],
+        "subcategories": [{
+
+            "title": "Quesos",
+            "image": ""
+        },
+        {
+            "title": "Fiambres",
+            "image": ""
+        },
+        {
+            "title": "Picadas",
+            "image": ""
+        },
+        {
+            "title": "Dulces",
+            "image": ""
+        },
+        {
+            "title": "Salchichas",
+            "image": ""
+        }],
         "image": ""
     },
     {
@@ -215,13 +359,27 @@
             "matecas",
             "yogures"
         ],
-        "title_subcategory": [
-            "Cremas",
-            "Dulce de leche",
-            "Leches",
-            "Matecas",
-            "Yogures"
-        ],
+        "subcategories": [{
+
+            "title": "Cremas",
+            "image": ""
+        },
+        {
+            "title": "Dulce de Leche",
+            "image": ""
+        },
+        {
+            "title": "Leches",
+            "image": ""
+        },
+        {
+            "title": "Mantecas",
+            "image": ""
+        },
+        {
+            "title": "Yogures",
+            "image": ""
+        }],
         "image": ""
     },
     {
@@ -234,12 +392,23 @@
             "vegetales",
             "papas"
         ],
-        "title_subcategory": [
-            "Hamburguesas y milanesas",
-            "Helados y postres",
-            "Vegetales",
-            "Papas"
-        ],
+        "subcategories": [{
+
+            "title": "Hamburguesas y milanesas",
+            "image": ""
+        },
+        {
+            "title": "Helados y postres",
+            "image": ""
+        },
+        {
+            "title": "Vegetales",
+            "image": ""
+        },
+        {
+            "title": "Papas",
+            "image": ""
+        }],
         "image": ""
     },
     {
@@ -253,13 +422,27 @@
             "farmacia",
             "maquillaje"
         ],
-        "title_subcategory": [
-            "Cuidado capilar",
-            "Cuidado personal",
-            "Cuidado de la piel",
-            "Farmacia",
-            "Maquillaje"
-        ],
+        "subcategories": [{
+
+            "title": "Cuidado capilar",
+            "image": ""
+        },
+        {
+            "title": "Cuidado personal",
+            "image": ""
+        },
+        {
+            "title": "Cuidado de la piel",
+            "image": ""
+        },
+        {
+            "title": "Farmacia",
+            "image": ""
+        },
+        {
+            "title": "Maquillaje",
+            "image": ""
+        }],
         "image": ""
     },
     {
@@ -274,14 +457,31 @@
             "limpieza-de-cocina",
             "limpieza-de-pisos-y-muebles"
         ],
-        "title_subcategory": [
-            "Desodorantes de ambiente",
-            "Insecticidas",
-            "Lavandina",
-            "Limpieza de baño",
-            "Limpieza de cocina",
-            "Limpieza de pisos-y-muebles"
-        ],
+        "subcategories": [{
+
+            "title": "Desodorantes de ambiente",
+            "image": ""
+        },
+        {
+            "title": "Insecticidas",
+            "image": ""
+        },
+        {
+            "title": "Lavandina",
+            "image": ""
+        },
+        {
+            "title": "Limpieza de baño",
+            "image": ""
+        },
+        {
+            "title": "Limpieza de cocina",
+            "image": ""
+        },
+        {
+            "title": "Limpieza de pisos y muebles",
+            "image": ""
+        }],
         "image": ""
     },
     {
@@ -294,12 +494,23 @@
             "perros",
             "otros-animales"
         ],
-        "title_subcategory": [
-            "Accesorios para mascotas",
-            "Gatos",
-            "Perros",
-            "Otros animales"
-        ],
+        "subcategories": [{
+
+            "title": "Accesorios para mascotas",
+            "image": ""
+        },
+        {
+            "title": "Gatos",
+            "image": ""
+        },
+        {
+            "title": "Perros",
+            "image": ""
+        },
+        {
+            "title": "Otros Animales",
+            "image": ""
+        }],
         "image": ""
     }
 ]

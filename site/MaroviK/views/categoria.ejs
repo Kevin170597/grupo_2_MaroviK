@@ -1,87 +1,12 @@
 <!DOCTYPE html>
 <html lang="es">
 
-<head>
-    
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>
-        MaroviK
-    </title>
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-
-    <script src="https://kit.fontawesome.com/e1661b9dce.js" crossorigin="anonymous"></script>
-    <link href="https://file.myfontastic.com/56iAMnJ5W4ohZQR6E7f8tE/icons.css" rel="stylesheet">
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-
-</head>
+<%- include('partials/head') %> 
 
 <body>
 
 
-    <header class="container-fluid">
-
-        <div class="container">
-
-            <div class="row">
-
-                <div class="col-5 col-md-2 col-lg-2 logo">
-                    <a href="./index.html"><img src="../public/images/logomarovik2.svg" alt=""></a>
-                </div>
-
-                <div class="col-7 col-md-6 col-lg-6">
-                    <form action="" method="get" class="search-form">
-                        <input type="text" name="search" placeholder="Buscar productos" class="search-form_input">
-                        <button type="submit" class="search-form_button"><i class="fas fa-search"></i></button>
-                    </form>
-                </div>
-
-                <div class="col-12 col-md-4 col-lg-4 cuotas">
-                    <ul class="usuario">
-                        <li>
-                            <a href="./register.html">Registrarse <img width="20" src="https://img.icons8.com/color/48/000000/user-location.png"/></a>
-                        </li>
-                        <li>
-                            <a href="./inicio_sesion.html">Iniciar sesión <img width="20" src="https://img.icons8.com/fluent/48/000000/login-rounded-right.png"/></a>
-                        </li>
-                        <li>
-                            <a href="./productCart.html">Carrito <img width="20" src="https://img.icons8.com/fluent/48/000000/shopping-cart-loaded.png"/></a>
-                        </li>
-                    </ul>
-                </div>
-
-            </div>
-        
-            <div class="col-2 cont-burger dropdown">
-                <botton class="btn btn-secondary dropdown-toggle" type="button" id="burger-menu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Categorias</botton>
-        
-                <div class="dropdown-menu cont-menu-categorias" aria-labelledby="burger-menu">
-        
-                    <a href="./categoria.html" class="dropdown-item"><i class="icon-tecnologia"></i>Tecnología</a>
-                    <a href="./categoria.html" class="dropdown-item"><i class="icon-electrodomesticos"></i>Electrodomésticos</a>
-                    <a href="./categoria.html" class="dropdown-item"><i class="icon-bebes"></i>Bebés y Niños</a>
-                    <a href="./categoria.html" class="dropdown-item"><i class="icon-libreria"></i>Librería</a>
-                    <a href="./categoria.html" class="dropdown-item"><i class="icon-almacen"></i>Almacén</a>
-                    <a href="./categoria.html" class="dropdown-item"><i class="icon-bebidas"></i>Bebidas</a>
-                    <a href="./categoria.html" class="dropdown-item"><i class="icon-frutas"></i>Frutas y Verduras</a>
-                    <a href="./categoria.html" class="dropdown-item"><i class="icon-carnes"></i>Carnes</a>
-                    <a href="./categoria.html" class="dropdown-item"><i class="icon-pescados"></i>Pescados y Mariscos</a>
-                    <a href="./categoria.html" class="dropdown-item"><i class="icon-queso"></i>Quesos y Fiambres</a>
-                    <a href="./categoria.html" class="dropdown-item"><i class="icon-lacteos"></i>Lácteos</a>
-                    <a href="./categoria.html" class="dropdown-item"><i class="icon-congelados"></i>Congelados</a>
-                    <a href="./categoria.html" class="dropdown-item"><i class="icon-perfumeria"></i>Perfumería</a>
-                    <a href="./categoria.html" class="dropdown-item"><i class="icon-limpieza"></i>Limpieza</a>
-                    <a href="./categoria.html" class="dropdown-item"><i class="icon-mascotas"></i>Mascotas</a>
-                </div>
-        
-            </div>
-        </div>
-            
-    </header>
-
+    <%- include('partials/header') %> 
     
     <div class="container-fluid categorias">
         <div class="column col-12 col-md-2 col-lg-2  filtro">
@@ -92,15 +17,13 @@
                 <div class="collapse navbar-collapse row" id="navbarSupportedContent">
                 
                     <ul>
-                        <h4>Tecnologia</h4>
-                        <li><a href="">Notebooks y PC</a></li>
-                        <li><a href="">Celulares y tablets</a></li>
-                        <li><a href="">Smart TV Audio y Video</a></li>
-                        <li><a href="">Gaming</a></li>
-                    </ul>
-                    
-                    <ul>
-                        
+                        <h4><%= categoria.title %></h4>
+
+                        <% categoria.subcategories.forEach(subcategoria => {%>
+                            
+                                <li><a href=""><%= subcategoria.title %> </a></li>
+                       
+                        <% }) %> 
                     </ul>
                 </div>
             </nav>
@@ -110,137 +33,31 @@
             
             <section>
                 
-                <div class="row productos">
+                <div class="productos">
+                    <div class="banner">
+                        <img src="/images/categories/<%- categoria.image %> " alt="" class="img-fluid">
+                    </div>
+                    <div class="subcategorias row col-12">
+                        <!--<div class="col-12 col-md-6 col-lg-4">-->
     
-                    <div class="col-12 col-md-6 col-lg-3">
-    
-                        <div class="contenido">
-    
-                            <figure>
-                                <a href="./productDetail.html"><img src="../public/images/img-cafetera-moulinex.jpg" alt=" "></a>
-                            </figure>
-    
-                            <article>
-                                <h2>$6.770</h2>
-                                <span>40% OFF</span>
-                                <p>Cafetera Moulinex Dolce Gusto</p>
-                                <i class="fas fa-truck "></i>
-                            </article>
-    
+                            <% categoria.subcategories.forEach(subcategoria => {%>
+                            <div class="contenido">
+        
+                                <figure>
+                                    <a href="./productDetail.html"><img src="/images/categories/<%= subcategoria.image %> " alt=" "></a>
+                                </figure>
+                                <ul> 
+                                    <li><a href=""><h5><%= subcategoria.title %></h5> </a></li>
+                                    <li><a href="">Ver más</a></li>
+                                </ul>
+                            </div>
+                            <% }) %> 
                             
-                        </div>
+                        <!--</div>-->
+                        
                         
                     </div>
-    
-                    <div class="col-12 col-md-6 col-lg-3">
-                        <div class="contenido">
-                            <figure>
-                                <a href="./productDetail.html""><img src="../public/images/img-macbook-pro-2019.jpg" alt=" "></a>
-                            </figure>
-                            <article>
-                                <h2>$150.970</h2>
-                                <span>10% OFF</span>
-                                <p>Macbook Pro 2019</p>
-                                <i class="fas fa-truck "></i>
-                            </article>
-                        </div>
-                    </div>
-    
-                    <div class="col-12 col-md-6 col-lg-3">
-                        <div class="contenido">
-                            <figure>
-                                <a href="./productDetail.html"><img src="../public/images/img-samsung-galaxy-s10.jpg " alt=" "></a>
-                            </figure>
-                            <article>
-                                <h2>$89.410</h2>
-                                <span>20% OFF</span>
-                                <p>Samsung Galaxy s10</p>
-                                <i class="fas fa-truck "></i>
-                            </article>
-                        </div>
-                    </div>
-    
-                    <div class="col-12 col-md-6 col-lg-3">
-                        <div class="contenido">
-                            <figure>
-                                <a href="./productDetail.html"><img src="../public/images/img-tv-samsung-smart.jpg " alt=" "></a>
-                            </figure>
-                            <article>
-                                <h2>$54.230</h2>
-                                <span>40% OFF</span>
-                                <p>Televisor Samsung Smart TV</p>
-                                <i class="fas fa-truck "></i>
-                            </article>
-                        </div>
-                    </div>
-                </div>
-    
-            </section>
-    
-            <section>
-    
-                <div class="row productos">
-    
-                    <div class="col-12 col-md-6 col-lg-3">
-    
-                        <div class="contenido">
-    
-                            <figure>
-                                <a href="./productDetail.html"><img src="../public/images/img-cafetera-moulinex.jpg " alt=" "></a>
-                            </figure>
-    
-                            <article>
-                                <h2>$6.770</h2>
-                                <span>40% OFF</span>
-                                <p>Cafetera Moulinex Dolce Gusto</p>
-                                <i class="fas fa-truck "></i>
-                            </article>
-    
-                        </div>
-                    </div>
-    
-                    <div class="col-12 col-md-6 col-lg-3">
-                        <div class="contenido">
-                            <figure>
-                                <a href="./productDetail.html"><img src="../public/images/img-macbook-pro-2019.jpg" alt=" "></a>
-                            </figure>
-                            <article>
-                                <h2>$150.970</h2>
-                                <span>10% OFF</span>
-                                <p>Macbook Pro 2019</p>
-                                <i class="fas fa-truck "></i>
-                            </article>
-                        </div>
-                    </div>
-    
-                    <div class="col-12 col-md-6 col-lg-3">
-                        <div class="contenido">
-                            <figure>
-                                <a href="./productDetail.html"><img src="../public/images/img-samsung-galaxy-s10.jpg " alt=" "></a>
-                            </figure>
-                            <article>
-                                <h2>$89.410</h2>
-                                <span>20% OFF</span>
-                                <p>Samsung Galaxy s10</p>
-                                <i class="fas fa-truck "></i>
-                            </article>
-                        </div>
-                    </div>
-    
-                    <div class="col-12 col-md-6 col-lg-3">
-                        <div class="contenido">
-                            <figure>
-                                <a href="./productDetail.html"><img src="../public/images/img-tv-samsung-smart.jpg " alt=" "></a>
-                            </figure>
-                            <article>
-                                <h2>$54.230</h2>
-                                <span>40% OFF</span>
-                                <p>Televisor Samsung Smart TV</p>
-                                <i class="fas fa-truck "></i>
-                            </article>
-                        </div>
-                    </div>
-    
+                    
                 </div>
     
             </section>
@@ -248,45 +65,7 @@
         </div>
     </div>
 
-    <footer class="container-fluid">
-
-        <div class="row footer">
-
-            <div class="col-12 col-lg-3">
-                <article>
-                    <img src="https://img.icons8.com/ultraviolet/40/000000/questions.png"/>
-                    <h4>¿Cómo comprar?</h4>
-                    <p>Si tenés alguna duda ingresá acá.</p>
-                </article>
-            </div>
-
-            <div class="col-12 col-lg-3">
-                <article>
-                    <img width="40" src="https://img.icons8.com/cotton/64/000000/worldwide-location--v2.png"/>
-                    <h4>Tiendas.</h4>
-                    <p>Conocé tu tienda mas cercana acá.</p>
-                </article>
-            </div>
-
-            <div class="col-12 col-lg-3">
-                <article>
-                    <img src="https://img.icons8.com/ultraviolet/40/000000/add-contact-to-company.png"/>
-                    <h4>Nosotros.</h4>
-                    <p>Nuestra historia. </p>
-                    <p>Trabajá con nosotoros. </p>
-                </article>
-            </div>
-            <div class="col-12 col-lg-3">
-                <article>
-                    <img width="40" src="https://img.icons8.com/officel/80/000000/sort-by-follow-up-date.png"/>
-                    <h4>Seguinos en nuestras redes.</h4>
-                    <img src="https://img.icons8.com/ios-glyphs/30/000000/facebook.png"/>
-                    <img src="https://img.icons8.com/ios-glyphs/30/000000/instagram-new.png"/>
-                    <img src="https://img.icons8.com/ios-glyphs/30/000000/twitter.png"/> <br>
-                </article>
-            </div>
-
-    </footer>
+    <%- include('partials/footer') %> 
 
     </div>
 
