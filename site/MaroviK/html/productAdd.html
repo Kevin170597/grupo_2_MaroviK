@@ -1,0 +1,73 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de carga de producto</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="../public/stylesheets/productAdd.css">
+</head>
+<body>
+
+    <div class="contenido"></div>
+
+     <h1>AGREGAR PRODUCTO</h1>
+     <!-- <h2>Completa los datos del producto que deseas agregar</h2> -->
+
+
+     <div class="formulario">
+        <form action="#"method="POST">
+            
+
+            <label for="Precio">Selecciona categoria: </label>
+            <select type="categoria" id="">
+                <option value="tecnologia">Tecnolgía</option>
+                <option value="Electrodomesticos">Electrodomésticos</option>
+                <option value="Bebes y niños">Bebes y Niños</option>
+                <option value="Libreria">Librería</option>
+                <option value="Alimentos">Almacén</option>
+                <option value="Bebidas">Bebidas</option>
+                <option value="Frutas y Verduras">Frutas y Verduras</option>
+                <option value="Carnes">Carnes</option>
+                <option value="Perscados y mariscos">Pescados y Mariscos</option>
+                <option value="Quesos y fiambres">Quesos y Fiambres</option>
+                <option value="lacteos">Lacteos</option>
+                <option value="congelados">Congelados</option>
+                <option value="Perfumeria">Perfumeria</option>
+                <option value="Limpieza">Limpieza</option>
+                <option value="Mascota">Mascota</option>
+            </select>
+
+
+            <label for="nombreProduct">Nombre del producto: </label>
+            <input type="text" id="nombreProduct" placeholder="Nombre del producto" name="nombreProduct">
+
+            <label for="Descripcion">Descripción: </label>
+            <input type="text"  placeholder="Descripcion" name="descripcion">
+      
+            <label for="Precio"> Precio: </label>
+            <input type="number"  placeholder="Precio" name="Precio">
+            
+            <label for="stock">Stock: </label>
+            <input type="number"  placeholder="Stock" id="stock" name="stock">
+            
+            <label for="imagen">Subir imagen: </label>
+            <input type="img"  placeholder="Subir imagen"id="imagen" name="imagen">
+               
+          </form>
+
+        <div class="boton container">
+            <button>Cargar producto</button>
+        </div>  
+    </div>
+
+</body>
+    
+    
+
+
+    <!--scrip bootstrap-->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+</body>
+</html>

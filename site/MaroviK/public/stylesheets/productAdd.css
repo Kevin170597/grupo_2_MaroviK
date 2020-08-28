@@ -1,0 +1,89 @@
+/* 
+- IMPORTS 
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
+/*
+- VARIABLES
+*/
+
+ :root {
+    --color-amarillo: #EAC926;
+    --color-grisClaro: #ebebeb;
+    --color-grisOscuro: #666666;
+    --color-azul: #03264C;
+    --color-verde: #39b54a;
+    --color-celeste: #41c4ec;
+}
+
+
+/*
+- GENERAL
+*/
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    color: rgb(52, 183, 235);
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    background-color: var(--color-grisClaro);
+}
+
+h1{
+    text-align: center;
+    padding-top: 20px;
+}
+.formulario{
+    padding: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+.formulario select {
+    margin-bottom: 30px;
+    width: 30%;
+}
+
+.formulario label{
+    display: block;
+    scroll-padding-left: 15px;
+    text-indent: -15px;
+}
+.formulario input{
+    margin-bottom: 30px;
+    width: 30%;
+}
+.boton{
+    text-align: center;
+    margin-bottom: 15px;
+}
+.boton a{
+    color: rgb(0, 119, 255);
+    
+}
+
+.boton button{
+    background-color: rgb(99, 196, 241);
+    border-style: none;
+    border-radius: 5px;
+    color: white;
+    margin-bottom: 10px;
+    padding: 15px 30px;
+}
