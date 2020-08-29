@@ -39,5 +39,12 @@ module.exports = {
             categoria: dataCategory[0],
             productos: dbProductsForSubcategory
         });
+    
+    },
+    agregar:function(req, res){
+        res.render('productsAdd', {
+            title: "Agregar producto",
+            cate
+        })
     }
 }
