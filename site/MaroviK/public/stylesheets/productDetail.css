@@ -172,7 +172,7 @@ section .titulo h2 {
 
 
 .contenido {
-    background-color: white;
+    
     margin-bottom: 0px;
     margin-top: 0px;
     margin-right: 10px;
@@ -357,6 +357,5 @@ section .titulo h2 {
     .contenido figure{
         width: 400px;
         margin-top: 50px;
-        
     }
 }
