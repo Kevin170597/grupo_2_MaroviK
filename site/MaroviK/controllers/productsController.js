@@ -41,10 +41,21 @@ module.exports = {
         });
     
     },
+    view_product_detail: (req,res) => {
+    
+        let idProduct = req.params.id;
+        product = productsDataBase.filter(producto => {
+            return (producto.id == idProduct);
+        });
+        
+        res.render('productDetail', {
+
+            producto: product[0]
+        });
+    },
     agregar:function(req, res){
         res.render('productsAdd', {
-            title: "Agregar producto",
-            cate
-        })
+            title: "Agregar producto"
+        });
     }
 }

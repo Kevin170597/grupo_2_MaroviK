@@ -12,18 +12,22 @@
     "subcategories": [{
 
         "title": "Notebooks y Pc",
+        "subcategory": "notebooks-y-pc",
         "image": "img-categoria-tecnologia-notebooks-y-pc.jpg"
     },
     {
         "title": "Celulares y Tablets",
+        "subcategory": "celulares-y-tablets",
         "image": "img-categoria-tecnologia-celulares-y-tablets.jpg"
     },
     {
         "title": "Smart TV  Audio y Video",
+        "subcategory": "smart-tv-audio-y-video",
         "image": "img-categoria-tecnologia-smart-tv-audio-y-video.jpg"
     },
     {
         "title": "Gaming",
+        "subcategory": "gaming",
         "image": "img-categoria-tecnologia-gaming.jpg"
     }],
     "image": "img-banner-categoria-tecnologia.jpg"
@@ -45,30 +49,37 @@
     "subcategories":[{
 
         "title": "Lavado",
+        "subcategory": "lavado",
         "image": "img-categoria-electrodomestico-lavado.jpg"
     },
     {
         "title": "Heladeras Freezers y Cavas",
+        "subcategory": "heladeras-freezers-y-cavas",
         "image": "img-categoria-electromesticos-heladeras-freezer-y-canvas.jpg"
     },
     {
         "title": "Cocinas y Hornos",
+        "subcategory": "cocinas-y-hornos",
         "image": "img-categoria-electrodomesticos-cocinas-y-hornos.jpg"
     },
     {
         "title": "Climatización",
+        "subcategory": "climatización",
         "image": "img-categoria-electrodomesticos-climatizacion.jpg"
     },
     {
         "title": "Termotanques y Calefones",
+        "subcategory": "termotanques-y-calefones",
         "image": "img-categoria-electrodomesticos-termotanques-y-calefones.jpg"
     },
     {
         "title": "Pequeños de Hogar",
+        "subcategory": "pequeños-de-hogar",
         "image": "img-categoria-electrodomesticos-pequenos-de-hogar.jpg"
     },
     {
         "title": "Pequeños de Cocina",
+        "subcategory": "pequeños-de-cocina",
         "image": "img-categoria-electrodomesticos-pequenos-de-cocina.jpg"
     }],
     "image": "img-banner-categoria-electrodomesticos.jpeg"
@@ -86,18 +97,22 @@
     "subcategories": [{
 
         "title": "Alimentación",
+        "subcategory": "alimentacion",
         "image": "img-categoria-bebes-y-ninos-alimentacion.jpg"
     },
     {
         "title": "Cuidado del Bebé",
+        "subcategory": "cuidado-del-bebe",
         "image": "img-categoria-bebes-y-ninos-cuidado-del-bebe.jpg"
     },
     {
         "title": "Pañales",
+        "subcategory": "panales",
         "image": "img-categoria-bebes-y-ninos-panales.jpg"
     },
     {
         "title": "Mamaderas Chupetes Y Baberos",
+        "subcategory": "mamaderas-chupetes-y-baberos",
         "image": "img-categoria-bebes-y-ninos-mamaderas-chupetes-y-baberos.jpg"
     }],
     "image": "img-banner-categoria-bebes-y-ninos.jpg"
@@ -114,19 +129,23 @@
     ],
     "subcategories": [{
 
-        "titile": "Carpetas",
+        "title": "Carpetas",
+        "subcategory": "carpetas",
         "image": "img-categoria-libreria-carpetas.jpg"
     },
     {
-        "titile": "Escritura",
+        "title": "Escritura",
+        "subcategory": "escritura",
         "image": "img-categoria-libreria-escritura.jpg"
     },
     {
         "title": "Cuadernos y Repuestos",
+        "subcategory": "cuadernos-y-repuestos",
         "image": "img-categoria-libreria-cuadernos-y-repuestos.jpg"
     },
     {
         "title": "Mochilas y Cartucheras",
+        "subcategory": "mochilas-y-cartucheras",
         "image": "img-categoria-libreria-mochilas-y-cartucheras.jpg"
     }],
     "image": "img-banner-categoria-libreria.jpg"
@@ -149,38 +168,47 @@
     "subcategories": [{
 
         "title": "Aceites y Vinagres",
+        "subcategory": "aceites-y-vinagres",
         "image": "img-categoria-almacen-aceites-y-vinagres.jpg"
     },
     {
         "title": "Aderezos",
+        "subcategory": "aderezos",
         "image": "img-categoria-almacen-aderezos.jpg"
     },
     {
         "title": "Arroz y Legumbres",
+        "subcategory": "arroz-y-legumbres",
         "image": "img-categoria-almacen-arroz-y-legumbres.jpg"
     },
     {
         "title": "Conservas",
+        "subcategory": "conservas",
         "image": "img-categoria-almacen-conservas.jpg"
     },
     {
         "title": "Desayuno y Merienda",
+        "subcategory": "desayuno-y-merienda",
         "image": "img-categoria-almacen-desayuno-y-merienda.jpg"
     },
     {
         "title": "Golosinas y Chocolates",
+        "subcategory": "golosinas-y-chocolates",
         "image": "img-categoria-almacen-chocolates-y-golosinas.jpg"
     },
     {
         "title": "Harinas",
+        "subcategory": "harinas",
         "image": "img-categoria-almacen-harinas.jpg"
     },
     {
         "title": "Pastas Secas y Salsas",
+        "subcategory": "pastas-secas-y-salsas",
         "image": "img-categoria-almacen-pastas-secas-y-salsas.jpg"
     },
     {
         "title": "Sal y Condimentos",
+        "subcategory": "sal-y-condimentos",
         "image": "img-categoria-almacen-sal-y-condimentos.jpg"
 
     }],  
@@ -205,42 +233,52 @@
     "subcategories": [{
 
         "title": "Aguas",
+        "subcategory": "aguas",
         "image": "img-categoria-bebidas-aguas.jpg"
     },
     {
         "title": "Aperitivos",
+        "subcategory": "aperitivos",
         "image": ""
     },
     {
         "title": "Bebidas Blancas",
+        "subcategory": "bebidas-blancas",
         "image": "img-categoria-bebidas-bebidas-blancas.jpg"
     },
     {
         "title": "Champagnes",
+        "subcategory": "champagnes",
         "image": "img-categoria-bebidas-champagnes.jpg"
     },
     {
         "title": "Cervezas",
+        "subcategory": "cervezas",
         "image": "img-categoria-bebidas-cervezas.jpg"
     },
     {
         "title": "Energizantes",
+        "subcategory": "energizantes",
         "image": ""
     },
     {
         "title": "Gaseosas",
+        "subcategory": "gaseosas",
         "image": "img-categoria-bebidas-gaseosas.jpg"
     },
     {
         "title": "Jugos",
+        "subcategory": "jugos",
         "image": "img-categoria-bebidas-jugos.jpg"
     },
     {
         "title": "Licores",
+        "subcategory": "licores",
         "image": "img-categoria-bebidas-licores.jpg"
     },
     {
         "title": "Vinos",
+        "subcategory": "vinos",
         "image": "img-categoria-bebidas-vinos.jpg"
     }],
     "image": "img-banner-categoria-bebidas.jpg"
@@ -256,14 +294,17 @@
     ],
     "subcategories": [{
         "title": "Frutas",
+        "subcategory": "frutas",
         "image": "img-categoria-frutas-y-verduras-frutas.jpg"
     },
     {
         "title": "Legumbres Granos y Semillas",
+        "subcategory": "legumbres-granos-y-semillas",
         "image": "img-categoria-frutas-y-verduras-legumbres-granos-y-semillas.jpg" 
     },
     {
         "title": "Verduras",
+        "subcategory": "verduras",
         "image": "img-categoria-frutas-y-verduras-verduras.jpg"  
     }],
     "image": "img-banner-categoria-frutas-y-verduras.jpg"
@@ -280,18 +321,22 @@
     ],
     "subcategories": [{
         "title": "Carne Vacuna",
+        "subcategory": "carne-vacuna",
         "image": "img-categoria-carnes-carne-vacuna.jpg"
     },
     {
         "title": "Carne de Cerdo",
+        "subcategory": "carne-de-cerdo",
         "image": "img-categoria-carnes-carne-de-cerdo.jpg"
     },
     {
         "title": "Embutidos",
+        "subcategory": "embutidos",
         "image": "img-categoria-carnes-embutidos.jpg"
     },
     {
         "title": "Pollos",
+        "subcategory": "pollos",
         "image": "img-categoria-carnes-pollos.jpg"
     }],
     "image": "img-banner-categoria-carnes.jpg"
@@ -306,10 +351,12 @@
     ],
     "subcategories": [{
         "title": "Mariscos",
+        "subcategory": "mariscos",
         "image": "img-categoria-pescados-y-mariscos-mariscos.jpg"
     },
     {
         "title": "Pescados",
+        "subcategory": "pescados",
         "image": "img-categoria-pescados-y-mariscos-pescados.jpg"
     }],
     "image": "img-banner-categoria-pescados-y-mariscos.jpg"
@@ -328,22 +375,27 @@
         "subcategories": [{
 
             "title": "Quesos",
+            "subcategory": "quesos",
             "image": ""
         },
         {
             "title": "Fiambres",
+            "subcategory": "fiambres",
             "image": ""
         },
         {
             "title": "Picadas",
+            "subcategory": "picadas",
             "image": ""
         },
         {
             "title": "Dulces",
+            "subcategory": "dulces",
             "image": ""
         },
         {
             "title": "Salchichas",
+            "subcategory": "salchichas",
             "image": ""
         }],
         "image": ""
@@ -362,22 +414,27 @@
         "subcategories": [{
 
             "title": "Cremas",
+            "subcategory": "cremas",
             "image": ""
         },
         {
             "title": "Dulce de Leche",
+            "subcategory": "dulce-de-leche",
             "image": ""
         },
         {
             "title": "Leches",
+            "subcategory": "leches",
             "image": ""
         },
         {
             "title": "Mantecas",
+            "subcategory": "mantecas",
             "image": ""
         },
         {
             "title": "Yogures",
+            "subcategory": "yogures",
             "image": ""
         }],
         "image": ""
@@ -395,18 +452,22 @@
         "subcategories": [{
 
             "title": "Hamburguesas y milanesas",
+            "subcategory": "hamburguesas-y-milanesas",
             "image": ""
         },
         {
             "title": "Helados y postres",
+            "subcategory": "helados-y-postres",
             "image": ""
         },
         {
             "title": "Vegetales",
+            "subcategory": "vegetales",
             "image": ""
         },
         {
             "title": "Papas",
+            "subcategory": "papas",
             "image": ""
         }],
         "image": ""
@@ -425,22 +486,27 @@
         "subcategories": [{
 
             "title": "Cuidado capilar",
+            "subcategory": "cuidado-capilar",
             "image": ""
         },
         {
             "title": "Cuidado personal",
+            "subcategory": "cuidado-personal",
             "image": ""
         },
         {
             "title": "Cuidado de la piel",
+            "subcategory": "cuidado-de-la-piel",
             "image": ""
         },
         {
             "title": "Farmacia",
+            "subcategory": "farmacia",
             "image": ""
         },
         {
             "title": "Maquillaje",
+            "subcategory": "maquillaje",
             "image": ""
         }],
         "image": ""
@@ -460,26 +526,32 @@
         "subcategories": [{
 
             "title": "Desodorantes de ambiente",
+            "subcategory": "desodorantes-de-ambiente",
             "image": ""
         },
         {
             "title": "Insecticidas",
+            "subcategory": "insecticidas",
             "image": ""
         },
         {
             "title": "Lavandina",
+            "subcategory": "lavandina",
             "image": ""
         },
         {
             "title": "Limpieza de baño",
+            "subcategory": "limpieza-de-baño",
             "image": ""
         },
         {
             "title": "Limpieza de cocina",
+            "subcategory": "limpieza-de-cocina",
             "image": ""
         },
         {
             "title": "Limpieza de pisos y muebles",
+            "subcategory": "limpieza-de-pisos-y-muebles",
             "image": ""
         }],
         "image": ""
@@ -497,18 +569,22 @@
         "subcategories": [{
 
             "title": "Accesorios para mascotas",
+            "subcategory": "accesorios-para-mascotas",
             "image": ""
         },
         {
             "title": "Gatos",
+            "subcategory": "gatos",
             "image": ""
         },
         {
             "title": "Perros",
+            "subcategory": "perros",
             "image": ""
         },
         {
             "title": "Otros Animales",
+            "subcategory": "otros-animales",
             "image": ""
         }],
         "image": ""

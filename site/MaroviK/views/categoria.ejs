@@ -21,7 +21,7 @@
 
                         <% categoria.subcategories.forEach(subcategoria => {%>
                             
-                                <li><a href=""><%= subcategoria.title %> </a></li>
+                                <li><a href="/products/<%= categoria.category %>/<%= subcategoria.subcategory %>"><%= subcategoria.title %> </a></li>
                        
                         <% }) %> 
                     </ul>
@@ -44,11 +44,11 @@
                             <div class="contenido">
         
                                 <figure>
-                                    <a href="./productDetail.html"><img src="/images/categories/<%= subcategoria.image %> " alt=" "></a>
+                                    <a href="/products/<%= categoria.category %>/<%= subcategoria.subcategory %>"><img src="/images/categories/<%= subcategoria.image %> " alt=" "></a>
                                 </figure>
                                 <ul> 
-                                    <li><a href=""><h5><%= subcategoria.title %></h5> </a></li>
-                                    <li><a href="">Ver más</a></li>
+                                    <li><a href="/products/<%= categoria.category %>/<%= subcategoria.subcategory %>"><h5><%= subcategoria.title %></h5> </a></li>
+                                    <li><a href="/products/<%= categoria.category %>/<%= subcategoria.subcategory %>">Ver más</a></li>
                                 </ul>
                             </div>
                             <% }) %> 

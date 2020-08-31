@@ -16,14 +16,14 @@
             
             <div class="row productos">
                 
-                <div class="col-12 col-md-6 col-lg-6">
+                <div class="col-12 col-md-6 col-lg-6 tex-center">
 
                     
                     <div class="contenido">
 
                         
                         <figure>
-                            <img src="../public/images/img-cafetera-moulinex.jpg" alt=" ">
+                            <img src="/images/products/<%= producto.image %> " alt=" ">
                         </figure>
                         
                     </div>
@@ -33,16 +33,30 @@
                 <div class="col-12 col-md-6 col-lg-6">
                     <div class="column">
                         
-                        <h2>Cafetera Moulinex Dolce Gusto</h2>
-                        <h3>$6.770</h3>
+                        <h2><%= producto.name %> </h2>
+
+                        <% if (producto.discount!=0) { %>
+                            <span> <strike> $<%= producto.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".") %></strike> / <strong><%- producto.discount %> % OFF</strong>
+                            </span>
+                        <% } %>
+
+                        <h3>$
+                            <%- (producto.price -producto.price * producto.discount /100).toFixed(0).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".") %> 
+                        </h3>
+
+                        <a href="#"><i class="fas fa-credit-card"></i> Ver formas de pago</a>
                         
                         <button class="comprar">Comprar</button><button class="agregar">Agregar al carrito</button>
-                        <p><img width="50" alt="Credit-card-1369111" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Credit-card-1369111.svg/128px-Credit-card-1369111.svg.png"></a> Pagá hasta en 12 cuotas</p><br>
+
+                        <p><i class="icon-truck"></i> Envío a domicilio  ->  <a href="#">Calcular costo de envío</a> </p>
+                        <p><i class="icon-tienda"></i> Retirá GRATIS en sucursal  ->  <a href="#">Ver sucursales disponibles</a> </p>
+
+                        <!--<p><img width="50" alt="Credit-card-1369111" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Credit-card-1369111.svg/128px-Credit-card-1369111.svg.png"></a> Pagá hasta en 12 cuotas</p><br>
                         <div class="cards">
                             <a><img width="50" alt="Visa Inc. logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Visa_Inc._logo.svg/512px-Visa_Inc._logo.svg.png"></a>
                             <a><img width="50" alt="HSBC logo (2018)" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/HSBC_logo_%282018%29.svg/512px-HSBC_logo_%282018%29.svg.png"></a>
                             <a><img width="50" alt="MasterCard Logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/MasterCard_Logo.svg/256px-MasterCard_Logo.svg.png"></a>
-                        </div>
+                        </div>-->
                         
                     </div>
                 </div>
@@ -55,14 +69,14 @@
         <section>
             <div class="container">
                 <h2>Descripcion</h2>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad laborum ut doloribus debitis quasi dolorum eveniet vero harum corrupti eius sed recusandae nisi perferendis perspiciatis nostrum pariatur, id quo laboriosam!
-                Numquam accusantium quas odio ex delectus dolorum reiciendis rerum tempora assumenda, itaque eius, hic eaque soluta, eum earum expedita possimus ab repellat nisi corporis veritatis pariatur? Itaque nobis non provident!
-                Mollitia nemo neque asperiores hic labore tempore animi sint tenetur! Sequi excepturi corporis dolor tempore animi dignissimos dolorum iste explicabo fugit eaque, corrupti debitis ad quasi similique molestias et omnis!</p>
+                <p>
+                    <%= producto.description %> 
+                </p>
             </div>
         </section>
     </div>
     
-    <div class="col-12 envios">
+    <!--<div class="col-12 envios">
         <section>
             <div class="row envioyretiro">
                 
@@ -79,7 +93,7 @@
                 
             </div>
         </section>
-    </div>
+    </div>-->
     <div class="col-12 dudas">
         <section>
             <div class="row telefono">
