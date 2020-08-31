@@ -166,7 +166,6 @@ section .titulo h2 {
 .productos {
     padding: 0px;
     margin-top: 30px;
-    
     justify-content: center;
 }
 
@@ -351,11 +350,14 @@ section .titulo h2 {
         padding-left: 0px;
     }
     .precio{
-        margin-left: 100px;
+        margin-left: 50px;
+        width: 30%;
     }
-    
+    .productos .contenido{
+        width: 500px;
+    }
     .contenido figure{
-        width: 400px;
+        width: 100%;
         margin-top: 50px;
     }
 }
