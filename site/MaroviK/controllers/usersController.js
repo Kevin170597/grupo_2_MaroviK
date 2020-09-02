@@ -1,1 +1,7 @@
-const dbUsers = require("../data/databaseUsers")
+const dbUsers = require("../data/databaseUsers");
+
+
+
+module.exports = {
+    
+}
