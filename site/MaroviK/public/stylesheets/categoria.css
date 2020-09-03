@@ -208,7 +208,7 @@ section .titulo h2 {
     
 }
 
-section .contenido {
+section .contenidos {
     background-color: white;
     margin-bottom: 15px;
     margin-left: 10px;
@@ -218,14 +218,14 @@ section .contenido {
     width: 100%;
 }
 
-section .contenido ul{
+section .contenidos ul{
     text-align: center;
     margin-right: 15px;
 }
 
 
 
-section .contenido figure img {
+section .contenidos figure img {
     width: 90%;
     margin-top: 10px;
 }
@@ -317,7 +317,7 @@ section article i {
         display: flex;
         flex-direction: column;
     }
-    section .contenido {
+    section .contenidos {
         width: 100%;
     }
 }
@@ -345,7 +345,7 @@ section article i {
     .filtro{
         padding-left: 0px;
     }
-    section .contenido {
+    .productos .contenidos {
         width: 290px;
     }
 }
