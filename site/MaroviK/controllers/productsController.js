@@ -100,7 +100,8 @@ module.exports = {
 
         fs.writeFileSync(path.join(__dirname, "..", "data", "productsDataBase.json"), JSON.stringify(productsDataBase), 'utf-8')
        
-        res.redirect(path.join("/", req.body.category, req.body.subcategory));
+        let ruta = "/products/" + req.body.category + "/" + req.body.subcategory;
+        res.redirect(ruta);
     },
     agregar:function(req, res){
         res.render('productsAdd', {
