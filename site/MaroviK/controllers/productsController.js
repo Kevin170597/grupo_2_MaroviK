@@ -1,5 +1,7 @@
 const productsDataBase = require('../data/database');
-const categoriesDataBase = require("../data/databaseCategories")
+const categoriesDataBase = require("../data/databaseCategories");
+const fs = require('fs');
+const path = require('path');
 
 module.exports = {
     view_products: (req,res) => {
@@ -52,6 +54,53 @@ module.exports = {
 
             producto: product[0]
         });
+    },
+    view_product_add: (req, res) => {
+
+        let categoria;
+        let subcategoria;
+
+        if(req.query.categoria){
+            categoria = req.query.categoria;
+            subcategoria = req.query.subcategoria;
+        }
+        
+        res.render('productAdd', {
+
+            title: "Agregar Producto",
+            categoria:categoria,
+            subcategoria:subcategoria,
+            categorias: categoriesDataBase
+        })
+    },
+    public_product: (req, res, next) => {
+
+        let lastId = 0;
+
+        productsDataBase.forEach(producto => {
+            if(producto.id > lastId){
+                lastId = producto.id;
+            }
+        });
+
+        let newProduct = {
+
+            id: lastId + 1,
+            category: req.body.category.trim(),
+            subcategory: req.body.subcategory.trim(),
+            name: req.body.name.trim(),
+            mark: req.body.mark.trim(),
+            price: Number(req.body.price),
+            discount: Number(req.body.discount),
+            description: req.body.description.trim(),
+            image: (req.files[0])?req.files[0].filename:"default-image.png"
+        }
+
+        productsDataBase.push(newProduct);
+
+        fs.writeFileSync(path.join(__dirname, "..", "data", "productsDataBase.json"), JSON.stringify(productsDataBase), 'utf-8')
+       
+        res.redirect(path.join("/", req.body.category, req.body.subcategory));
     },
     agregar:function(req, res){
         res.render('productsAdd', {

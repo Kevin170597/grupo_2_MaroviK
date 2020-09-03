@@ -2,70 +2,119 @@
 <html lang="es">
 
 <%- include("partials/head") %> 
+
 <body>
 
+    <%- include('partials/header')  %>
 
-    <div class="contenido"></div>
-
-     <h1> <%= title %> </h1>
-     <!-- <h2>Completa los datos del producto que deseas agregar</h2> -->
-
-
-     <div class="formulario">
-        <form action="#"method="POST">
-            
-
-            <label for="Precio">Selecciona categoria: </label>
-            <select type="categoria" id="">
-                <option value="tecnologia">Tecnolgía</option>
-                <option value="Electrodomesticos">Electrodomésticos</option>
-                <option value="Bebes y niños">Bebes y Niños</option>
-                <option value="Libreria">Librería</option>
-                <option value="Alimentos">Almacén</option>
-                <option value="Bebidas">Bebidas</option>
-                <option value="Frutas y Verduras">Frutas y Verduras</option>
-                <option value="Carnes">Carnes</option>
-                <option value="Perscados y mariscos">Pescados y Mariscos</option>
-                <option value="Quesos y fiambres">Quesos y Fiambres</option>
-                <option value="lacteos">Lacteos</option>
-                <option value="congelados">Congelados</option>
-                <option value="Perfumeria">Perfumeria</option>
-                <option value="Limpieza">Limpieza</option>
-                <option value="Mascota">Mascota</option>
-            </select>
+    <div class="container">
+        <section class="addProduct">
+            <div class="row productos">
+                <div class="titulo col-12">
+                    <h2>
+                        <%= title %> 
+                    </h2>
+                </div>
+                <div class="col-12">
+                    <div class="contenido text-left">
+                        <div class="row">
+                            <div class="col-12 col-md-5 col-xl-4 categorias">
+                                <h5 class="mb-3">Categorias</h5>
+                                <!--inicio la iteracion sobre las categorias-->
+                                <% categorias.forEach(categoria => { %>
+                                    <div class="accordion" id="accordionExample">
+                                        <div class="">
+                                            <div class="card-header p-0" id="headingOne<%= categoria.id %> ">
+                                                <h2 class="mb-0">
+                                                    <button class="btn btn-outline-dark btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne<%= categoria.id %>" aria-expanded="true" aria-controls="collapseOne<%= categoria.id %>">
+                                                        <%= categoria.title %> 
+                                                    </button>
+                                                </h2>
+                                            </div>
+                                            <!--inicio la iteracion sobre las sub-categorias-->
 
 
-            <label for="nombreProduct">Nombre del producto: </label>
-            <input type="text" id="nombreProduct" placeholder="Nombre del producto" name="nombreProduct">
+                                            <div id="collapseOne<%= categoria.id %>" class="collapse" aria-labelledby="headingOne<%= categoria.id %> " data-parent="#accordionExample">
+                                                <% categoria.subcategories.forEach(subcategoria => { %>
+                                                    <!--<div class="card-body">
+                                                       
+                                                    </div>-->
+                                                    <div class="card">
+                                                        <ul class="list-group list-group-flush ">
+                                                            <li class="list-group-item list-group-item-dark p-2">
+                                                                <a href="/products/add/form/?categoria=<%= categoria.category %>&subcategoria=<%=subcategoria.subcategory %> " class="ml-2">
+                                                                    <%= subcategoria.title %>
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                    <!--finalizo la iteracion de subcategorias-->
+                                                    <% }) %>
+                                            </div>
+                                        </div>
 
-            <label for="Descripcion">Descripción: </label>
-            <input type="text"  placeholder="Descripcion" name="descripcion">
-      
-            <label for="Precio"> Precio: </label>
-            <input type="number"  placeholder="Precio" name="Precio">
-            
-            <label for="stock">Stock: </label>
-            <input type="number"  placeholder="Stock" id="stock" name="stock">
-            
-            <label for="imagen">Subir imagen: </label>
-            <input type="img"  placeholder="Subir imagen"id="imagen" name="imagen">
-               
-          
+                                    </div>
+                                    <!--finalizo la iteración de categorias-->
+                                    <% }) %>
 
-            <div class="boton container">
-            <button type="submit">Cargar producto</button>
-            </div> 
-        </form> 
+                            </div>
+                            <div class="col-12 col-md-7 col-xl-8 formulario">
+                                <% if (categoria!=undefined && subcategoria != undefined) { %>
+
+                                    <div class="">
+                                        <h5 class="mb-3">Datos del Producto</h5>
+                                        <form action="" method="POST" enctype="multipart/form-data"> <!--enctype="multipart/form-data"es impotante para poder subir archivos (input -> type="file") -->
+                                            <div class="form-group">
+                                                <label for="exampleFormControlInput1">Categoría</label>
+                                                <input type="text" class="form-control" id="exampleFormControlInput1" value="<%= categoria%>" name="category">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="exampleFormControlInput1">Subcategoría</label>
+                                                <input type="text" class="form-control" id="exampleFormControlInput1" value="<%= subcategoria%>" name="subcategory">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="exampleFormControlInput1">Titulo de la publicación</label>
+                                                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="" name="name">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="exampleFormControlInput1">Marca</label>
+                                                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="" name="mark">
+                                            </div>
+
+                                            <div class="form-row">
+                                                <div class="col">
+                                                    <label for="">Precio</label>
+                                                    <input type="number" class="form-control" name="price">
+                                                </div>
+                                                <div class="col">
+                                                    <label for="">Descuento</label>
+                                                    <input type="number" class="form-control" name="discount">
+                                                </div>
+                                            </div>
+                                            <div class="form-group mt-3">
+                                                <label for="exampleFormControlTextarea1">Descripción</label>
+                                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="description"></textarea>
+                                            </div>
+                                            <div class="form-group mt-3">
+                                                <label for="">Elija una imagen</label>
+                                                <input type="file" class="form-control" name='image'>
+                                            </div>
+                                            <div class="mt-5 mr-5 d-flex justify-content-end">
+                                                <button type="reset" class="btn btn-outline-secondary mr-3">Borrar</button>
+                                                <button type="submit" class="btn btn-outline-primary">Publicar</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <% } %>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </div>
-
-</body>
     
-    
-
-
-    <!--scrip bootstrap-->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <%- include('partials/footer') %> 
 </body>
 </html>
