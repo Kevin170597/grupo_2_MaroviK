@@ -1,13 +1,1 @@
-[
-
-{
-"id": "id",
-"Nombre": "firstName",
-"Apellido": "lastName",
-"Email": "email",
-"Contraseña": "password",
-"Categoría": "category",
-"Imagen": "image"
-}
-
-]
+[{"id":"id","Nombre":"firstName","Apellido":"lastName","Email":"email","Contraseña":"password"},{"id":2,"Nombre":"Kevin","Apellido":"Mendoza","Email":"kevin170597@gmail.com","Contraseña":"123456","rol":"user"},{"id":3,"Nombre":"Kevin2","Apellido":"Mendoza2","Email":"kevin170597@gmail.com","Contraseña":"123456789","rol":"user"},{"id":4,"Nombre":"PruebaNombre","Apellido":"PruebaApellido","Email":"PruebaEmail@gmail.com","Contraseña":"123456","rol":"user"}]

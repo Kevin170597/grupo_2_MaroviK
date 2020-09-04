@@ -13,20 +13,33 @@
 
     <h1>Registrate</h1>
     <div class="formulario">
-        <form action="resultado.html" method="POST">
+        <form action="" method="POST">
             
+            <label for="nombre">Nombre: </label>
+            <input type="text" id="" name="firstName" value="<%= (typeof old != 'undefined' && old.firstName)?old.firstName:'' %>"><br>
+            <small class="text-danger"><%= (typeof errors != 'undefined' && errors.firstName)?errors.firstName.msg: "" %> </small>
+
+
+            <label for="nombre">Apellido: </label>
+            <input type="text" id="" name="lastName" value="<%= (typeof old != 'undefined' && old.lastName)?old.lastName:'' %>"><br>
+            <small class="text-danger"><%= (typeof errors != 'undefined' && errors.lastName)?errors.lastName.msg: "" %> </small>
+
+
             <label for="email">Email: </label>
-            <input type="text" id="" name="email">
-            
+            <input type="text" id="" name="email" value="<%= (typeof old != 'undefined' && old.email)?old.email:'' %>"><br>
+            <small class="text-danger"><%= (typeof errors != 'undefined' && errors.email)?errors.email.msg: "" %> </small>
       
             
             <label for="password">Contraseña: </label>
-            <input type="password" id="" name="password">
-            
+            <input type="password" id="" name="password"><br>
+            <small class="text-danger"><%= (typeof errors != 'undefined' && errors.password)?errors.password.msg: "" %> </small>
             
             
             <label for="password">Repetí contraseña: </label>
-            <input type="password" id="" name="password">
+            <input type="password" id="" name="password2"><br>
+            <small class="text-danger"><%= (typeof errors != 'undefined' && errors.password2)?errors.password2.msg: "" %> </small>
+
+
             <div class="captcha container">
             <label><input type="checkbox"> No soy un robot  </label><img width="50" alt="RecaptchaLogo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/RecaptchaLogo.svg/128px-RecaptchaLogo.svg.png">
             
