@@ -30,6 +30,7 @@ module.exports = {
             }
             dbUsers.push(nuevoUsuario);
             fs.writeFileSync(path.join(__dirname, "..", "data", "users.json"),JSON.stringify(dbUsers), "utf-8")
+            return res.redirect("/users/login")
         }else{
             res.render("register",{
                 errors:errors.mapped(),
