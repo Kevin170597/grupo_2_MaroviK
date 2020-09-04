@@ -179,4 +179,8 @@ text-align: center;
     .filtro{
         padding-left: 0px;
     }
+    .formulario{
+        margin-bottom: 80px;
+        margin-top: 50px;
+    }
 }
