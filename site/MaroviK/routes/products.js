@@ -25,11 +25,14 @@ let upload = multer({storage:storage})
 router.get('/add', controller.view_product_add);
 router.get('/add/form', controller.view_product_add);
 router.get('/detail/:id', controller.view_product_detail);
+
+router.get('/show/:id', controller.view_product_show);
+router.put('/edit/:id', upload.any(), controller.update_product);
+router.delete('/delete/:id', controller.delete_product);
+
 router.get('/:categoria', controller.view_for_category);
 router.get('/:categoria/:subcategoria', controller.view_for_subcategory);
 
 router.post('/add/form', upload.any(), controller.public_product);
-
-//router.get ('/add', controller.view_product_add);
 
 module.exports = router;
