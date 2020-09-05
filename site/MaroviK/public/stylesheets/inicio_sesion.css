@@ -55,6 +55,7 @@ h1{
     text-align: center;
     padding: 20px;
     font-weight: bold;
+    margin-top: 120px;
 }
 
 .formulario label{
@@ -178,9 +179,5 @@ text-align: center;
     }
     .filtro{
         padding-left: 0px;
-    }
-    .formulario{
-        margin-bottom: 80px;
-        margin-top: 50px;
     }
 }

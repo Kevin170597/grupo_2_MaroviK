@@ -44,14 +44,17 @@ module.exports = {
     processLogin: function(req, res){
         let errors = validationResult(req);
         if(errors.isEmpty()){
-            dbUsers.forEach(usuario=>{
-                if(usuario.Email == req.body.Email){
+            dbUsers.forEach(usuario =>{
+                if(usuario.email == req.body.email){
                     req.session.user = usuario
                 }
             })
-            return res.redirect("/users")
+            return res.redirect("/users/profile")
         }else{
-            return res.render("userLogin")
+            return res.render("inicioSesion", {
+                errors: errors.mapped(),
+                old: req.body
+            })
         }
     },
 }
