@@ -20,3 +20,30 @@ Tenemos que tratar de no pasar por alto los temas opcionales que nos asignan en 
 # SEGUIR HACIENDO:
 Debemos seguir comunicándonos, compartiendo y debatiendo nuestras ideas para hacer de Marovik un gran trabajo.
 
+
+------------------------------------------------------------------------
+
+
+# Retrospectiva Sprint 2:
+
+Al empezar nuestro debate todos coincidimos que fue mucho mejor que la primera ya que tuvimos muchos mas encuentros virtuales y seguimos en constante comunicacion.
+Siempre apoyandonos uno al otro el comapañerismo es lo que mas resalta :)
+
+# HACER MAS:
+Hacer mas commits ,subiendo las cosas a medida que avanzamos.
+Organizar el tablero de trello.
+
+# EMPEZAR A HACER:
+Actualizar el tablero individualmente en tiempo real.
+Realizar el ultimo chequeo del trabajo antes de la entrega.
+
+
+# DEJAR DE HACER:
+Dejar de pushear en la ubicacion incorrecta al actualizar el repositorio local.
+
+
+# HACER MENOS:
+Que nuestros avances coincidan con las tareas asignadas en Tablero de trello.
+
+# SEGUIR HACIENDO:
+Continuar con las reuniones frecuentes y adaptarnos al horario de los integrantes.

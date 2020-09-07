@@ -6,20 +6,20 @@
 <body>
 
    
-    <!--SECCIONES: PRODUCTOS-->
+    
 
     <h1>Iniciar Sesión</h1>
     <div class="formulario">
-        <form action="resultado.html" method="POST">
+        <form action="" method="POST">
             
-            <label for="nombre">Email: </label>
-            <input type="text" id="nombre" name="nombre"> <br>
-            
+            <label for="email">Email: </label>
+            <input type="text" id="email" name="email" value="<%= (typeof old != 'undefined' && old.email)?old.email:'' %>"> <br>
+            <small class="text-danger"><%= (typeof errors != 'undefined' && errors.email)?errors.email.msg: "" %> </small>
       
             
-            <label for="email">Contraseña: </label>
-            <input type="password" id="nombre" name="email"> <br>
-            
+            <label for="password">Contraseña: </label>
+            <input type="password" id="password" name="password" value="<%= (typeof old != 'undefined' && old.password)?old.password:'' %>"> <br>
+            <small class="text-danger"><%= (typeof errors != 'undefined' && errors.password)?errors.password.msg: "" %> </small>
             
             
           <div class="recordar">
@@ -30,7 +30,7 @@
             <button type="submit">Ingresar</button><br>
           </div>
       
-            <a href="register.html">¿TodavÍa no tenes una cuenta? Registrate ahora</a>
+            <a href="/users/register">¿TodavÍa no tenes una cuenta? Registrate ahora</a>
    
         </form>
  </div>

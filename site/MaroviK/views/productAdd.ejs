@@ -16,14 +16,14 @@
                     </h2>
                 </div>
                 <div class="col-12">
-                    <div class="contenido text-left">
+                    <div class="contenido2 text-left">
                         <div class="row">
-                            <div class="col-12 col-md-5 col-xl-4 categorias">
+                            <div class="col-12 col-md-5 col-lg-12 categorias2">
                                 <h5 class="mb-3">Categorias</h5>
                                 <!--inicio la iteracion sobre las categorias-->
                                 <% categorias.forEach(categoria => { %>
                                     <div class="accordion" id="accordionExample">
-                                        <div class="">
+                                        <div class="botones">
                                             <div class="card-header p-0" id="headingOne<%= categoria.id %> ">
                                                 <h2 class="mb-0">
                                                     <button class="btn btn-outline-dark btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne<%= categoria.id %>" aria-expanded="true" aria-controls="collapseOne<%= categoria.id %>">
@@ -61,7 +61,7 @@
                             <div class="col-12 col-md-7 col-xl-8 formulario">
                                 <% if (categoria!=undefined && subcategoria != undefined) { %>
 
-                                    <div class="">
+                                    <div class="opciones">
                                         <h5 class="mb-3">Datos del Producto</h5>
                                         <form action="" method="POST" enctype="multipart/form-data"> <!--enctype="multipart/form-data"es impotante para poder subir archivos (input -> type="file") -->
                                             <div class="form-group">
