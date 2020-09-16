@@ -35,8 +35,7 @@ module.exports = {
                 lastName: req.body.lastName,
                 email: req.body.email,
                 password: bcrypt.hashSync(req.body.password,10), //-- Encripta la contraseña --
-                //avatar:(req.files[0])?req.files[0].filename:"default.png",
-                avatar: "",
+                avatar:(req.files[0])?req.files[0].filename:"default.png",
                 rol:"user"
             }
 

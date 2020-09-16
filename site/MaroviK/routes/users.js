@@ -5,11 +5,13 @@ let controller = require("../controllers/usersController");
 let registerValidator = require("../validators/registerValidator");
 let loginValidator = require("../validators/loginValidator");
 
+
+const multerAvatar = require("../middlewares/multerAvatar");
 /* GET users listing. */
 router.get('/profile', controller.view_user_profile);
 
 router.get("/register", controller.register);
-router.post("/register", registerValidator, controller.processRegister);
+router.post("/register", multerAvatar.any(), registerValidator, controller.processRegister);
 
 router.get("/login", controller.login);
 router.post("/login", loginValidator, controller.processLogin);

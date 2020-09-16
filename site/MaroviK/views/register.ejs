@@ -28,7 +28,7 @@
 
             <div class="col-12 cont_form">
 
-                <form class="formulario_register" action="" method="POST">
+                <form class="formulario_register" action="" method="POST" enctype="multipart/form-data">
 
                     <div class="form-row">
 
@@ -77,8 +77,8 @@
   
                         <div class="form-group col-12 col-md-6">
                           <div class="custom-file mt-4">
-                            <input type="file" class="custom-file-input " id="customFileLang" lang="es" name="avatar">
-                            <label class="custom-file-label" for="customFileLang">Seleccionar Archivo</label>
+                            <input type="file" id="" name="avatar">
+                            <label for="customFileLang">Seleccionar Archivo</label>
                             <small class="text-danger"><%= (typeof errorFormato != 'undefined')?errorFormato: "" %> </small>
                           </div>
                         </div>
