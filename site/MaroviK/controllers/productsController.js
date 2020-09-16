@@ -155,8 +155,6 @@ module.exports = {
 
         fs.writeFileSync(path.join(__dirname, '..', 'data', 'productsDataBase.json'), JSON.stringify(productsDataBase), 'utf-8');
 
-        res.redirect('/users/profile');
-
-        
+        res.redirect('/users/profile');  
     }
 }

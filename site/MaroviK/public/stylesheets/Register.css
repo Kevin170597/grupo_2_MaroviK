@@ -184,21 +184,26 @@ header nav ul {
     
 }
 
+/***************************   ESTILOS FORMULARIO   ***************************/
 
-h1{
+.title_register{
     text-align: center;
-    padding-top: 20px;
+    color: var(--color-grisOscuro);
 }
-.formulario{
+.cont_logo{
+    background-color: white;
     text-align: center;
-    padding: 20px;
-    font-weight: bold;
+    padding: 0, 30px;
 }
-
-.formulario label{
-    display: block;
-    scroll-padding-left: 15px;
-    text-indent: -15px;
+.cont_logo img{
+    width: 20%;
+}
+.cont_form{
+    margin-bottom: 2em;
+}
+.formulario_register{
+    padding: 10px 30px;
+    background-color: white;
 }
 
 .captcha{
