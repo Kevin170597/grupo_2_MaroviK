@@ -60,9 +60,16 @@ module.exports = {
         if(errors.isEmpty()){
             dbUsers.forEach(usuario =>{
                 if(usuario.email == req.body.email){
-                    req.session.user = usuario
+                    req.session = {
+                        nombre: usuario.name,
+                        apellido: usuario.lastName,
+                        rol: usuario.rol,
+                        email: usuario.email,
+                        avatar: usuario.avatar
+                    }
                 }
             })
+            //res.send(req.session)
             return res.redirect("/users/profile")
         }else{
             return res.render("inicioSesion", {

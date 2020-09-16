@@ -10,10 +10,10 @@ module.exports = [
     
     body("email")
     .custom(function(value){
-        let usuario = dbUsers.filter(function(){
-            return usuario.email == value
+        let usuario1 = dbUsers.filter(function(usuario1){
+            return usuario1.email == value
         })
-        if(usuario == true){
+        if(usuario1 == true){
             return false
         }else{
             return true

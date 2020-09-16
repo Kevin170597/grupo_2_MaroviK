@@ -1,1 +1,29 @@
-[{"id":1,"name":"Rossmery","lastName":"Garcia","email":"garciarossmery@gmail.com","password":"$2b$10$8QQt49mkmUDzjtxI6LMcOuXozQtkXWMkUmoAz0inAuxj3QQYBqyZ.","avatar":"","rol":"user"},{"id":1,"name":"fulano","lastName":"fulanito","email":"fulano.fulanito@gmail.com","password":"$2b$10$8NerBR2JWUfVA.UhiFWoseeW.K07/7Ng5lmvpfy4KQWD/C87W9hAS","avatar":"","rol":"user"},{"id":2,"name":"Kevin","lastName":"Mendoza","email":"kevin170597@gmail.com","password":"$2b$10$MIaJEs1vn3kns/nkrLAc1eEqNqEF0WitFrlhfnftwmlkZoxFicUvW","avatar":"avatar1600220902820.jpg","rol":"user"}]
+[
+    {
+        "id": 1,
+        "name": "Rossmery",
+        "lastName": "Garcia",
+        "email": "garciarossmery@gmail.com",
+        "password": "$2b$10$8QQt49mkmUDzjtxI6LMcOuXozQtkXWMkUmoAz0inAuxj3QQYBqyZ.",
+        "avatar": "",
+        "rol": "user"
+    },
+    {
+        "id": 1,
+        "name": "fulano",
+        "lastName": "fulanito",
+        "email": "fulano.fulanito@gmail.com",
+        "password": "$2b$10$8NerBR2JWUfVA.UhiFWoseeW.K07/7Ng5lmvpfy4KQWD/C87W9hAS",
+        "avatar": "",
+        "rol": "user"
+    },
+    {
+        "id": 2,
+        "name": "Kevin",
+        "lastName": "Mendoza",
+        "email": "kevin170597@gmail.com",
+        "password": "$2b$10$MIaJEs1vn3kns/nkrLAc1eEqNqEF0WitFrlhfnftwmlkZoxFicUvW",
+        "avatar": "avatar1600220902820.jpg",
+        "rol": "user"
+    }
+]
