@@ -10,10 +10,10 @@ module.exports = [
     
     body("email")
     .custom(function(value){
-        let usuario = dbUsers.filter(function(){
+        let usuario = dbUsers.filter(function(usuario){
             return usuario.email == value
         })
-        if(usuario == true){
+        if(usuario == false){
             return false
         }else{
             return true
@@ -26,7 +26,7 @@ module.exports = [
         let result = true;
         dbUsers.forEach(user => {
             if(user.email == req.body.email){
-                if(!bcrypt.compareSync(value, user.password)){
+                if(!bcrypt.compareSync(value, user.password)){//-- Verifica si la contraseña recibida(value) es igual a la almacenada en la base de datos(user.password) --
                     result = false
                 }
             }

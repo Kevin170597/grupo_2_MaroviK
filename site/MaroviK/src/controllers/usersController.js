@@ -10,13 +10,16 @@ module.exports = {
     view_user_profile: (req, res) => {
         res.render('userProfile', {
             title: "Perfil de Usuario",
+            user: req.session.user,
             productos: productsDataBase.filter(producto => {
                 return (producto.id > 352 && producto.id <= 356)
             })
         });
     },
     register: function(req, res){
-        res.render("register")
+        res.render("register", {
+            user: req.session.user
+        })
     },
     processRegister: function(req, res){
         let errors = validationResult(req);
@@ -53,16 +56,25 @@ module.exports = {
         }
     },
     login: function(req, res){
-        res.render("inicioSesion")
+        res.render("inicioSesion", {
+            user: req.session.user
+        })
     },
     processLogin: function(req, res){
         let errors = validationResult(req);
         if(errors.isEmpty()){
             dbUsers.forEach(usuario =>{
                 if(usuario.email == req.body.email){
-                    req.session.user = usuario
+                    req.session.user = {
+                        nombre: usuario.name,
+                        apellido: usuario.lastName,
+                        rol: usuario.rol,
+                        email: usuario.email,
+                        avatar: usuario.avatar
+                    }
                 }
             })
+            //res.send(req.session)
             return res.redirect("/users/profile")
         }else{
             return res.render("inicioSesion", {
@@ -71,4 +83,8 @@ module.exports = {
             })
         }
     },
+    logout: (req, res) => {
+        req.session.destroy();
+        res.redirect('/');
+    }
 }
