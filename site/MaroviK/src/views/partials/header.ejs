@@ -26,8 +26,13 @@
                     </li>
                     <% } else{ %>
                         <li>
-                            <a href="/users/logout">Cerrar sesión <i class="fas fa-sign-in-alt "></i></a>
+                            <a href="/users/logout">Cerrar sesión <img width="20" src="https://img.icons8.com/fluent/48/000000/login-rounded-right.png"/></a>
                         </li>
+                        <% if (user.rol == "user") { %>
+                            <li>
+                                <a href="/products/add">Publicar </a>
+                            </li>
+                        <% } %>   
                     <% } %>
                     <li>
                         <a href="./productCart.html">Carrito <img width="20" src="https://img.icons8.com/fluent/48/000000/shopping-cart-loaded.png"/></a>
@@ -37,7 +42,8 @@
 
         </div>
     
-        <div class="col-2 cont-burger dropdown">
+        <div class="row">
+        <div class="col-8 cont-burger dropdown">
             <botton class="btn btn-secondary dropdown-toggle" type="button" id="burger-menu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Categorias</botton>
     
             <div class="dropdown-menu cont-menu-categorias" aria-labelledby="burger-menu">
@@ -59,6 +65,16 @@
                 <a href="/products/mascotas" class="dropdown-item"><i class="icon-mascotas"></i>Mascotas</a>
             </div>
     
+        </div>
+        <div class="col-4 d-flex justify-content-end align-items-center cuotas">
+            <a href=""><h5 class="mr-2"><%= (user)?user.nick:"Invitado" %> </h5></a>
+            <% if (user) { %>
+                <a href=""><img src="/images/users/<%= user.avatar %> " alt="avatar" width="50px" height="50px" class="avatar"></a>
+
+            <% } else{%>
+            <a href=""><img src="/images/users/default.png" alt="" width="50px" height="50px" class="avatar"></a>
+            <% } %>
+        </div>
         </div>
     </div>
         

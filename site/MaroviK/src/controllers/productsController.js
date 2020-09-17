@@ -5,7 +5,9 @@ const path = require('path');
 
 module.exports = {
     view_products: (req,res) => {
-        res.render('categoria');
+        res.render('categoria', {
+            user: req.session.user
+        });
     },
     view_for_category: (req,res) => {
 
@@ -14,6 +16,7 @@ module.exports = {
             return(category.category == categoria);
         });
         res.render('categoria', {
+            user: req.session.user,
             categoria: dataCategory[0]
         });
     },
@@ -38,6 +41,7 @@ module.exports = {
         //res.send(dbProductsForSubcategory);
         res.render('subcategoria', {
 
+            user: req.session.user,
             categoria: dataCategory[0],
             productos: dbProductsForSubcategory
         });
@@ -52,6 +56,7 @@ module.exports = {
         
         res.render('productDetail', {
 
+            user: req.session.user,
             producto: product[0]
         });
     },
@@ -70,7 +75,8 @@ module.exports = {
             title: "Agregar Producto",
             categoria:categoria,
             subcategoria:subcategoria,
-            categorias: categoriesDataBase
+            categorias: categoriesDataBase,
+            user: req.session.user
         })
     },
     public_product: (req, res, next) => {
@@ -114,7 +120,8 @@ module.exports = {
             title: "Ver/Editar Producto",
             producto: productResult[0],
             total: productsDataBase.length,
-            categorias: categoriesDataBase
+            categorias: categoriesDataBase,
+            user: req.session.user
         })
     },
     update_product: (req, res) => {

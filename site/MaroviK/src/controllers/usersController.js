@@ -23,12 +23,11 @@ module.exports = {
     },
     processRegister: function(req, res){
         let errors = validationResult(req);
+        let lastID = 0;
 
         //-- Asigno el valor del último id de usuario a lastID, considerando un base de datos sin registros
-        if(dbUsers.length == 0){
-            lastID = 0;
-        }else{
-            lastID = dbUsers.length - 1;
+        if(dbUsers.length > 0){
+            lastID = dbUsers.length;
         }
        
         if(errors.isEmpty()){ //-- Si no hay ningún error (errors vacio) => registro un nuevo usuario --
@@ -66,25 +65,34 @@ module.exports = {
             dbUsers.forEach(usuario =>{
                 if(usuario.email == req.body.email){
                     req.session.user = {
-                        nombre: usuario.name,
-                        apellido: usuario.lastName,
+                        id: usuario.id,
+                        //nombre: usuario.name,
+                        //apellido: usuario.lastName,
+                        nick: usuario.name + " " + usuario.lastName,
                         rol: usuario.rol,
                         email: usuario.email,
                         avatar: usuario.avatar
                     }
                 }
             })
+            if(req.body.recordar){
+                res.cookie('userMarovik',req.session.user,{maxAge:1000*60*2});
+            }
             //res.send(req.session)
-            return res.redirect("/users/profile")
+            return res.redirect("/")
         }else{
             return res.render("inicioSesion", {
                 errors: errors.mapped(),
-                old: req.body
-            })
+                old: req.body,
+                user: req.session.user
+            });
         }
     },
     logout: (req, res) => {
         req.session.destroy();
+        if(req.cookies.userMarovik){
+            res.cookie('userMarovik','',{maxAge:-1})
+        }
         res.redirect('/');
     }
 }
