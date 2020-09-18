@@ -134,6 +134,20 @@ header form input {
 
 }
 
+.search-form input{
+    border-radius: 20px;
+    border: solid 1px black;
+    padding-left: 30px;
+}
+.search-form button{
+    margin-right: 10px;
+}
+.search-form i{
+    font-size: 20px;
+    color: rgba(131, 131, 131, 0.5);
+}
+
+
 header form input:focus,
 form button:focus {
     outline: none;

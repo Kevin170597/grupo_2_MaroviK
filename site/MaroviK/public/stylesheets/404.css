@@ -1,0 +1,18 @@
+*{
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
+img{
+    width: 100%;
+}
+
+@media(max-width: 640px) {
+    img{
+        display: none;
+    }
+    body{
+        background-image: url("/images/404/404V.gif");
+    }
+}
