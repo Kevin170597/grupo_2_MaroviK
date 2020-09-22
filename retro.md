@@ -47,3 +47,32 @@ Que nuestros avances coincidan con las tareas asignadas en Tablero de trello.
 
 # SEGUIR HACIENDO:
 Continuar con las reuniones frecuentes y adaptarnos al horario de los integrantes.
+
+------------------------------------------------------------------------
+
+
+# Retrospectiva Sprint 2:
+Estamos muy contentos y conformes con los avances que tuvimos hasta hoy, nos sentimos mas seguro en cada cosa que hacemos, mantenemos la comunicación todo el tiempo y seguimos siempre apoyandonos entre todos. (El comapañerismo es lo que mas resalta) :)
+
+# HACER MAS:
+Organizar el tablero de trello.
+
+# EMPEZAR A HACER:
+Implementar daily/weekly standups
+Que nuestros avances coincidan con las tareas asignadas en el tablero de Trello.
+Actualizar el tablero de Trello individualmente en tiemporeal.
+Ultimo chequeo antes de entregar el trabajo.
+
+# DEJAR DE HACER:
+
+
+# HACER MENOS:
+Comunicar todos los avances individuales por whatsapp y utilizar mas Trello.
+
+# SEGUIR HACIENDO:
+Continuar con las reuniones frecuentes y adaptarnos al horario de los integrantes.
+Pushear en la ubicacion correcta al actualizar repositorio local.
+Adaptarnos al horario de todos los integrantes.
+Realizar retrospectiva al finalizar cada sprint.
+
+
