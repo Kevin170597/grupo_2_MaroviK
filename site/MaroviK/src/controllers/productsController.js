@@ -2,6 +2,7 @@ const productsDataBase = require('../data/database');
 const categoriesDataBase = require("../data/databaseCategories");
 const fs = require('fs');
 const path = require('path');
+const db = require('../database/models');
 
 module.exports = {
     view_products: (req,res) => {
@@ -9,7 +10,27 @@ module.exports = {
             user: req.session.user
         });
     },
-    view_for_category: (req,res) => {
+    view_for_category: (req, res) => {
+        let categoria = req.params.categoria;
+        db.categories.findOne({where: {title: categoria}})
+        .then(category => {
+            let idCategory = category.id;
+            db.Subcategories.findAll({where: {id_categorie: idCategory}})
+            .then(subcategory => {
+                res.render("categoria", {
+                    user: req.session.user,
+                    titulo: category.title,
+                    nombre: category.namePath,
+                    imagen: category.image,
+                    subtitulo: subcategory,
+                })
+            })
+        })
+        .catch(error => {
+            console.log(error)
+        })
+    },
+    /*view_for_category: (req,res) => {
 
         let categoria = req.params.categoria;
         let dataCategory = categoriesDataBase.filter(category => {
@@ -19,7 +40,7 @@ module.exports = {
             user: req.session.user,
             categoria: dataCategory[0]
         });
-    },
+    },*/
     view_for_subcategory: (req,res) => {
         
         let categoria = req.params.categoria;

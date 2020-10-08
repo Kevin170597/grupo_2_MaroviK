@@ -2,7 +2,7 @@ module.exports = (sequelize, DataTypes) => {
     let alias = "Admins";
     let cols = {
         id: {
-            type:DataTypes.INTERGER(11),
+            type:DataTypes.INTEGER(11),
             allowNull: false,
             autoIncrement: true,
             primaryKey: true
@@ -20,7 +20,7 @@ module.exports = (sequelize, DataTypes) => {
             allowNull: false
         },
         id_user: {
-            type:DataTypes.INTERGER(11),
+            type:DataTypes.INTEGER(11),
             allowNull: true,
         }
     }

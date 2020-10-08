@@ -1,9 +1,9 @@
-module.exports = (sequelize, dataTypes) => {
+module.exports = (sequelize, DataTypes) => {
     let alias = "Products";
 
     let cols = {
         id:{
-            type:DataTypes.INTERGER(11),
+            type:DataTypes.INTEGER(11),
             allowNull: false,
             autoIncrement: true,
             primaryKey: true
@@ -17,15 +17,15 @@ module.exports = (sequelize, dataTypes) => {
             allowNull: false
         },
         price:{
-            type:DataTypes.INTERGER(11),
+            type:DataTypes.INTEGER(11),
             allowNull: false
         },
         discount:{
-            type:DataTypes.INTERGER(11),
+            type:DataTypes.INTEGER(11),
             allowNull: false
         },
         stock:{
-            type:DataTypes.INTERGER(11),
+            type:DataTypes.INTEGER(11),
             allowNull: false
         },
         description:{

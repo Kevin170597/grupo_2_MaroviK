@@ -6,7 +6,7 @@ module.exports = (sequelize, DataTypes) =>{
     // Campos de la tabla //
     let cols = {
         id:{
-            type:DataTypes.INTERGER(11),
+            type:DataTypes.INTEGER(11),
             allowNull: false,
             autoIncrement: true,
             primaryKey: true
@@ -55,7 +55,7 @@ module.exports = (sequelize, DataTypes) =>{
         },
 
         cp:{
-            type:DataTypes.INTERGER(11)
+            type:DataTypes.INTEGER(11)
         },
 
         rol:{
