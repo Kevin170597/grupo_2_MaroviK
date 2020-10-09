@@ -71,19 +71,19 @@ module.exports = (sequelize, DataTypes) =>{
 
     const User = sequelize.define(alias, cols, config);
     
-    /*User.associate = function(models){
-        User.belongsToMany(models.Product, {
+    User.associate = function(models){
+        User.belongsToMany(models.Products, {
             as: 'product_u',
             through: 'cart',
             foreignKey: 'id_product',
             otherKey: 'id_user',
             timestamps: false
         }),
-        User.hasMany(models.Product, {
+        User.hasMany(models.Products, {
             as: 'product_public',
             foreignKey: 'user_id'
         })
-    }*/
+    }
 
     return User;
 

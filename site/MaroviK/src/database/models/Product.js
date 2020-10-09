@@ -46,22 +46,23 @@ module.exports = (sequelize, DataTypes) => {
 
     const Product = sequelize.define(alias, cols, config);
     
-    /*Product.associate = function(models){
-        Product.belongsTo(models.Subcategory, {
+    
+    Product.associate = function(models){
+        Product.belongsTo(models.Subcategories, {
             as: 'subcategories_p',
             foreignKey: 'id_subcategory'
         }),
-        Product.belongsToMany(models.User, {
+        Product.belongsToMany(models.users, {
             as: 'user',
             through: 'cart',
             foreignKey: 'id_user',
             otherKey: 'id_product',
             timestamps: false
         }),
-        Product.belongsTo(models.User, {
+        Product.belongsTo(models.users, {
             as: 'user_public',
             foreignKey: 'id_user'
         })
-    }*/
+    }
     return Product;
 }
