@@ -19,10 +19,10 @@ module.exports = {
             .then(subcategory => {
                 res.render("categoria", {
                     user: req.session.user,
+                    
                     titulo: category.title,
-                    nombre: category.namePath,
                     imagen: category.image,
-                    subtitulo: subcategory,
+                    subcategory: subcategory,
                 })
             })
         })
