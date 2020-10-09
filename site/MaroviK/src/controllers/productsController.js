@@ -12,10 +12,10 @@ module.exports = {
     },
     view_for_category: (req, res) => {
         let categoria = req.params.categoria;
-        db.categories.findOne({where: {title: categoria}})
+        db.Categories.findOne({where: {namePath: categoria}})
         .then(category => {
             let idCategory = category.id;
-            db.Subcategories.findAll({where: {id_categorie: idCategory}})
+            db.Subcategories.findAll({where: {id_category: idCategory}})
             .then(subcategory => {
                 res.render("categoria", {
                     user: req.session.user,
