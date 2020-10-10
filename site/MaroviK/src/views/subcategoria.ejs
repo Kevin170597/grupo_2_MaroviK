@@ -17,10 +17,10 @@
                 <div class="collapse navbar-collapse row" id="navbarSupportedContent">
                 
                     <ul>
-                        <h4><%= titulo %></h4>
-
-                                <li><a href=""><%= subcategoria.title %> </a></li>
-                       
+                        
+                            <% subcategorias.forEach(subcategoria => {  %>
+                            <li><a href=""><%= subcategoria.title %> </a></li>
+                            <% }) %>
                     </ul>
                     
                     <ul>
@@ -39,7 +39,7 @@
                 <div class="productos">
     
                     <div class="subcategorias row col-12">
-                        <% producto.forEach(producto => {%>
+                        <% productos.forEach(producto => {%>
                         <div class="contenidos">
     
                             <figure>
