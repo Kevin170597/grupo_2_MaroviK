@@ -1,5 +1,7 @@
-const dbUsers = require("../data/databaseUsers");
-const productsDataBase = require('../data/database');
+//const dbUsers = require("../data/databaseUsers");
+//const productsDataBase = require('../data/database');
+
+const db = require("../database/models");
 
 const {validationResult, body} = require("express-validator");
 const bcrypt = require('bcrypt');
@@ -23,15 +25,35 @@ module.exports = {
     },
     processRegister: function(req, res){
         let errors = validationResult(req);
-        let lastID = 0;
-
-        //-- Asigno el valor del último id de usuario a lastID, considerando un base de datos sin registros
-        if(dbUsers.length > 0){
-            lastID = dbUsers.length;
-        }
        
         if(errors.isEmpty()){ //-- Si no hay ningún error (errors vacio) => registro un nuevo usuario --
-            let nuevoUsuario = {
+
+            db.Users.create(
+                {
+                    name: req.body.name,
+                    lastName: req.body.lastName,
+                    email: req.body.email,
+                    password: bcrypt.hashSync(req.body.password,10), //-- Encripta la contraseña --
+                    avatar:(req.files[0])?req.files[0].filename:"default.png",
+                    rol:"user"
+                }
+            )
+            .then(result => {
+                console.log(result);
+                
+                return res.redirect('/users/login');
+            })
+            .catch(errores => {
+                console.log(errores);
+            })
+        }else {
+            res.render("register",{
+                errors: errors.mapped(), //-- Renderiza y muestra en la vista todos los errores --
+                old: req.body, //-- Maneja la persistencia de datos --
+                user: req.session.user
+            });   
+        }
+            /*let nuevoUsuario = {
                 id: lastID + 1,
                 name: req.body.name,
                 lastName: req.body.lastName,
@@ -52,7 +74,7 @@ module.exports = {
                 errors: errors.mapped(), //-- Renderiza y muestra en la vista todos los errores --
                 old: req.body //-- Maneja la persistencia de datos --
             });
-        }
+        }*/
     },
     login: function(req, res){
         res.render("inicioSesion", {
@@ -60,26 +82,33 @@ module.exports = {
         })
     },
     processLogin: function(req, res){
+
         let errors = validationResult(req);
+
         if(errors.isEmpty()){
-            dbUsers.forEach(usuario =>{
-                if(usuario.email == req.body.email){
-                    req.session.user = {
-                        id: usuario.id,
-                        //nombre: usuario.name,
-                        //apellido: usuario.lastName,
-                        nick: usuario.name + " " + usuario.lastName,
-                        rol: usuario.rol,
-                        email: usuario.email,
-                        avatar: usuario.avatar
-                    }
+
+            db.Users.findOne({
+                where:{
+                    email:req.body.email
+                }
+            })
+            .then(user => {
+                req.session.user = {
+                    id:user.id,
+                    nick: user.name + " " + user.lastName,
+                    rol: user.rol,
+                    email: user.email,
+                    avatar: user.avatar
                 }
             })
             if(req.body.recordar){
                 res.cookie('userMarovik',req.session.user,{maxAge:1000*60*2});
             }
-            //res.send(req.session)
+
+            res.locals.user = req.session.user
+
             return res.redirect("/")
+
         }else{
             return res.render("inicioSesion", {
                 errors: errors.mapped(),

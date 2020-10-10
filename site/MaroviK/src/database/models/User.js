@@ -1,7 +1,7 @@
 module.exports = (sequelize, DataTypes) =>{
 
     // nombre de tabla //
-    let alias = 'users';
+    let alias = 'Users';
 
     // Campos de la tabla //
     let cols = {
@@ -72,16 +72,16 @@ module.exports = (sequelize, DataTypes) =>{
     const User = sequelize.define(alias, cols, config);
     
     User.associate = function(models){
-        User.belongsToMany(models.Product, {
+        User.belongsToMany(models.Products, {
             as: 'product_u',
             through: 'cart',
-            foreignKey: 'id_product',
-            otherKey: 'id_user',
+            foreignKey: 'id_user',
+            otherKey: 'id_product',
             timestamps: false
         }),
-        User.hasMany(models.Product, {
+        User.hasMany(models.Products, {
             as: 'product_public',
-            foreignKey: 'user_id'
+            foreignKey: 'id_user'
         })
     }
 

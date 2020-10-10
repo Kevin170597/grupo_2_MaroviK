@@ -1,5 +1,5 @@
-const productsDataBase = require('../data/database');
-const categoriesDataBase = require("../data/databaseCategories");
+//const productsDataBase = require('../data/database');
+//const categoriesDataBase = require("../data/databaseCategories");
 const fs = require('fs');
 const path = require('path');
 const db = require('../database/models');
@@ -12,17 +12,17 @@ module.exports = {
     },
     view_for_category: (req, res) => {
         let categoria = req.params.categoria;
-        db.categories.findOne({where: {title: categoria}})
+        db.Categories.findOne({where: {namePath: categoria}})
         .then(category => {
             let idCategory = category.id;
-            db.Subcategories.findAll({where: {id_categorie: idCategory}})
+            db.Subcategories.findAll({where: {id_category: idCategory}})
             .then(subcategory => {
                 res.render("categoria", {
                     user: req.session.user,
+                    
                     titulo: category.title,
-                    nombre: category.namePath,
                     imagen: category.image,
-                    subtitulo: subcategory,
+                    subcategory: subcategory,
                 })
             })
         })
@@ -90,26 +90,33 @@ module.exports = {
             categoria = req.query.categoria;
             subcategoria = req.query.subcategoria;
         }
-        
-        res.render('productAdd', {
 
-            title: "Agregar Producto",
-            categoria:categoria,
-            subcategoria:subcategoria,
-            categorias: categoriesDataBase,
-            user: req.session.user
+        db.Categories.findAll({
+            include:[{association:'subcategories'}]
+        })
+        .then(categorias => {
+
+            res.render('productAdd', {
+
+                title: "Agregar Producto",
+                categoria:categoria,
+                subcategoria:subcategoria,
+                categorias: categorias,
+                user: req.session.user
+            })
         })
     },
     public_product: (req, res, next) => {
 
-        let lastId = 0;
+        /*let lastId = 0;
 
         productsDataBase.forEach(producto => {
             if(producto.id > lastId){
                 lastId = producto.id;
             }
-        });
+        });*/
 
+        db.Product.create()
         let newProduct = {
 
             id: lastId + 1,

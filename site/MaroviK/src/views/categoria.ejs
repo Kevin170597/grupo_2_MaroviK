@@ -17,11 +17,11 @@
                 <div class="collapse navbar-collapse row" id="navbarSupportedContent">
                 
                     <ul>
-                        <h4><%= nombre%></h4>
+                        <h4><%= titulo%></h4>
 
                         
-                            <% subtitulo.forEach(subtitulos => { %>
-                            <li><a href=""><%= subtitulos.name_path %> </a></li>
+                            <% subcategory.forEach(subcategoria => { %>
+                            <li><a href=""><%= subcategoria.title %> </a></li>
                             <% }) %>
                         
                     </ul>
@@ -40,14 +40,14 @@
                     <div class="subcategorias row col-12">
                         <!--<div class="col-12 col-md-6 col-lg-4">-->
     
-                            <% subtitulo.forEach(imagenes => { %>
+                            <% subcategory.forEach(imagenes => { %>
                             <div class="contenidos">
         
                                 <figure>
                                     <a href=""><img src="/images/categories/<%= imagenes.image %> " alt=" "></a>
                                 </figure>
                                 <ul> 
-                                    <li><a href=""><h5><%= imagenes.name_path %></h5> </a></li>
+                                    <li><a href=""><h5><%= imagenes.title %></h5> </a></li>
                                     <li><a href="">Ver más</a></li>
                                 </ul>
                             </div>

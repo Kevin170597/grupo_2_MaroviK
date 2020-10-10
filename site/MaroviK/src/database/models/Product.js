@@ -35,7 +35,14 @@ module.exports = (sequelize, DataTypes) => {
         image:{
             type:DataTypes.STRING(100),
             allowNull: false
+        },
+        id_user:{
+            type: DataTypes.INTEGER(11),
+        },
+        id_subcategory: {
+            type:DataTypes.INTEGER(11)
         }
+        
     };
 
     let config ={
@@ -46,19 +53,20 @@ module.exports = (sequelize, DataTypes) => {
 
     const Product = sequelize.define(alias, cols, config);
     
+    
     Product.associate = function(models){
-        Product.belongsTo(models.Subcategory, {
+        Product.belongsTo(models.Subcategories, {
             as: 'subcategories_p',
             foreignKey: 'id_subcategory'
         }),
-        Product.belongsToMany(models.User, {
+        Product.belongsToMany(models.Users, {
             as: 'user',
             through: 'cart',
-            foreignKey: 'id_user',
-            otherKey: 'id_product',
+            foreignKey: 'id_product',
+            otherKey: 'id_user',
             timestamps: false
         }),
-        Product.belongsTo(models.User, {
+        Product.belongsTo(models.Users, {
             as: 'user_public',
             foreignKey: 'id_user'
         })

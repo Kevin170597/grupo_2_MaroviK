@@ -1,5 +1,5 @@
-const dbUsers = require("../data/databaseUsers");
-
+//const dbUsers = require("../data/databaseUsers");
+const db = require('../database/models');
 const {check, validationResult, body} = require("express-validator");
 const bcrypt = require("bcrypt")
 
@@ -10,32 +10,35 @@ module.exports = [
     
     body("email")
     .custom(function(value){
-        let usuario = dbUsers.filter(function(usuario){
-            return usuario.email == value
+        return db.Users.findOne({
+            where:{
+                email:value
+            }
         })
-        if(usuario == false){
-            return false
-        }else{
-            return true
-        }
-    })
-    .withMessage("El usuario no está registrado"),
+        .then(user => {
+            if(!user){
+                return Promise.reject("Email no registrado")
+            }
+
+        })
+    }),
 
     body("password")
     .custom(function(value,{req}){
-        let result = true;
-        dbUsers.forEach(user => {
-            if(user.email == req.body.email){
-                if(!bcrypt.compareSync(value, user.password)){//-- Verifica si la contraseña recibida(value) es igual a la almacenada en la base de datos(user.password) --
-                    result = false
-                }
+        
+        return db.Users.findOne({
+            where:{
+                email:req.body.email
             }
-        });
-        if (result == false){
-            return false
-        }else{
-            return true
-        }
+        })
+        .then(user => {
+            if(!bcrypt.compareSync(value, user.dataValues.password)){//-- Verifica si la contraseña recibida(value) es igual a la almacenada en la base de datos  --
+                return Promise.reject()
+            }
+        })
+        .catch(() => {
+            return Promise.reject("Contraseña incorrecta")
+        })
     })
-    .withMessage("Contraseña incorrecta")
+    
 ]
