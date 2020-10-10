@@ -117,7 +117,7 @@ module.exports = {
           console.log(error)
       })
     },
-    view_product_add: (req, res) => {
+    viewProductAdd: (req, res) => {
 
         let categoria;
         let subcategoria;
@@ -145,7 +145,7 @@ module.exports = {
             res.send(errores)
         })
     },
-    public_product: (req, res, next) => {
+    publicProduct: (req, res, next) => {
 
         db.Subcategories.findOne({
             where:{
