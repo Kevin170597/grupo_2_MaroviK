@@ -10,26 +10,6 @@ module.exports = {
             user: req.session.user
         });
     },
-    view_for_category: (req, res) => {
-        let categoria = req.params.categoria;
-        db.Categories.findOne({where: {namePath: categoria}})
-        .then(category => {
-            let idCategory = category.id;
-            db.Subcategories.findAll({where: {id_category: idCategory}})
-            .then(subcategory => {
-                res.render("categoria", {
-                    user: req.session.user,
-                    
-                    titulo: category.title,
-                    imagen: category.image,
-                    subcategory: subcategory,
-                })
-            })
-        })
-        .catch(error => {
-            console.log(error)
-        })
-    },
     /*view_for_category: (req,res) => {
 
         let categoria = req.params.categoria;
@@ -41,7 +21,49 @@ module.exports = {
             categoria: dataCategory[0]
         });
     },*/
-    view_for_subcategory: (req,res) => {
+    view_for_category: (req, res) => {
+        let categoria = req.params.categoria;
+        db.Categories.findOne({where: {namePath: categoria}})
+        .then(category => {
+            let idCategory = category.id;
+            db.Subcategories.findAll({where: {id_category: idCategory}})
+            .then(subcategory => {
+                res.render("categoria", {
+                    user: req.session.user,
+                    titulo: category.title,
+                    imagen: category.image,
+                    subcategory: subcategory,
+                })
+            })
+        })
+        .catch(error => {
+            console.log(error)
+        })
+    },
+    ver_productos: (req, res) => {
+        let categoria = req.params.categoria;
+        let subcategoria = req.params.subcategoria;
+        
+        db.Categories.findOne({where: {namePath: categoria}})
+        .then(category => {
+            db.Subcategories.findOne({where:{name_path: subcategoria}})
+            .then(subcategory => {
+            db.Products.findAll({where: {id_subcategory: subcategory.id}})
+                .then(producto => {
+                    res.render("subcategoria", {
+                        user: req.session.user,
+                        producto: producto,
+                        subcategoria: subcategory,
+                        titulo: category.title
+                    })
+                })
+            })
+        })
+        .catch(errors => {
+           console.log(errors)
+        })
+    },
+    /*view_for_subcategory: (req,res) => {
         
         let categoria = req.params.categoria;
         let subcategoria = req.params.subcategoria;
@@ -67,7 +89,7 @@ module.exports = {
             productos: dbProductsForSubcategory
         });
     
-    },
+    },*/
     view_product_detail: (req,res) => {
     
         let idProduct = req.params.id;
