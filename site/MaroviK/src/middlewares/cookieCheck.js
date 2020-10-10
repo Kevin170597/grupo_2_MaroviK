@@ -1,5 +1,5 @@
 
-const dbUsers = require("../data/databaseUsers");
+const db = require("../database/models");
 
 module.exports = (req, res, next) => {
     if(req.cookies.userMarovik){

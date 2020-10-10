@@ -1,7 +1,7 @@
-module.exports = function sessionUserCheck(req, res, next){
-    if(req.session){
+module.exports = function sessionUserChech(req,res,next){
+    if(req.session.user){
         next()
     }else{
-        res.redirect("/users/login");
+        res.redirect('/users/login')
     }
 }

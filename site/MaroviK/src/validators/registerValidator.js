@@ -31,6 +31,9 @@ module.exports = [
                 return Promise.reject('Este email ya está registrado')
             }
         })
+        .catch(errores => {
+            console.log(errores);
+        })
     }),
     check("password")
     .isLength({

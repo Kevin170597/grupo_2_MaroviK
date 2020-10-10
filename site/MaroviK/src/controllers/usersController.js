@@ -31,7 +31,7 @@ module.exports = {
             db.Users.create(
                 {
                     name: req.body.name,
-                    lastName: req.body.lastName,
+                    last_name: req.body.lastName,
                     email: req.body.email,
                     password: bcrypt.hashSync(req.body.password,10), //-- Encripta la contraseña --
                     avatar:(req.files[0])?req.files[0].filename:"default.png",
@@ -94,12 +94,13 @@ module.exports = {
             })
             .then(user => {
                 req.session.user = {
-                    id:user.id,
-                    nick: user.name + " " + user.lastName,
+                    id: user.id,
+                    nick: user.name + " " + user.last_name,
                     rol: user.rol,
                     email: user.email,
                     avatar: user.avatar
                 }
+                console.log(user)
             })
             if(req.body.recordar){
                 res.cookie('userMarovik',req.session.user,{maxAge:1000*60*2});

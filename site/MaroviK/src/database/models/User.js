@@ -1,7 +1,7 @@
 module.exports = (sequelize, DataTypes) =>{
 
     // nombre de tabla //
-    let alias = 'Users';
+    let alias = 'Users'
 
     // Campos de la tabla //
     let cols = {
@@ -19,7 +19,7 @@ module.exports = (sequelize, DataTypes) =>{
         },
 
         //apellido//
-        lastName:{
+        last_name:{
             type:DataTypes.STRING(45),
             allowNull: false
         },
@@ -78,11 +78,11 @@ module.exports = (sequelize, DataTypes) =>{
             foreignKey: 'id_user',
             otherKey: 'id_product',
             timestamps: false
-        })/*,
+        })
         User.hasMany(models.Products, {
             as: 'product_public',
             foreignKey: 'id_user'
-        })*/
+        })
     }
 
     return User;
