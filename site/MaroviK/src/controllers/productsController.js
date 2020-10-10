@@ -10,34 +10,22 @@ module.exports = {
             user: req.session.user
         });
     },
-    /*view_for_category: (req,res) => {
-
-        let categoria = req.params.categoria;
-        let dataCategory = categoriesDataBase.filter(category => {
-            return(category.category == categoria);
-        });
-        res.render('categoria', {
-            user: req.session.user,
-            categoria: dataCategory[0]
-        });
-    },*/
     view_for_category: (req, res) => {
-        let categoria = req.params.categoria;
-        db.Categories.findOne({where: {namePath: categoria}})
-        .then(category => {
-            let idCategory = category.id;
-            db.Subcategories.findAll({where: {id_category: idCategory}})
-            .then(subcategory => {
-                res.render("categoria", {
-                    user: req.session.user,
-                    titulo: category.title,
-                    imagen: category.image,
-                    subcategory: subcategory,
-                })
+        let categoria = req.params.categoria
+        db.Categories.findOne({
+            include:{association:"subcategories"},
+            where: {namePath: categoria}
+        })
+        .then(categories => {
+            res.render("categoria", {
+                user: req.session.user,
+                titulo: categories.title,
+                imagen: categories.image,
+                subcategory: categories.subcategories
             })
         })
-        .catch(error => {
-            console.log(error)
+        .catch(errors => {
+            console.log(errors)
         })
     },
     ver_productos: (req, res) => {
@@ -63,60 +51,39 @@ module.exports = {
            console.log(errors)
         })
     },
-    /*view_for_subcategory: (req,res) => {
-        
-        let categoria = req.params.categoria;
-        let subcategoria = req.params.subcategoria;
-
-        let dataCategory = categoriesDataBase.filter(category => {
-            return (category.category == categoria);
-        });
-
-        let dbProductsForCategory = productsDataBase.filter(productCategory => {
-            return (productCategory.category == categoria);
-        });
-
-        let dbProductsForSubcategory = dbProductsForCategory.filter(product => {
-            return (product.subcategory == subcategoria);
-        });
-
-        //res.send(dataCategory);
-        //res.send(dbProductsForSubcategory);
-        res.render('subcategoria', {
-
-            user: req.session.user,
-            categoria: dataCategory[0],
-            productos: dbProductsForSubcategory
-        });
-    
-    },*/
-    view_product_detail: (req,res) => {
-    
-        let idProduct = req.params.id;
-        product = productsDataBase.filter(producto => {
-            return (producto.id == idProduct);
-        });
-        
-        res.render('productDetail', {
-
-            user: req.session.user,
-            producto: product[0]
-        });
+    view_for_subcategory: (req, res) => {
+        let subcategoria = req.params.subcategoria
+        db.Subcategories.findOne({
+            include:{association: "products"},
+            where:{name_path:subcategoria}
+        })
+        .then(producto => {
+            db.Subcategories.findAll({where: {id_category: producto.id_category}})
+            .then(subcategorias => {
+                res.render("subcategoria",{
+                    user: req.session.user,
+                    productos: producto.products,
+                    subcategorias: subcategorias
+                })
+            })
+            .catch(errors => {console.log(errors)})
+        })
+        .catch(errors => {console.log(errors)})
     },
-    ver_producto_detalle:(req, res) => {
-      let idproduct = req.params.idproduct;
-      
-      db.Products.findOne({where: {id: idproduct}})
-      .then(producto => {
-          res.render("productDetail", {
-              user: req.session.user,
-              producto: producto
-          })
-      })
-      .catch(error => {
-          console.log(error)
-      })
-    },
+    view_product_detail:(req, res) => {
+        let idproduct = req.params.idproduct;
+  
+        db.Products.findOne({where: {id: idproduct}})
+        .then(producto => {
+            res.render("productDetail", {
+                user: req.session.user,
+                producto: producto
+            })
+        })
+        .catch(error => {
+            console.log(error)
+        })
+      },
     viewProductAdd: (req, res) => {
 
         let categoria;
