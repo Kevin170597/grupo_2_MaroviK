@@ -78,11 +78,11 @@ module.exports = (sequelize, DataTypes) =>{
             foreignKey: 'id_user',
             otherKey: 'id_product',
             timestamps: false
-        }),
+        })/*,
         User.hasMany(models.Products, {
             as: 'product_public',
             foreignKey: 'id_user'
-        })
+        })*/
     }
 
     return User;

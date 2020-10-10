@@ -22,7 +22,7 @@ module.exports = (sequelize, DataTypes) => {
         },
         discount:{
             type:DataTypes.INTEGER(11),
-            allowNull: false
+            allowNull: true
         },
         stock:{
             type:DataTypes.INTEGER(11),
@@ -43,6 +43,22 @@ module.exports = (sequelize, DataTypes) => {
             type:DataTypes.INTEGER(11)
         }
         
+        /*created_at:{
+            type:DataTypes.STRING(45),
+            allowNull:true
+        },
+        updated_at:{
+            type:DataTypes.STRING(45),
+            allowNull:true
+        },
+        id_user:{
+            type:DataTypes.INTEGER(11),
+            allowNull:true
+        },
+        id_subcategory:{
+            type:DataTypes.INTEGER(11),
+            allowNull:true
+            }*/
     };
 
     let config ={

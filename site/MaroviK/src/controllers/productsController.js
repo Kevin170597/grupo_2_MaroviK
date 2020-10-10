@@ -10,26 +10,6 @@ module.exports = {
             user: req.session.user
         });
     },
-    view_for_category: (req, res) => {
-        let categoria = req.params.categoria;
-        db.Categories.findOne({where: {namePath: categoria}})
-        .then(category => {
-            let idCategory = category.id;
-            db.Subcategories.findAll({where: {id_category: idCategory}})
-            .then(subcategory => {
-                res.render("categoria", {
-                    user: req.session.user,
-                    
-                    titulo: category.title,
-                    imagen: category.image,
-                    subcategory: subcategory,
-                })
-            })
-        })
-        .catch(error => {
-            console.log(error)
-        })
-    },
     /*view_for_category: (req,res) => {
 
         let categoria = req.params.categoria;
@@ -41,7 +21,49 @@ module.exports = {
             categoria: dataCategory[0]
         });
     },*/
-    view_for_subcategory: (req,res) => {
+    view_for_category: (req, res) => {
+        let categoria = req.params.categoria;
+        db.Categories.findOne({where: {namePath: categoria}})
+        .then(category => {
+            let idCategory = category.id;
+            db.Subcategories.findAll({where: {id_category: idCategory}})
+            .then(subcategory => {
+                res.render("categoria", {
+                    user: req.session.user,
+                    titulo: category.title,
+                    imagen: category.image,
+                    subcategory: subcategory,
+                })
+            })
+        })
+        .catch(error => {
+            console.log(error)
+        })
+    },
+    ver_productos: (req, res) => {
+        let categoria = req.params.categoria;
+        let subcategoria = req.params.subcategoria;
+        
+        db.Categories.findOne({where: {namePath: categoria}})
+        .then(category => {
+            db.Subcategories.findOne({where:{name_path: subcategoria}})
+            .then(subcategory => {
+            db.Products.findAll({where: {id_subcategory: subcategory.id}})
+                .then(producto => {
+                    res.render("subcategoria", {
+                        user: req.session.user,
+                        producto: producto,
+                        subcategoria: subcategory,
+                        titulo: category.title
+                    })
+                })
+            })
+        })
+        .catch(errors => {
+           console.log(errors)
+        })
+    },
+    /*view_for_subcategory: (req,res) => {
         
         let categoria = req.params.categoria;
         let subcategoria = req.params.subcategoria;
@@ -67,7 +89,7 @@ module.exports = {
             productos: dbProductsForSubcategory
         });
     
-    },
+    },*/
     view_product_detail: (req,res) => {
     
         let idProduct = req.params.id;
@@ -80,6 +102,20 @@ module.exports = {
             user: req.session.user,
             producto: product[0]
         });
+    },
+    ver_producto_detalle:(req, res) => {
+      let idproduct = req.params.idproduct;
+      
+      db.Products.findOne({where: {id: idproduct}})
+      .then(producto => {
+          res.render("productDetail", {
+              user: req.session.user,
+              producto: producto
+          })
+      })
+      .catch(error => {
+          console.log(error)
+      })
     },
     view_product_add: (req, res) => {
 
@@ -105,37 +141,41 @@ module.exports = {
                 user: req.session.user
             })
         })
+        .catch(errores => {
+            res.send(errores)
+        })
     },
     public_product: (req, res, next) => {
 
-        /*let lastId = 0;
-
-        productsDataBase.forEach(producto => {
-            if(producto.id > lastId){
-                lastId = producto.id;
+        db.Subcategories.findOne({
+            where:{
+                name_path: req.body.subcategory
             }
-        });*/
-
-        db.Product.create()
-        let newProduct = {
-
-            id: lastId + 1,
-            category: req.body.category.trim(),
-            subcategory: req.body.subcategory.trim(),
-            name: req.body.name.trim(),
-            mark: req.body.mark.trim(),
-            price: Number(req.body.price),
-            discount: Number(req.body.discount),
-            description: req.body.description.trim(),
-            image: (req.files[0])?req.files[0].filename:"default-image.png"
-        }
-
-        productsDataBase.push(newProduct);
-
-        fs.writeFileSync(path.join(__dirname, "..", "data", "productsDataBase.json"), JSON.stringify(productsDataBase), 'utf-8')
-       
-        let ruta = "/products/" + req.body.category + "/" + req.body.subcategory;
-        res.redirect(ruta);
+        })
+        .then(subcategory => {
+            db.Products.create({
+                name: req.body.name.trim(),
+                mark: req.body.mark.trim(),
+                price: Number(req.body.price),
+                discount: Number(req.body.discount),
+                stock:Number(req.body.stock),
+                description: req.body.description.trim(),
+                image: (req.files[0])?req.files[0].filename:"default-image.png",
+                id_subcategory: subcategory.id
+            })
+            .then(result => {
+                console.log(result);
+                res.redirect('/');
+                /*let ruta = "/products/" + req.body.category + "/" + req.body.subcategory;
+                res.redirect(ruta);*/
+            })
+            .catch(error => {
+                res.send(error);
+            })
+        })
+        .catch(error => {
+            res.send(error);
+        })   
     },
     view_product_show: (req, res) => {
 

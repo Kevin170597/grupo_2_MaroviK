@@ -32,7 +32,7 @@ module.exports = (sequelize, DataTypes) => {
     const Subcategory = sequelize.define(alias, cols, config);
 
     Subcategory.associate = function(models){
-        Subcategory.hasOne(models.Categories, {
+        Subcategory.belongsTo(models.Categories, {
             as: 'categories',
             foreignKey: 'id_category'
         }),
