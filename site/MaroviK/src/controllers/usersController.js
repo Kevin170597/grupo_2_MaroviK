@@ -93,6 +93,7 @@ module.exports = {
                 }
             })
             .then(user => {
+    
                 req.session.user = {
                     id: user.id,
                     nick: user.name + " " + user.last_name,
@@ -100,15 +101,15 @@ module.exports = {
                     email: user.email,
                     avatar: user.avatar
                 }
-                console.log(user)
+                
+                if(req.body.recordar){
+                    res.cookie('userMarovik',req.session.user,{maxAge:1000*60*2});
+                }
+    
+                res.locals.user = req.session.user
+    
+                return res.redirect("/")
             })
-            if(req.body.recordar){
-                res.cookie('userMarovik',req.session.user,{maxAge:1000*60*2});
-            }
-
-            res.locals.user = req.session.user
-
-            return res.redirect("/")
 
         }else{
             return res.render("inicioSesion", {

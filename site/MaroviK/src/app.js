@@ -30,7 +30,6 @@ app.use(methodOverride('_method'));
 
 //-- Mientras una sesión este abierta la encripta --
 app.use(session({secret:'marovik for ever'}));
-
 app.use(localsUserCheck);
 
 app.use('/', indexRouter);
