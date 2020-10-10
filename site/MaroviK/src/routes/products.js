@@ -19,7 +19,8 @@ const multerProduct = require('../middlewares/multerProduct');
 
 router.get('/add', sessionUserCheck, controller.view_product_add);
 router.get('/add/form', sessionUserCheck, controller.view_product_add);
-router.get('/detail/:id', controller.view_product_detail);
+//router.get('/detail/:id', controller.view_product_detail);
+router.get("/detail/:idproduct", controller.ver_producto_detalle);
 
 router.get('/show/:id', sessionUserCheck, controller.view_product_show);
 router.put('/edit/:id', multerProduct.any(), sessionUserCheck, controller.update_product);

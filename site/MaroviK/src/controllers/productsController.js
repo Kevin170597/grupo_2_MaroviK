@@ -103,6 +103,20 @@ module.exports = {
             producto: product[0]
         });
     },
+    ver_producto_detalle:(req, res) => {
+      let idproduct = req.params.idproduct;
+      
+      db.Products.findOne({where: {id: idproduct}})
+      .then(producto => {
+          res.render("productDetail", {
+              user: req.session.user,
+              producto: producto
+          })
+      })
+      .catch(error => {
+          console.log(error)
+      })
+    },
     view_product_add: (req, res) => {
 
         let categoria;
