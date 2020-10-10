@@ -21,7 +21,7 @@
 
                         
                             <% subcategory.forEach(subcategoria => { %>
-                            <li><a href=""><%= subcategoria.title %> </a></li>
+                            <li><a href="/products/categorias/<%= subcategoria.name_path%> "><%= subcategoria.title %> </a></li>
                             <% }) %>
                         
                     </ul>
