@@ -3,12 +3,37 @@ const categoriesDataBase = require("../data/databaseCategories");
 const fs = require('fs');
 const path = require('path');
 const db = require('../database/models');
+const Sequelize = require("sequelize");
+const Op = Sequelize.Op;
 
 module.exports = {
     view_products: (req,res) => {
         res.render('categoria', {
             user: req.session.user
         });
+    },
+    search: (req,res) => {
+        let search = req.query.search;
+        if(search == ""){
+            res.redirect("/")
+        }else{
+            db.Products.findAll({where:{name:{[Op.like]: ["%" + search + "%"]}}})
+            .then(productos => {
+                db.Subcategories.findAll({include: {association: "categories"}, where:{}})
+                .then(subcategorias => {
+                    res.render("subcategoria", {
+                        productos: productos,
+                        subcategorias:subcategorias
+                    })
+                })
+                .catch(errors => {
+                    console.log(errors)
+                })
+            })
+            .catch(errors => {
+                console.log(errors)
+            })
+        }
     },
     view_for_category: (req, res) => {
         let categoria = req.params.categoria
@@ -26,29 +51,6 @@ module.exports = {
         })
         .catch(errors => {
             console.log(errors)
-        })
-    },
-    ver_productos: (req, res) => {
-        let categoria = req.params.categoria;
-        let subcategoria = req.params.subcategoria;
-        
-        db.Categories.findOne({where: {namePath: categoria}})
-        .then(category => {
-            db.Subcategories.findOne({where:{name_path: subcategoria}})
-            .then(subcategory => {
-            db.Products.findAll({where: {id_subcategory: subcategory.id}})
-                .then(producto => {
-                    res.render("subcategoria", {
-                        user: req.session.user,
-                        producto: producto,
-                        subcategoria: subcategory,
-                        titulo: category.title
-                    })
-                })
-            })
-        })
-        .catch(errors => {
-           console.log(errors)
         })
     },
     view_for_subcategory: (req, res) => {
