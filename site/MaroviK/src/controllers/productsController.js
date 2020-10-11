@@ -192,30 +192,7 @@ module.exports = {
                     })
                 })
             })
-        })
-        
-        /*.then(product => {
-
-            db.Categories.findAll({
-                include:[{association:'subcategories'}]
-            })
-            .then(categorias => {
-                db.Products.findAll({
-                    include:[{association:'subcategory'},{association:'categories'}]
-                })
-                .then(productos => {
-                    res.send(productos)
-                    /*res.render('productShow', {
-                        title: "Ver/Editar Producto",
-                        producto: product,
-                        total:productos.length,
-                        categorias:categorias,
-                        user:req.session.user
-        
-                    })*/
-              /*  })
-            })*/
-            
+        })    
         /*let productResult = productsDataBase.filter(producto => {
             return (producto.id == idProduct);
         });
@@ -230,6 +207,7 @@ module.exports = {
     },
     update_product: (req, res) => {
 
+        //res.send(req.body)
         db.Products.update(
             {
                 name: req.body.name.trim(),
@@ -238,7 +216,7 @@ module.exports = {
                 discount: Number(req.body.discount),
                 description: req.body.description.trim(),
                 stock: Number(req.body.stock),
-                image: (req.files[0])?req.files[0].filename:producto.image
+                image: (req.files[0])?req.files[0].filename:req.body.image
             },
             {
                 where:{
@@ -276,6 +254,10 @@ module.exports = {
     },
     delete_product: (req, res) => {
 
+        //borrar el archivo de imagen de perfil
+        /*if(fs.existsSync('public/images/products/'+req.body.image)&&req.body.image != "default.png"){
+            fs.unlinkSync('public/images/product/'+req.body.image)
+        }*/
         db.Products.destroy({
             where:{
                 id:req.params.id
