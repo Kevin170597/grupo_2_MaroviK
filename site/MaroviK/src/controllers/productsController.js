@@ -114,35 +114,46 @@ module.exports = {
     },
     publicProduct: (req, res, next) => {
 
-        db.Subcategories.findOne({
-            where:{
-                name_path: req.body.subcategory
+        db.Users.findOne({
+
+            where: {
+                id:req.session.user.id
             }
         })
-        .then(subcategory => {
-            db.Products.create({
-                name: req.body.name.trim(),
-                mark: req.body.mark.trim(),
-                price: Number(req.body.price),
-                discount: Number(req.body.discount),
-                stock:Number(req.body.stock),
-                description: req.body.description.trim(),
-                image: (req.files[0])?req.files[0].filename:"default-image.png",
-                id_subcategory: subcategory.id
+        .then(user => {
+
+            db.Subcategories.findOne({
+                where:{
+                    name_path: req.body.subcategory
+                }
             })
-            .then(result => {
-                console.log(result);
-                res.redirect('/');
-                /*let ruta = "/products/" + req.body.category + "/" + req.body.subcategory;
-                res.redirect(ruta);*/
+            .then(subcategory => {
+                db.Products.create({
+                    name: req.body.name.trim(),
+                    mark: req.body.mark.trim(),
+                    price: Number(req.body.price),
+                    discount: Number(req.body.discount),
+                    stock:Number(req.body.stock),
+                    description: req.body.description.trim(),
+                    image: (req.files[0])?req.files[0].filename:"default-image.png",
+                    id_subcategory: subcategory.id,
+                    id_user: user.id
+                })
+                .then(result => {
+                    console.log(result);
+                    //res.redirect('/');
+                    let ruta = "/products/" + req.body.category + "/" + req.body.subcategory;
+                    res.redirect(ruta);
+                })
+                .catch(error => {
+                    res.send(error);
+                })
             })
             .catch(error => {
                 res.send(error);
-            })
+            }) 
         })
-        .catch(error => {
-            res.send(error);
-        })   
+          
     },
     view_product_show: (req, res) => {
 
