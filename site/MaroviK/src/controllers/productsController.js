@@ -143,8 +143,8 @@ module.exports = {
                 })
                 .then(result => {
                     console.log(result);
-                    //res.redirect('/');
-                    let ruta = "/products/" + req.body.category + "/" + req.body.subcategory;
+                    
+                    let ruta = "/products/categorias/" + req.body.subcategory
                     res.redirect(ruta);
                 })
                 .catch(error => {
