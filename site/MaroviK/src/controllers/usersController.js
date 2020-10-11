@@ -9,7 +9,7 @@ const fs = require("fs");
 const path = require("path");
 
 module.exports = {
-    view_user_profile: (req, res) => {
+    viewUserProfile: (req, res) => {
 
         db.Users.findOne({
             where: {

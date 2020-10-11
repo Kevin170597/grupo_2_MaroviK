@@ -63,12 +63,12 @@
                                             <div class="row">
                                                 <div class="col-12 col-lg-4">
                                                     <span><b>Categoría:</b> 
-                                                        <%= producto.category %>
+                                                        <%= producto.subcategory.category.namePath %>
                                                     </span>
                                                 </div>
                                                 <div class="col-12 col-lg-4">
                                                     <span><b>Subategoría:</b> 
-                                                        <%= producto.subcategory %>
+                                                        <%= producto.subcategory.name_path %>
                                                     </span>
                                                 </div>
                                                 <div class="col-12 col-lg-4">
@@ -84,6 +84,11 @@
                                                 <div class="col-12 col-md-6 col-lg-4">
                                                     <span><b>Descuento:</b> 
                                                     <%=producto.discount%>%
+                                                </span>
+                                                </div>
+                                                <div class="col-12 col-md-6 col-lg-4">
+                                                    <span><b>Stock:</b> 
+                                                    <%=producto.stock %>
                                                 </span>
                                                 </div>
 
@@ -112,10 +117,10 @@
                                                     <div class="form-group col-12 col-lg-4">
 
                                                         <select name="category" id="" class="form-control">
-                                                            <option value=" <%= producto.category %>" selected> <%= producto.category %></option>
+                                                            <option value=" <%= producto.subcategory.category.namePath %>" selected> <%= producto.subcategory.category.namePath %></option>
                                                             <% categorias.forEach(categoria => { %>
                                                                 
-                                                                    <option value=" <%= categoria.category %>"> <%= categoria.category %></option>
+                                                                    <option value=" <%= categoria.namePath %>"> <%= categoria.namePath %></option>
                                                                 
                                                             <% }) %>
                                                             
@@ -124,10 +129,10 @@
                                                     <div class="form-group col-12 col-lg-4">
 
                                                         <select name="subcategory" id="" class="form-control">
-                                                            <option value=" <%= producto.subcategory %>" selected> <%= producto.subcategory %></option>
+                                                            <option value=" <%= producto.subcategory.name_path %>" selected> <%= producto.subcategory.name_path %></option>
                                                             <% categorias.forEach(categoria => { %>
                                                                 <% categoria.subcategories.forEach(subcategoria => { %>
-                                                                    <option value=" <%= subcategoria.title %>"> <%= subcategoria.title %></option>
+                                                                    <option value=" <%= subcategoria.name_path %>"> <%= subcategoria.name_path %></option>
                                                                 <% }) %>
                                                                 <% }) %>
                                                             
@@ -161,6 +166,15 @@
                                                             </div>
                                                         </div>
                                                         </span>
+                                                    </div>
+                                                    <div class="form-group col-6 col-lg-4">
+
+                                                        <div class="input-group mb-2 mr-sm-2">
+                                                            <div class="input-group-prepend">
+                                                                <div class="input-group-text">$</div>
+                                                            </div>
+                                                            <input type="text" class="form-control" value="<%=producto.stock%>" name="stock">
+                                                        </div>
                                                     </div>
                                                     <div class="col-12 d-flex justify-content-end">
                                                         <button class="btn btn-danger mr-2" type="reset">Cancelar</button>

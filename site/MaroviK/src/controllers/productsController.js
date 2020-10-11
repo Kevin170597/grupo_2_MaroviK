@@ -157,8 +157,64 @@ module.exports = {
     },
     view_product_show: (req, res) => {
 
-        let idProduct = req.params.id;
-        let productResult = productsDataBase.filter(producto => {
+        //let idProduct = req.params.id;
+        db.Products.findOne({
+            where:{
+                id:req.params.id
+            },
+            include:[{
+                association:'subcategory',
+                include:[{
+                    association:'category'
+                }]
+            }]    
+        })
+        .then(product => {
+
+            db.Categories.findAll({
+                include:[{association:'subcategories'}]
+            })
+            .then(categorias => {
+                db.Products.findAll({
+                    include:[{association:'subcategory'}]
+                })
+                .then(productos => {
+                    //res.send(productos)
+                    res.render('productShow', {
+                        title: "Ver/Editar Producto",
+                        producto: product,
+                        total:productos.length,
+                        categorias:categorias,
+                        user:req.session.user
+        
+                    })
+                })
+            })
+        })
+        
+        /*.then(product => {
+
+            db.Categories.findAll({
+                include:[{association:'subcategories'}]
+            })
+            .then(categorias => {
+                db.Products.findAll({
+                    include:[{association:'subcategory'},{association:'categories'}]
+                })
+                .then(productos => {
+                    res.send(productos)
+                    /*res.render('productShow', {
+                        title: "Ver/Editar Producto",
+                        producto: product,
+                        total:productos.length,
+                        categorias:categorias,
+                        user:req.session.user
+        
+                    })*/
+              /*  })
+            })*/
+            
+        /*let productResult = productsDataBase.filter(producto => {
             return (producto.id == idProduct);
         });
 
@@ -168,13 +224,36 @@ module.exports = {
             total: productsDataBase.length,
             categorias: categoriesDataBase,
             user: req.session.user
-        })
+        })*/
     },
     update_product: (req, res) => {
 
-        let idProduct = req.params.id;
+        db.Products.update(
+            {
+                name: req.body.name.trim(),
+                mark: req.body.mark.trim(),
+                price: Number(req.body.price),
+                discount: Number(req.body.discount),
+                description: req.body.description.trim(),
+                stock: Number(req.body.stock),
+                image: (req.files[0])?req.files[0].filename:producto.image
+            },
+            {
+                where:{
+                    id:req.params.id
+                }
+            }
+        )
+        .then( result => {
+            console.log(result)
+            return res.redirect('/users/profile')
+        })
+        .catch( errors => {
+            console.log(errors)
+        })
+        //let idProduct = req.params.id;
 
-        productsDataBase.forEach(producto => {
+        /*productsDataBase.forEach(producto => {
 
             if(producto.id == idProduct){
                 producto.id = Number(req.body.id);
@@ -191,11 +270,17 @@ module.exports = {
 
         fs.writeFileSync(path.join(__dirname, '..', 'data', 'productsDataBase.json'), JSON.stringify(productsDataBase), 'utf-8');
 
-        res.redirect('/products/show/' + idProduct);
+        res.redirect('/products/show/' + idProduct);*/
     },
     delete_product: (req, res) => {
 
-        let idProduct = req.params.id;
+        db.Products.destroy({
+            where:{
+                id:req.params.id
+            }
+        })
+        return res.redirect('/users/profile')
+        /*let idProduct = req.params.id;
         let aEliminar;
 
         productsDataBase.filter(producto => {
@@ -208,6 +293,6 @@ module.exports = {
 
         fs.writeFileSync(path.join(__dirname, '..', 'data', 'productsDataBase.json'), JSON.stringify(productsDataBase), 'utf-8');
 
-        res.redirect('/users/profile');  
+        res.redirect('/users/profile');  */
     }
 }

@@ -56,7 +56,7 @@ module.exports = (sequelize, DataTypes) => {
     
     Product.associate = function(models){
         Product.belongsTo(models.Subcategories, {
-            as: 'subcategories_p',
+            as: 'subcategory',
             foreignKey: 'id_subcategory'
         }),
         Product.belongsToMany(models.Users, {
