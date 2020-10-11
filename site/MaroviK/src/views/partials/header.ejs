@@ -27,12 +27,7 @@
                     <% } else{ %>
                         <li>
                             <a href="/users/logout">Cerrar sesión <img width="20" src="https://img.icons8.com/fluent/48/000000/login-rounded-right.png"/></a>
-                        </li>
-                        <% if (locals.user.rol == "admin") { %>
-                            <li>
-                                <a href="/products/add">Publicar </a>
-                            </li>
-                        <% } %>   
+                        </li>  
                     <% } %>
                     <li>
                         <a href="./productCart.html">Carrito <img width="20" src="https://img.icons8.com/fluent/48/000000/shopping-cart-loaded.png"/></a>
@@ -43,38 +38,68 @@
         </div>
     
         <div class="row">
-        <div class="col-8 cont-burger dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="burger-menu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Categorias</button>
+            <div class="col-8 cont-burger dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="burger-menu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Categorias</button>
     
-            <div class="dropdown-menu cont-menu-categorias" aria-labelledby="burger-menu">
+                <div class="dropdown-menu cont-menu-categorias" aria-labelledby="burger-menu">
     
-                <a href="/products/tecnologia" class="dropdown-item"><i class="icon-tecnologia"></i>Tecnología</a>
-                <a href="/products/electrodomesticos" class="dropdown-item"><i class="icon-electrodomesticos"></i>Electrodomésticos</a>
-                <a href="/products/bebes-y-ninos" class="dropdown-item"><i class="icon-bebes"></i>Bebés y Niños</a>
-                <a href="/products/libreria" class="dropdown-item"><i class="icon-libreria"></i>Librería</a>
-                <a href="/products/almacen" class="dropdown-item"><i class="icon-almacen"></i>Almacén</a>
-                <a href="/products/bebidas" class="dropdown-item"><i class="icon-bebidas"></i>Bebidas</a>
-                <a href="/products/frutas-y-verduras" class="dropdown-item"><i class="icon-frutas"></i>Frutas y Verduras</a>
-                <a href="/products/carnes" class="dropdown-item"><i class="icon-carnes"></i>Carnes</a>
-                <a href="/products/pescados-y-mariscos" class="dropdown-item"><i class="icon-pescados"></i>Pescados y Mariscos</a>
-                <a href="/products/quesos-y-fiambres" class="dropdown-item"><i class="icon-queso"></i>Quesos y Fiambres</a>
-                <a href="/products/lacteos" class="dropdown-item"><i class="icon-lacteos"></i>Lácteos</a>
-                <a href="/products/congelados" class="dropdown-item"><i class="icon-congelados"></i>Congelados</a>
-                <a href="/products/perfumeria" class="dropdown-item"><i class="icon-perfumeria"></i>Perfumería</a>
-                <a href="/products/limpieza" class="dropdown-item"><i class="icon-limpieza"></i>Limpieza</a>
-                <a href="/products/mascotas" class="dropdown-item"><i class="icon-mascotas"></i>Mascotas</a>
+                    <a href="/products/tecnologia" class="dropdown-item"><i class="icon-tecnologia"></i>Tecnología</a>
+                    <a href="/products/electrodomesticos" class="dropdown-item"><i class="icon-electrodomesticos"></i>Electrodomésticos</a>
+                    <a href="/products/bebes-y-ninos" class="dropdown-item"><i class="icon-bebes"></i>Bebés y Niños</a>
+                    <a href="/products/libreria" class="dropdown-item"><i class="icon-libreria"></i>Librería</a>
+                    <a href="/products/almacen" class="dropdown-item"><i class="icon-almacen"></i>Almacén</a>
+                    <a href="/products/bebidas" class="dropdown-item"><i class="icon-bebidas"></i>Bebidas</a>
+                    <a href="/products/frutas-y-verduras" class="dropdown-item"><i class="icon-frutas"></i>Frutas y Verduras</a>
+                    <a href="/products/carnes" class="dropdown-item"><i class="icon-carnes"></i>Carnes</a>
+                    <a href="/products/pescados-y-mariscos" class="dropdown-item"><i class="icon-pescados"></i>Pescados y Mariscos</a>
+                    <a href="/products/quesos-y-fiambres" class="dropdown-item"><i class="icon-queso"></i>Quesos y Fiambres</a>
+                    <a href="/products/lacteos" class="dropdown-item"><i class="icon-lacteos"></i>Lácteos</a>
+                    <a href="/products/congelados" class="dropdown-item"><i class="icon-congelados"></i>Congelados</a>
+                    <a href="/products/perfumeria" class="dropdown-item"><i class="icon-perfumeria"></i>Perfumería</a>
+                    <a href="/products/limpieza" class="dropdown-item"><i class="icon-limpieza"></i>Limpieza</a>
+                    <a href="/products/mascotas" class="dropdown-item"><i class="icon-mascotas"></i>Mascotas</a>
+                </div>
+    
             </div>
-    
-        </div>
-        <div class="col-4 d-flex justify-content-end align-items-center cuotas">
-            <a href=""><h5 class="mr-2"><%= (locals.user)?locals.user.nick:"Invitado" %> </h5></a>
-            <% if (locals.user) { %>
-                <a href=""><img src="/images/users/<%= locals.user.avatar %> " alt="avatar" width="50px" height="50px" class="avatar"></a>
 
-            <% } else{%>
-            <a href=""><img src="/images/users/default.png" alt="" width="50px" height="50px" class="avatar"></a>
-            <% } %>
-        </div>
+            <div class="col-4 d-flex justify-content-end align-items-center cuotas">
+
+                <% if ((typeof locals.user != "undefined") && (locals.user.rol == "user")){ %>
+
+                    <div class="cont-burger dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="burger-menu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Mi cuenta</button>
+            
+                        <div class="dropdown-menu cont-menu-categorias" aria-labelledby="burger-menu">
+            
+                            <a href="/products/tecnologia" class="dropdown-item">Mi Perfil</a>
+                            <a href="/products/electrodomesticos" class="dropdown-item">Cambiar Contraseña</a>
+                            <a href="/products/almacen" class="dropdown-item">Cerrar Sesión</a>
+                        </div>
+                    </div>
+                <% } %>
+                <% if ((typeof locals.user != "undefined") && (locals.user.rol == "admin")){ %>
+                <div class="cont-burger dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="burger-menu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Mi cuenta</button>
+        
+                    <div class="dropdown-menu cont-menu-categorias" aria-labelledby="burger-menu">
+        
+                        <a href="/products/tecnologia" class="dropdown-item">Mi Perfil</a>
+                        <a href="/products/electrodomesticos" class="dropdown-item">Cambiar Contraseña</a>
+                        <a href="/products/add" class="dropdown-item">Publicar</a>
+                        <a href="/users/profile" class="dropdown-item">Perfil de Publicaciones</a>
+                        <a href="/products/almacen" class="dropdown-item">Editar</a>
+                        <a href="/products/almacen" class="dropdown-item">Cerrar Sesión</a>
+                    </div>
+                </div>
+                <% } %>
+                <% if (locals.user) { %>
+                <a href=""><h5 class="mr-2"><%= (locals.user)?locals.user.nick:"Invitado" %> </h5></a>
+                    <a href=""><img src="/images/users/<%= locals.user.avatar %> " alt="avatar" width="50px" height="50px" class="avatar"></a>
+                <% }else{ %>
+                    <a href=""><h5 class="mr-2">Invitado</h5></a>  
+                    <a href=""><img src="/images/users/default.png" alt="" width="50px" height="50px" class="avatar"></a>
+                <% } %>
+            </div>
         </div>
     </div>
         

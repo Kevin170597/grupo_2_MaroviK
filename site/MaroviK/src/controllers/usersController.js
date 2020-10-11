@@ -1,5 +1,5 @@
-//const dbUsers = require("../data/databaseUsers");
-//const productsDataBase = require('../data/database');
+const dbUsers = require("../data/databaseUsers");
+const productsDataBase = require('../data/database');
 
 const db = require("../database/models");
 
@@ -10,13 +10,26 @@ const path = require("path");
 
 module.exports = {
     view_user_profile: (req, res) => {
-        res.render('userProfile', {
-            title: "Perfil de Usuario",
-            user: req.session.user,
-            productos: productsDataBase.filter(producto => {
-                return (producto.id > 352 && producto.id <= 356)
-            })
-        });
+
+        db.Users.findOne({
+            where: {
+                id:req.session.user.id
+            },
+            include:[{association:'products_public'}]
+        
+        })
+        .then(user => {
+
+            res.render('userProfile', {
+                
+                title: "Perfil de Publicaciones",
+                user: req.session.user,
+                productos:user.products_public
+            })    
+        })
+        .catch(errores => {
+            console.log(errores);
+        })
     },
     register: function(req, res){
         res.render("register", {

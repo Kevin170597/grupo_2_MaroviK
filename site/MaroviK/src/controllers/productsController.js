@@ -1,5 +1,5 @@
-//const productsDataBase = require('../data/database');
-//const categoriesDataBase = require("../data/databaseCategories");
+const productsDataBase = require('../data/database');
+const categoriesDataBase = require("../data/databaseCategories");
 const fs = require('fs');
 const path = require('path');
 const db = require('../database/models');

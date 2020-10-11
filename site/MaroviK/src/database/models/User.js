@@ -80,7 +80,7 @@ module.exports = (sequelize, DataTypes) =>{
             timestamps: false
         })
         User.hasMany(models.Products, {
-            as: 'product_public',
+            as: 'products_public',
             foreignKey: 'id_user'
         })
     }
