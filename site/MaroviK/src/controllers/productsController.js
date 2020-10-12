@@ -17,7 +17,11 @@ module.exports = {
         if(search == ""){
             res.redirect("/")
         }else{
-            db.Products.findAll({where:{name:{[Op.like]: ["%" + search + "%"]}}})
+            db.Products.findAll({
+                where: {
+                    [Op.or]: [{name:{[Op.like]: ["%" + search + "%"]}}, {price:{[Op.like]: ["%" + search + "%"]}}, {mark:{[Op.like]: ["%" + search + "%"]}}]
+                }
+            })
             .then(productos => {
                 db.Subcategories.findAll({include: {association: "category"}, where:{}})
                 .then(subcategorias => {
