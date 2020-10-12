@@ -9,28 +9,6 @@ const fs = require("fs");
 const path = require("path");
 
 module.exports = {
-    viewUserProfile: (req, res) => {
-
-        db.Users.findOne({
-            where: {
-                id:req.session.user.id
-            },
-            include:[{association:'products_public'}]
-        
-        })
-        .then(user => {
-
-            res.render('userProfile', {
-                
-                title: "Perfil de Publicaciones",
-                user: req.session.user,
-                productos:user.products_public
-            })    
-        })
-        .catch(errores => {
-            console.log(errores);
-        })
-    },
     register: function(req, res){
         res.render("register", {
             user: req.session.user
@@ -138,5 +116,70 @@ module.exports = {
             res.cookie('userMarovik','',{maxAge:-1})
         }
         res.redirect('/');
+    },
+    viewUserProfile: (req, res) => {
+
+        db.Users.findOne({
+            where: {
+                id: req.session.user.id
+            },
+            include:[{association:'products_public'}]
+        
+        })
+        .then(user => {
+
+            res.render('userProfile', {
+                
+                title: "Perfil de Publicaciones",
+                user: req.session.user,
+                productos:user.products_public
+            })    
+        })
+        .catch(errores => {
+            console.log(errores);
+        })
+    },
+    updateProfile:function(req, res){
+        res.send()
+        db.Users.update(
+            {
+                avatar:(req.files[0])?req.files[0].filename:req.session.user.avatar,
+                address: (req.body.address != ' ')?req.body.address.trim():null,
+                city: (req.body.city != ' ')?req.body.city.trim():null,
+                province: (req.body.province != ' ')?req.body.province.trim():null,
+                cp: Number(req.body.cp)
+            },
+            {
+                where:{
+                    id: req.params.id
+                }
+            }
+        )
+    
+     .then( result =>{
+        console.log(result)
+        return res.redirect('/users/profile')
+     })
+     .catch(errors =>{
+        console.log(errors)
+     })
+    },
+    delete: function(req, res){
+           //borrar el archivo de imagen de perfil
+           if(fs.existsSync('public/images/users/'+req.session.user.avatar)&&req.session.user.avatar != "default.png"){
+            fs.unlinkSync('public/images/users/'+req.session.user.avatar)
+        }
+        //cerrar la session y borrar cookie
+        req.session.destroy();
+        if(req.cookies.userMarovik){
+            res.cookie('userMarovik','',{maxAge:-1});
+        }
+        //borrar el registro de la base de datos
+        db.Users.destroy({
+            where:{
+                id:req.params.id
+            }
+        })
+        return res.redirect('/')
     }
 }
