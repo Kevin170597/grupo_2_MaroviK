@@ -29,7 +29,7 @@ module.exports = (sequelize, DataTypes) => {
             allowNull: false
         },
         description:{
-            type:DataTypes.STRING(500),
+            type:DataTypes.STRING(2500),
             allowNull: false
         },
         image:{
