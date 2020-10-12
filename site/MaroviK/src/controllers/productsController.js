@@ -19,7 +19,7 @@ module.exports = {
         }else{
             db.Products.findAll({where:{name:{[Op.like]: ["%" + search + "%"]}}})
             .then(productos => {
-                db.Subcategories.findAll({include: {association: "categories"}, where:{}})
+                db.Subcategories.findAll({include: {association: "category"}, where:{}})
                 .then(subcategorias => {
                     res.render("subcategoria", {
                         productos: productos,
