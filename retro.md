@@ -51,7 +51,7 @@ Continuar con las reuniones frecuentes y adaptarnos al horario de los integrante
 ------------------------------------------------------------------------
 
 
-# Retrospectiva Sprint 2:
+# Retrospectiva Sprint 3:
 Estamos muy contentos y conformes con los avances que tuvimos hasta hoy, nos sentimos mas seguro en cada cosa que hacemos, mantenemos la comunicación todo el tiempo y seguimos siempre apoyandonos entre todos. (El comapañerismo es lo que mas resalta) :)
 
 # HACER MAS:
@@ -75,4 +75,31 @@ Pushear en la ubicacion correcta al actualizar repositorio local.
 Adaptarnos al horario de todos los integrantes.
 Realizar retrospectiva al finalizar cada sprint.
 
+------------------------------------------------------------------------
+
+
+# Retrospectiva Sprint 4:
+
+Estamos muy contentos y conformes con los avances que tuvimos hasta hoy, nos sentimos mas seguro en cada cosa que hacemos, mantenemos la comunicación todo el tiempo y seguimos siempre apoyandonos entre todos. (El comapañerismo es lo que mas resalta) :)
+
+# HACER MAS:
+Organizar el tablero de trello.
+Reunirnos el mismo dia que no entregan el sprint para analizar y repartir las tareas.
+
+# EMPEZAR A HACER:
+Implementar daily/weekly standups.
+Actualizar el tablero de Trello individualmente en tiemporeal.
+Ultimo chequeo antes de entregar el trabajo.
+
+# DEJAR DE HACER:
+
+
+# HACER MENOS:
+Comunicar todos los avances individuales por whatsapp.
+
+# SEGUIR HACIENDO:
+Continuar con las reuniones frecuentes y adaptarnos al horario de los integrantes.
+Adaptarnos al horario de todos los integrantes.
+Realizar retrospectiva al finalizar cada sprint.
+Organizar el tablero de trello.
 
