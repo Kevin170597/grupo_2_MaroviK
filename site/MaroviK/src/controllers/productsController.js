@@ -235,26 +235,6 @@ module.exports = {
         .catch( errors => {
             console.log(errors)
         })
-        //let idProduct = req.params.id;
-
-        /*productsDataBase.forEach(producto => {
-
-            if(producto.id == idProduct){
-                producto.id = Number(req.body.id);
-                producto.category = req.body.category.trim();
-                producto.subcategory = req.body.subcategory.trim();
-                producto.name = req.body.name.trim();
-                producto.mark = req.body.mark.trim();
-                producto.price = Number(req.body.price);
-                producto.discount = Number(req.body.discount);
-                producto.description = req.body.description.trim();
-                producto.image = (req.files[0])?req.files[0].filename:producto.image;
-            }
-        });
-
-        fs.writeFileSync(path.join(__dirname, '..', 'data', 'productsDataBase.json'), JSON.stringify(productsDataBase), 'utf-8');
-
-        res.redirect('/products/show/' + idProduct);*/
     },
     delete_product: (req, res) => {
 
