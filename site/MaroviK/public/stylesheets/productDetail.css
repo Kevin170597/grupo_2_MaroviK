@@ -46,115 +46,7 @@ body {
 }
 
 
-header {
-    background-color: white;
-    padding: 20px;
-    
-    
-}
 
-
-
-header .logo img{
-    width: 100px;
-    
-}
-
-header form {
-    position: relative;
-    display: flex;
-    align-items: center;
-    font-size: 0.8rem;
-   
-}
-
-header form input {
-    border: solid 1px var(--color-grisClaro);
-    display: block;
-    width: 100%;
-    padding: 7px 35px 7px 7px;
-    border-radius: 5px;
-    height: 40px;
-    font-size: 1.5em;
-    font-family: inherit;
-    
-}
-
-header form input:focus,
-form button:focus {
-    outline: none;
-}
-
-header form button {
-    position: absolute;
-    right: 2px;
-    height: 60%;
-    background-color: white;
-    border: none;
-    border-left: solid 1px var(--color-grisClaro);
-    color: var(--color-grisOscuro);
-    cursor: pointer;
-    
-}
-
-header .cuotas {
-    margin: 20px 0;
-    align-self: center;
-    
-}
-
-.dropdown button{
-    width: 150px;
-    background-color: rgb(99, 196, 241);
-    border: solid 1px rgb(99, 196, 241);
-    margin-top: 20px;
-    
-}
-
-
-
-header .usuario li{
-    display: inline;
-    
-    padding: 0px;
-}
-
-
-
-header nav {
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    margin-top: 20px;
-    
-}
-
-header nav button.burger {
-    background-color: rgb(99, 196, 241);
-    border: none;
-    border-radius: 4px;
-    padding: 3px 15px;
-    margin-right: 10px;
-    
-}
-
-
-
-header nav button.burger:focus {
-    outline: 1px solid white;
-}
-
-header nav button.burger i {
-    color: white;
-}
-
-header nav ul {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    margin-top: 30px;
-    
-}
 
 section .titulo h2 {
     text-align: center;
@@ -303,20 +195,7 @@ section .titulo h2 {
 /* --- VERSION PARA TABLET --- */
 
 @media(min-width:768px) {
-    /*header form input {
-        width: 92%;
-    }*/
-    header .cuotas {
-        margin: 0;
-        text-align: right;
-    }
-    header ul li {
-        justify-content: space-between;
-        padding-right: 12px;
-    }
-    header ul.usuario li:last-child {
-        padding-right: 0;
-    }
+    
     .banner img {
         display: block;
     }

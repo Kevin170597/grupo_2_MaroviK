@@ -24,7 +24,8 @@
 
 * {
     box-sizing: border-box;
-    margin: 0;
+    margin: 0px;
+    padding: 0px;
 }
 
 a {
@@ -57,131 +58,182 @@ body {
 - CABECERA
 */
 
-header {
-    background-color: white;
-    padding: 20px;
-    
-    
-}
-
-
-
-header .logo img{
-    width: 100px;
-    
-}
-
-header form {
-    position: relative;
-    display: flex;
-    align-items: center;
-    font-size: 0.8rem;
-    
-    /*background-color: white;
-    border: 1px solid var(--color-grisClaro);
-    border-radius: 5px;
-    padding: 0px 8px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;*/
-}
-
-header form input {
-    border: solid 1px var(--color-grisClaro);
-    display: block;
+#barrasuperior{
+    background-color: rgb(255, 255, 255);
     width: 100%;
-    padding: 7px 35px 7px 7px;
-    border-radius: 5px;
-    height: 40px;
-    font-size: 1.5em;
-    font-family: inherit;
-    
-    /*background: none;
-    border: 0;
-    width: 85%;
-    margin: 5px 0px;
-    padding-right: 5px;
-    border-right: 2px solid var(--color-grisClaro);*/
+    border-bottom: solid 1px rgb(221, 221, 221);
 }
-
-header form input:focus,
-form button:focus {
+.superior{
+    width: 100%;
+    height: 27px;
+    display: flex;
+    background-color: rgb(65, 60, 60);
+}
+.superior p{
+    color: white;
+    padding-top: 2px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 15px;
+}
+.superior p a{
+    color: rgb(95, 184, 240);
+}
+.superior .botonesSuperiores{
+    width: 25%;
+}
+#barraprincipal{
+    background-color: white;
+    width: 100%;
+}
+.barprincipal{
+    width: 85%;
+    display: flex;
+    margin-left: 7%;
+    margin-right: 7%;
+    background-color: white;
+    border-bottom: solid 1px rgb(221, 221, 221);
+    text-align: center;
+}
+.logo{
+    width: 10%;
+}
+.logo img{
+    width: 90%;
+    margin-top: 7px;
+    margin-left: 0px;
+    margin-bottom: 7px;
+}
+.botoncategorias{
+    width: 10%;
+}
+.botoncategorias button{
+    border: none;
+    margin-top: 23px;
+    background-color: white;
+}
+.botoncategorias .dropdown button:hover{
+    color: rgb(95, 184, 240);
+    transition: 1s  ;
+}
+.botoncategorias .dropdown button:focus{
     outline: none;
 }
-
-header form button {
-    position: absolute;
-    right: 2px;
-    height: 60%;
+.botoncategorias .dropdown .dropdown-menu a:hover{
+    color: rgb(95, 184, 240);
+    transition: 1s ;
     background-color: white;
-    border: none;
-    border-left: solid 1px var(--color-grisClaro);
-    color: var(--color-grisOscuro);
-    cursor: pointer;
-    /*background: none;
-    border: 0;
-    border: var(--color-grisOscuro);
-    color: var(--color-grisOscuro);
-    padding: 0;
-    padding-left: 5px;*/
 }
-
-header .cuotas {
-    margin: 20px 0;
-    align-self: center;
-    
+.botoncategorias .dropdown .dropdown-menu{
+    -webkit-box-shadow: 5px 12px 16px -2px rgba(0,0,0,0.23);
+    -moz-box-shadow: 5px 12px 16px -2px rgba(0,0,0,0.23);
+    box-shadow: 5px 12px 16px -2px rgba(0,0,0,0.23);
+    animation: starting 0.8s;
 }
-
-.dropdown button{
-    width: 150px;
-    background-color: rgb(99, 196, 241);
-    border: solid 1px rgb(99, 196, 241);
-    margin-top: 20px;
-    
+.buscador{
+    width: 70%;
+    margin-top: 18px;
 }
-
-
-
-header .usuario li{
-    display: inline;
-    
-    padding: 0px;
-}
-
-
-
-header nav {
+.buscador input{
+    padding-left: 10px;
+    border-radius: 0px;
     width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    margin-top: 20px;
-    
+    height: 45px;
 }
-
-header nav button.burger {
-    background-color: rgb(99, 196, 241);
+.buscador  ::placeholder{
+    font-size: 15px;
+}
+.buscador input:hover{
+    border: solid 1px rgb(95, 184, 240);
+    transition: 0.5s;
+    animation: color 3s infinite;
+}
+@keyframes color{
+    0% {border: solid 1px rgb(95, 184, 240);}
+    50% {border: solid 1px rgb(232, 239, 241);;}
+    100% {border: solid 1px rgb(95, 184, 240);}
+}
+.buscador input:focus{
+    background-color: rgb(248, 248, 248);
+    transition: 1s;
+    outline: none;
+    animation: color 3s infinite;
+    -webkit-box-shadow: inset -3px 10px 23px -2px rgba(0,0,0,0.15);
+    -moz-box-shadow: inset -3px 10px 23px -2px rgba(0,0,0,0.15);
+    box-shadow: inset -3px 10px 23px -2px rgba(0,0,0,0.15);
+}
+.buscador button{
     border: none;
-    border-radius: 4px;
-    padding: 3px 15px;
-    margin-right: 10px;
-    
+    background-color: rgb(92, 198, 243);
+    width: 20%;
+    margin-left: 4px;
 }
-
-
-header nav button.burger:focus {
-    outline: 1px solid white;
-}
-
-header nav button.burger i {
+.buscador button p{
+    position: relative;
+    top: 8px;
     color: white;
+    font-size: 15px;
+}
+.buscador button:focus{
+    outline: none;
+    background-color: rgb(92, 198, 243);
+    animation: movimiento 0.2s;
+}
+@keyframes movimiento{
+    from{position: relative;top: 0px;}
+    to{position: relative;top: 20px;}
+}
+.user{
+    width: 8%;
+}
+.user .dropdown button{
+    background-color: rgba(255, 255, 255, 0);
+    border: none;;
+}
+.user .dropdown button:focus{
+    outline: none;
+}
+.user .dropdown button span{
+    color: black;
+    font-size: 32px;
+    margin-top: 22px;
+}
+.user .dropdown button img{
+    margin-top: 17px;
+    width: 45%;
+}
+.user .dropdown span:hover{
+    color: rgb(88, 186, 228);
+    transition: 0.5s;
+    font-size: 38px;
+}
+.user .dropdown .dropdown-menu{
+    -webkit-box-shadow: 5px 12px 16px -2px rgba(0,0,0,0.23);
+    -moz-box-shadow: 5px 12px 16px -2px rgba(0,0,0,0.23);
+    box-shadow: 5px 12px 16px -2px rgba(0,0,0,0.23);
+    animation: starting 0.8s;
+}
+@keyframes starting{
+    from{opacity: 0;top: 20px;}
+    to{opacity: 1;top: 0px;}
+}
+.user .dropdown .dropdown-menu a:hover{
+   background-color: white;
+   color: rgb(92, 198, 243);
+   transition: 1s;
 }
 
-header nav ul {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    margin-top: 30px;
-    
+.cart{
+    width: 8%;
+}
+.cart span{
+    font-size: 32px;
+    margin-top: 22px;
+    color: black;
+}
+.cart span:hover{
+    color: rgb(88, 186, 228);
+    transition: 0.5s;
+    font-size: 38px;
 }
 
 /***************************   ESTILOS FORMULARIO   ***************************/
@@ -271,22 +323,64 @@ header nav ul {
 }
 
 
+@media(max-width:480px){
+    #barrasuperior .superior .botonesSuperiores p{
+        display: none;
+    }
+    #barraprincipal{
+        width: 100%;
+        display: flex;
+    }
+    #barraprincipal .barprincipal{
+        width: 100%;
+        display: block;
+    }
+    #barraprincipal .logo{
+        float: left;
+        width: 35%;
+    }
+    #barraprincipal .logo img{
+        width: 100%;
+        margin-top: 10px;
+    }
+    #barraprincipal .botoncategorias{
+        float: left;
+        width: 65%;
+    }
+    #barraprincipal .botoncategorias .dropdown button p{
+        color: rgb(87, 87, 87);
+        margin-top: 15px;
+    }
+    #barraprincipal .buscador{
+        float: left;
+        width: 100%;
+        margin-top: 0px;
+    }
+    #barraprincipal .user{
+        float: left;
+        width: 50%;
+    }
+    #barraprincipal .user .dropdown button img{
+        width: 25%;
+        margin-bottom: 10px;
+    }
+    #barraprincipal .user span{
+        font-size: 45px;
+    }
+    #barraprincipal .cart{
+        float: left;
+        width: 50%;
+    }
+    #barraprincipal .cart span{
+        font-size: 45px;
+    }
+}
+
 /* --- VERSION PARA TABLET --- */
 
 @media(min-width:768px) {
-    /*header form input {
-        width: 92%;
-    }*/
-    header .cuotas {
-        margin: 0;
-        text-align: right;
-    }
-    header ul li {
-        justify-content: space-between;
-        padding-right: 12px;
-    }
-    header ul.usuario li:last-child {
-        padding-right: 0;
+    .buscador button span{
+        color: white;
     }
     .banner img {
         display: block;
@@ -301,6 +395,9 @@ header nav ul {
 /* --- VERSION PARA ESCRITORIO --- */
 
 @media(min-width:1024px) {
+    .buscador button span{
+        display: none;
+    }
     section article h2 {
         font-size: 1.9rem;
     }
