@@ -42,6 +42,11 @@ body {
     background-color: var(--color-grisClaro);
 }
 
+#ofertas h1:hover{
+    color: rgb(52, 183, 235);
+    transition: 1s;
+}
+
 .productosOfertas{
     width: 100%;
     text-align: center;
@@ -60,10 +65,20 @@ body {
     background-color: white;
     border-bottom: solid 1px rgb(197, 197, 197);
     margin: 0px;
-    padding: 20px;
+    padding: 15px;
     border-radius: 10px 10px 0px 0px;
     -moz-border-radius: 10px 10px 0px 0px;
     -webkit-border-radius: 10px 10px 0px 0px;
+}
+.productosOfertas .ofertas .cajaproducto figure:hover{
+    -webkit-box-shadow: 1px 1px 36px 2px rgba(146,210,235,1);
+    -moz-box-shadow: 1px 1px 36px 2px rgba(146,210,235,1);
+    box-shadow: 1px 1px 36px 2px rgba(146,210,235,1);
+}
+.productosOfertas .ofertas .cajaproducto article:hover{
+    -webkit-box-shadow: 1px 1px 36px 2px rgba(148,235,206,1);
+    -moz-box-shadow: 1px 1px 36px 2px rgba(148,235,206,1);
+    box-shadow: 1px 1px 36px 2px rgba(148,235,206,1);
 }
 .productosOfertas .ofertas .cajaproducto article{
     width: 100%;

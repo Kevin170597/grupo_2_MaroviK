@@ -17,12 +17,12 @@
     
       <div class="ofertas row col-12">
         <% productos.forEach(producto=>{ %> 
-          <div class="cajaproducto col-2">
+          <div class="cajaproducto col-12 col-md-12 col-lg-2">
               <figure>
-                  <a href=""><img src="/images/products/<%= producto.image%>" alt=" "></a>
+                  <a href="/products/detail/<%= producto.id%>"><img src="/images/products/<%= producto.image%>" alt=" "></a>
               </figure>
               <article>
-                  <p><a href=""><%= producto.name%></a> </p>
+                  <p><a href="/products/detail/<%= producto.id%>"><%= producto.name%></a> </p>
                   <h2><%= (producto.price -producto.price * producto.discount /100).toFixed(0).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".") %></h2>
                       
                   <% if (producto.discount!=0) { %>
