@@ -49,7 +49,9 @@ body {
     
 }
 
+
 .filtro{
+    background-image: url("/images/fondocart1.png");
     padding-left: 30px;
     margin-top: 10px;
     border-right: solid 1px rgb(179, 178, 178);
@@ -59,6 +61,11 @@ body {
     background-color: rgb(99, 196, 241);
     margin-left: 20px;
     padding: 3px 15px;
+}
+
+.filtro ul {
+    margin-top: 20px;
+    margin-left: 50px;
 }
 
 .filtro .burger i{
@@ -107,6 +114,13 @@ section .contenidos {
     padding: 5px;
     text-align: center;
     width: 100%;
+}
+
+section .contenidos:hover{
+    -webkit-box-shadow: -1px -1px 59px -14px rgba(69,230,222,1);
+    -moz-box-shadow: -1px -1px 59px -14px rgba(69,230,222,1);
+    box-shadow: -1px -1px 59px -14px rgba(69,230,222,1);
+    transition: 0.5s;
 }
 
 section .contenidos ul{
