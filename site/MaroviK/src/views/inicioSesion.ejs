@@ -7,33 +7,68 @@
 
    
   <%- include("partials/header") %>
-
+  
     <h1>Iniciar Sesión</h1>
-    <div class="formulario">
-        <form action="" method="POST">
-            
-            <label for="email">Email: </label>
-            <input type="email" id="email" name="email" value="<%= (typeof old != 'undefined' && old.email)?old.email:'' %>"> <br>
-            <small class="text-danger"><%= (typeof errors != 'undefined' && errors.email)?errors.email.msg: "" %> </small>
-      
-            
-            <label for="password">Contraseña: </label>
-            <input type="password" id="password" name="password" value="<%= (typeof old != 'undefined' && old.password)?old.password:'' %>"> <br>
-            <small class="text-danger"><%= (typeof errors != 'undefined' && errors.password)?errors.password.msg: "" %> </small>
-            
-            
-          <div class="recordar">
-            <label><input type="checkbox" name="recordar">Recordar contraseña  </label>
-          </div>
 
-          <div class="boton container">
-            <button type="submit">Ingresar</button><br>
-          </div>
-      
-            <a href="/users/register">¿TodavÍa no tenes una cuenta? Registrate ahora</a>
-   
-        </form>
- </div>
+
+    <div class="container contenedor-login">
+      <div class="row justify-content-center">
+        <div class="card mb-3">
+          <!--Inicio contenedor card-horizontal -->
+          <div class="row no-gutters">
+            <!--Inicio contenedor imagen -->
+            <div class="col-sm-12 col-md-6">
+
+              <figure class="row w-100 h-100 align-items-center justify-content-center">
+              <img src="/images/logomarovik2.svg" class="card-img img-fluid" alt="logo marovik">
+              </figure>
+            </div>
+
+            <!--Inicio contenedor formulario -->
+            <div class="col-sm-12 col-md-6">
+              <div class="card-body">
+                
+                  <form class="w-100" action="" method="POST">
+            
+                    <div class="form-row">
+                      <div class="form-group col-12">
+                       <label for="email"></label>
+                        <input class="w-100 p-2 m-2" type="email" id="email" name="email" placeholder="Email" value="<%= (typeof old != 'undefined' && old.email)?old.email:'' %>"> <br>
+                        <small class="text-danger"><%= (typeof errors != 'undefined' && errors.email)?errors.email.msg: "" %> </small>
+                      </div>
+                    </div>
+
+                    <div class="form-row">
+                      <div class="form-group col-12">
+                        <label for="password"></label>
+                        <input class="w-100 p-2 m-2" type="password" id="password" name="password" placeholder="Contraseña" value="<%= (typeof old != 'undefined' && old.password)?old.password:'' %>">
+                        <small class="text-danger"><%= (typeof errors != 'undefined' && errors.password)?errors.password.msg: "" %> </small>
+                      </div>
+                    </div>
+
+                    <div class="form row">
+                      <div class="recordar">
+                        <label><input class="ml-4" type="checkbox" name="recordar">Recordar contraseña  </label>
+                       </div>
+                    </div>
+
+                    <div class="form-row boton container justify-content-center">
+                      <button type="submit">Ingresar</button><br>
+                     </div>
+
+                    <p class="text-center">¿TodavÍa no tenes una cuenta?</p>
+                    <div class="form-row justify-content-center">
+                      <a href="/users/register">Registrate ahora</a>
+                    </div>
+       
+                  </form>
+               
+              </div>
+            </div><!--Fin contenedor formulario -->
+          </div> <!-- Fin contenedor card-horizontal -->
+        </div>
+      </div>
+    </div>
 
     <%- include("partials/footer") %> 
 </body>

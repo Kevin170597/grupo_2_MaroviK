@@ -181,3 +181,23 @@ text-align: center;
         padding-left: 0px;
     }
 }
+
+/****** ESTILOS ÚLTIMA VERSION LOGIN ********/
+.contenedor-login{
+    width: 80%;
+    margin: 50px 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.contenedor-login img{
+    width: 80%;
+    height: auto;
+}
+/*******+ Estilos USER PROFILE   *********/
+.contenedor_form_userProfile{
+    background-color: white;
+    width: 80%;
+    margin-bottom: 30px;
+}

@@ -162,8 +162,7 @@ module.exports = {
           
     },
     view_product_show: (req, res) => {
-
-        //let idProduct = req.params.id;
+        
         db.Products.findOne({
             where:{
                 id:req.params.id
@@ -197,17 +196,6 @@ module.exports = {
                 })
             })
         })    
-        /*let productResult = productsDataBase.filter(producto => {
-            return (producto.id == idProduct);
-        });
-
-        res.render('productShow', {
-            title: "Ver/Editar Producto",
-            producto: productResult[0],
-            total: productsDataBase.length,
-            categorias: categoriesDataBase,
-            user: req.session.user
-        })*/
     },
     update_product: (req, res) => {
 
@@ -248,19 +236,5 @@ module.exports = {
             }
         })
         return res.redirect('/users/profile')
-        /*let idProduct = req.params.id;
-        let aEliminar;
-
-        productsDataBase.filter(producto => {
-            if(producto.id == idProduct){
-                aEliminar = productsDataBase.indexOf(producto);
-            }
-        })
-
-        productsDataBase.splice(aEliminar, 1);
-
-        fs.writeFileSync(path.join(__dirname, '..', 'data', 'productsDataBase.json'), JSON.stringify(productsDataBase), 'utf-8');
-
-        res.redirect('/users/profile');  */
     }
 }

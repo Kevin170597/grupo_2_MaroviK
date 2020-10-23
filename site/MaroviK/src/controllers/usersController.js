@@ -43,29 +43,7 @@ module.exports = {
                 old: req.body, //-- Maneja la persistencia de datos --
                 user: req.session.user
             });   
-        }
-            /*let nuevoUsuario = {
-                id: lastID + 1,
-                name: req.body.name,
-                lastName: req.body.lastName,
-                email: req.body.email,
-                password: bcrypt.hashSync(req.body.password,10), //-- Encripta la contraseña --
-                avatar:(req.files[0])?req.files[0].filename:"default.png",
-                rol:"user"
-            }
-
-            dbUsers.push(nuevoUsuario);
-
-            fs.writeFileSync(path.join(__dirname, "..", "data", "users.json"),JSON.stringify(dbUsers), "utf-8");
-
-            //res.send(dbUsers);
-            res.redirect("/users/login");
-        }else{
-            res.render("register",{
-                errors: errors.mapped(), //-- Renderiza y muestra en la vista todos los errores --
-                old: req.body //-- Maneja la persistencia de datos --
-            });
-        }*/
+        }    
     },
     login: function(req, res){
         res.render("inicioSesion", {
@@ -117,7 +95,7 @@ module.exports = {
         }
         res.redirect('/');
     },
-    viewUserProfile: (req, res) => {
+    viewAdminProfile: (req, res) => {
 
         db.Users.findOne({
             where: {
@@ -139,15 +117,29 @@ module.exports = {
             console.log(errores);
         })
     },
+    viewProfile:(req,res) => {
+        if(req.session.user){
+
+            db.Users.findByPk(req.session.user.id)
+            .then(user => {
+
+                res.render('perfilUsuario', {
+                    user:user
+                })
+            })
+        }else{
+            return (res.redirect('/'));
+        }
+    },
     updateProfile:function(req, res){
-        res.send()
+
         db.Users.update(
             {
                 avatar:(req.files[0])?req.files[0].filename:req.session.user.avatar,
                 address: (req.body.address != ' ')?req.body.address.trim():null,
                 city: (req.body.city != ' ')?req.body.city.trim():null,
                 province: (req.body.province != ' ')?req.body.province.trim():null,
-                cp: Number(req.body.cp)
+                cp: (req.body.cp)?(Number(req.body.cp)):null
             },
             {
                 where:{
@@ -155,20 +147,21 @@ module.exports = {
                 }
             }
         )
-    
-     .then( result =>{
-        console.log(result)
-        return res.redirect('/users/profile')
-     })
-     .catch(errors =>{
-        console.log(errors)
-     })
+        .then( result =>{
+            console.log(result)
+            return res.redirect('/users/profile')
+        })
+        .catch(errors =>{
+            console.log(errors)
+        })
     },
     delete: function(req, res){
-           //borrar el archivo de imagen de perfil
-           if(fs.existsSync('public/images/users/'+req.session.user.avatar)&&req.session.user.avatar != "default.png"){
+
+        //borrar el archivo de imagen de perfil
+        if(fs.existsSync('public/images/users/'+req.session.user.avatar)&&req.session.user.avatar != "default.png"){
             fs.unlinkSync('public/images/users/'+req.session.user.avatar)
         }
+
         //cerrar la session y borrar cookie
         req.session.destroy();
         if(req.cookies.userMarovik){
@@ -180,6 +173,7 @@ module.exports = {
                 id:req.params.id
             }
         })
-        return res.redirect('/')
+        return res.redirect('/');
     }
+    
 }
