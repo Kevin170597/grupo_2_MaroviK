@@ -5,6 +5,7 @@ const path = require('path');
 const db = require('../database/models');
 const Sequelize = require("sequelize");
 const Op = Sequelize.Op;
+const {validationResult, body} = require("express-validator");
 
 module.exports = {
     view_products: (req,res) => {
@@ -119,47 +120,77 @@ module.exports = {
         })
     },
     publicProduct: (req, res, next) => {
+        let errors = validationResult(req);
+        
+        if(errors.isEmpty()){
+            db.Users.findOne({
 
-        db.Users.findOne({
-
-            where: {
-                id:req.session.user.id
-            }
-        })
-        .then(user => {
-
-            db.Subcategories.findOne({
-                where:{
-                    name_path: req.body.subcategory
+                where: {
+                    id:req.session.user.id
                 }
             })
-            .then(subcategory => {
-                db.Products.create({
-                    name: req.body.name.trim(),
-                    mark: req.body.mark.trim(),
-                    price: Number(req.body.price),
-                    discount: Number(req.body.discount),
-                    stock:Number(req.body.stock),
-                    description: req.body.description.trim(),
-                    image: (req.files[0])?req.files[0].filename:"default-image.png",
-                    id_subcategory: subcategory.id,
-                    id_user: user.id
+            .then(user => {
+    
+                db.Subcategories.findOne({
+                    where:{
+                        name_path: req.body.subcategory
+                    }
                 })
-                .then(result => {
-                    console.log(result);
-                    
-                    let ruta = "/products/categorias/" + req.body.subcategory
-                    res.redirect(ruta);
+                .then(subcategory => {
+                    db.Products.create({
+                        name: req.body.name.trim(),
+                        mark: req.body.mark.trim(),
+                        price: Number(req.body.price),
+                        discount: Number(req.body.discount),
+                        stock:Number(req.body.stock),
+                        description: req.body.description.trim(),
+                        image: (req.files[0])?req.files[0].filename:"default-image.png",
+                        id_subcategory: subcategory.id,
+                        id_user: user.id
+                    })
+                    .then(result => {
+                        console.log(result);
+                        
+                        let ruta = "/products/categorias/" + req.body.subcategory
+                        res.redirect(ruta);
+                    })
+                    .catch(error => {
+                        res.send(error);
+                    })
                 })
                 .catch(error => {
                     res.send(error);
-                })
+                }) 
             })
-            .catch(error => {
-                res.send(error);
-            }) 
+        }else {
+        let categoria;
+        let subcategoria;
+
+        if(req.query.categoria){
+            categoria = req.query.categoria;
+            subcategoria = req.query.subcategoria;
+        }
+
+        db.Categories.findAll({
+            include:[{association:'subcategories'}]
         })
-          
+        .then(categorias => {
+
+            res.render('productAdd', {
+
+                title: "Agregar Producto",
+                categoria:categoria,
+                subcategoria:subcategoria,
+                categorias: categorias,
+                user: req.session.user,
+                errors: errors.mapped(),
+                old: req.body
+            })
+        })
+        .catch(errores => {
+            res.send(errores)
+        })
+        }
     },
     view_product_show: (req, res) => {
         
@@ -198,31 +229,70 @@ module.exports = {
         })    
     },
     update_product: (req, res) => {
-
-        //res.send(req.body)
-        db.Products.update(
-            {
-                name: req.body.name.trim(),
-                mark: req.body.mark.trim(),
-                price: Number(req.body.price),
-                discount: Number(req.body.discount),
-                description: req.body.description.trim(),
-                stock: Number(req.body.stock),
-                image: (req.files[0])?req.files[0].filename:req.body.image
-            },
-            {
+        let errors = validationResult(req);
+        
+        if(errors.isEmpty()){
+            db.Products.update(
+                {
+                    name: req.body.name.trim(),
+                    mark: req.body.mark.trim(),
+                    price: Number(req.body.price),
+                    discount: Number(req.body.discount),
+                    description: req.body.description.trim(),
+                    stock: Number(req.body.stock),
+                    image: (req.files[0])?req.files[0].filename:req.body.image
+                },
+                {
+                    where:{
+                        id:req.params.id
+                    }
+                }
+            )
+            .then( result => {
+                console.log(result)
+                return res.redirect('/users/profile')
+            })
+            .catch( errors => {
+                console.log(errors)
+            })
+        } else {
+            db.Products.findOne({
                 where:{
                     id:req.params.id
-                }
-            }
-        )
-        .then( result => {
-            console.log(result)
-            return res.redirect('/users/profile')
-        })
-        .catch( errors => {
-            console.log(errors)
-        })
+                },
+                include:[{
+                    association:'subcategory',
+                    include:[{
+                        association:'category'
+                    }]
+                }]    
+            })
+            .then(product => {
+    
+                db.Categories.findAll({
+                    include:[{association:'subcategories'}]
+                })
+                .then(categorias => {
+                    db.Products.findAll({
+                        include:[{association:'subcategory'}]
+                    })
+                    .then(productos => {
+                        //res.send(productos)
+                        res.render('productShow', {
+                            title: "Ver/Editar Producto",
+                            producto: product,
+                            total:productos.length,
+                            categorias:categorias,
+                            user:req.session.user,
+                            errors: errors.mapped(),
+                            old: req.body
+            
+                        })
+                    })
+                })
+            })
+        }
+        
     },
     delete_product: (req, res) => {
 

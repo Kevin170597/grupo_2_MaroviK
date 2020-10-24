@@ -11,6 +11,7 @@ var controller = require('../controllers/productsController');
 
 const sessionUserCheck = require('../middlewares/sessionUserCheck');
 const multerProduct = require('../middlewares/multerProduct');
+const productsValidator = require('../validators/productsValidator');
 
 
 /******************   RUTAS   *******************/
@@ -23,7 +24,7 @@ router.get('/add/form', sessionUserCheck, controller.viewProductAdd);
 router.get("/detail/:idproduct", controller.view_product_detail);
 
 router.get('/show/:id', sessionUserCheck, controller.view_product_show);
-router.put('/edit/:id', multerProduct.any(), sessionUserCheck, controller.update_product);
+router.put('/edit/:id', multerProduct.any(), sessionUserCheck, productsValidator, controller.update_product);
 router.delete('/delete/:id', sessionUserCheck, controller.delete_product);
 
 
@@ -31,6 +32,6 @@ router.get('/:categoria', controller.view_for_category);
 router.get("/categorias/:subcategoria", controller.view_for_subcategory);
 
 
-router.post('/add/form', multerProduct.any(), sessionUserCheck, controller.publicProduct);
+router.post('/add/form', multerProduct.any(), sessionUserCheck, productsValidator, controller.publicProduct);
 
 module.exports = router;
