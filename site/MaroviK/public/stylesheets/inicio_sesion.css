@@ -63,7 +63,17 @@ h1{
     scroll-padding-left: 15px;
     text-indent: -15px;
 }
-
+.formLogin{
+    background-color: #39b54a;
+}
+.login{
+    width: 70%;
+    text-align: center;
+    margin: 0 auto;
+}
+.login img{
+    width: 70%;
+}
 .captcha{
     border: solid 1px;
     text-align: center;
