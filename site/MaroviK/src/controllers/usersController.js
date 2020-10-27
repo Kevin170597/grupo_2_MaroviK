@@ -148,8 +148,21 @@ module.exports = {
             }
         )
         .then( result =>{
-            console.log(result)
-            return res.redirect('/users/profile')
+            db.Users.findByPk(req.session.user.id)
+            .then(user => {
+                if(req.session.user.avatar != user.avatar)
+                {
+                    //borrar el archivo de imagen de perfil
+                    if(fs.existsSync('public/images/users/'+req.session.user.avatar)&&req.session.user.avatar != "default.png"){
+                    fs.unlinkSync('public/images/users/'+req.session.user.avatar)
+                    }
+                    req.session.user.avatar = user.avatar
+                }
+                
+                return res.redirect('/users/profile')
+            })
+            //console.log(result)
+            //return res.redirect('/users/profile')
         })
         .catch(errors =>{
             console.log(errors)
