@@ -262,20 +262,32 @@ body {
     margin-top: 5px;
     margin-left: 10px;
 }
+#errorName i{
+    color: green;
+}
 #errorLastName{
     color: rgb(225, 70, 49);
     margin-top: 5px;
     margin-left: 10px;
+}
+#errorLastName i{
+    color: green;
 }
 #errorPassword{
     color: rgb(225, 70, 49);
     margin-top: 5px;
     margin-left: 10px;
 }
+#errorPassword i{
+    color: green;
+}
 #errorEmail{
     color: rgb(225, 70, 49);
     margin-top: 5px;
     margin-left: 10px;
+}
+#errorEmail i{
+    color: green;
 }
 .captcha{
     border: solid 1px;

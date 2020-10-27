@@ -19,11 +19,19 @@ window.addEventListener("load", function(){
         /*Validar que el input nombre no esté vacío y contenga al menos 2 caracteres*/
         let errorNameMessage = [];
         let errorNameCharacter = [];
+        let OkNameMesagge = [];
 
         if(name.value === "" || name.value == null){
             errorNameMessage.push("Debe ingresar un nombre.")
         }else if(name.value != "" && name.value.length < 2){
             errorNameCharacter.push("Debe contener al menos 2 caracteres.")
+        }else if(name.value != "" && name.value.length > 2){
+            name.style.border = "solid 1px green"
+            OkNameMesagge.push('<i class="far fa-check-circle"></i>')
+        }
+
+        if(OkNameMesagge.length > 0){
+            errorName.innerHTML = OkNameMesagge.join();
         }
 
         if(errorNameMessage.length > 0){
@@ -39,11 +47,19 @@ window.addEventListener("load", function(){
         /*Validar que el input apellido no esté vacío y contenga al menos 2 caracteres*/
         let errorLastNameMessage = [];
         let errorLastNameCharacter = [];
+        let OkLastNameMesagge = [];
 
         if(lastName.value === "" || lastName.value == null){
             errorLastNameMessage.push("Debe ingresar un apellido.")
         }else if(lastName.value != "" && lastName.value.length < 2){
             errorLastNameCharacter.push("Debe contener al menos 2 caracteres.")
+        }else if(lastName.value != "" && lastName.value.length > 2){
+            lastName.style.border = "solid 1px green"
+            OkLastNameMesagge.push('<i class="far fa-check-circle"></i>')
+        }
+
+        if(OkLastNameMesagge.length > 0){
+            errorLastName.innerHTML = OkLastNameMesagge.join();
         }
 
         if(errorLastNameMessage.length > 0){
@@ -59,11 +75,19 @@ window.addEventListener("load", function(){
         /*Validar que el input contraseña no esté vacío y contenga al menos 8 caracteres*/
         let errorPasswordMessage = [];
         let errorPasswordCharacter = [];
+        let OkPasswordMesagge = [];
 
         if(password.value === "" || password.value == null){
             errorPasswordMessage.push("Debe ingresar una contraseña.")
         }else if(password.value != "" && password.value.length < 8){
             errorPasswordCharacter.push("Debe contener al menos 8 caracteres.")
+        }else if(password.value != "" && password.value.length > 2){
+            password.style.border = "solid 1px green"
+            OkPasswordMesagge.push('<i class="far fa-check-circle"></i>')
+        }
+
+        if(OkPasswordMesagge.length > 0){
+            errorPassword.innerHTML = OkPasswordMesagge.join();
         }
 
         if(errorPasswordMessage.length > 0){
@@ -79,15 +103,22 @@ window.addEventListener("load", function(){
         /*Validar que el input email no esté vacío y que sea válido*/
         let errorEmailMessage = [];
         let errorEmailFormat = [];
+        let OkEmailMesagge = [];
 
         if(email.value === "" || email.value == null){
             errorEmailMessage.push("Debe ingresar un email.")
         }else if(email.value != ""){
             if(formatoValido.test(email.value)){
-                return true
+                email.style.border = "solid 1px green"
+                OkEmailMesagge.push('<i class="far fa-check-circle"></i>')
+                //return true
             } else{
                 errorEmailFormat.push("El email no es válido.");
             }
+        }
+
+        if(OkEmailMesagge.length > 0){
+            errorEmail.innerHTML = OkEmailMesagge.join();
         }
 
         if(errorEmailMessage.length > 0){

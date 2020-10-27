@@ -19,8 +19,8 @@ module.exports = [
     .isEmail()
     .withMessage("Debes ingresar un email válido"),
 
-    body('email')
-    .custom((value) => {
+    body("email")
+    .custom(function(value){
         return db.Users.findOne({
             where:{
                 email:value
@@ -28,11 +28,11 @@ module.exports = [
         })
         .then(user => {
             if(user){
-                return Promise.reject('Este email ya está registrado')
+                return Promise.reject()
             }
         })
-        .catch(errores => {
-            console.log(errores);
+        .catch(() => {
+            return Promise.reject('Este email ya está registrado')
         })
     }),
     check("password")
