@@ -35,16 +35,18 @@
                         <div class="form-group col-12 col-md-6">
                           <label for="name"></label>
                           <input type="text"
-                          class="form-control <%= (typeof old != 'undefined' && old.name)?"is-valid":(typeof errors != 'undefined' && errors.name)?"is-invalid": ""  %>" 
-                          id="name"  name="name"  value="<%= (typeof old != 'undefined' && old.name)?old.name:'' %>" placeholder="Nombre"/>
+                          id="name"class="form-control <%= (typeof old != 'undefined' && old.name)?"is-valid":(typeof errors != 'undefined' && errors.name)?"is-invalid": ""  %>" 
+                          name="name"  value="<%= (typeof old != 'undefined' && old.name)?old.name:'' %>" placeholder="Nombre"/>
                           <small class="text-danger"><%= (typeof errors != 'undefined' && errors.name)?errors.name.msg: "" %> </small>
+                          <div id="errorName"></div>
                         </div>
                         <div class="form-group col-12 col-md-6">
                             <label for="lastName"></label>
                             <input type="text"
-                            class="form-control <%= (typeof old != 'undefined' && old.lastName)?"is-valid":(typeof errors != 'undefined' && errors.lastName)?"is-invalid": ""  %>"
-                            id="lastName" value="<%= (typeof old != 'undefined' && old.lastName)?old.lastName:'' %>" placeholder="Apellido" name="lastName"/>
+                            id="lastName" class="form-control <%= (typeof old != 'undefined' && old.lastName)?"is-valid":(typeof errors != 'undefined' && errors.lastName)?"is-invalid": ""  %>"
+                            value="<%= (typeof old != 'undefined' && old.lastName)?old.lastName:'' %>" placeholder="Apellido" name="lastName"/>
                             <small class="text-danger"><%= (typeof errors != 'undefined' && errors.lastName)?errors.lastName.msg: "" %> </small>
+                            <div id="errorLastName"></div>
                         </div>
     
                     </div>
@@ -52,9 +54,10 @@
                         <div class="form-group col-12 col-md-6">
                           <label for="password"></label>
                           <input type="password"
-                          class="form-control <%= (typeof errors != 'undefined' && errors.password)?"is-invalid": ""  %>"
-                          id="password" placeholder="Contraseña" name="password"/>
+                          id="password" class="form-control <%= (typeof errors != 'undefined' && errors.password)?"is-invalid": ""  %>"
+                          placeholder="Contraseña" name="password"/>
                           <small class="text-danger"><%= (typeof errors != 'undefined' && errors.password)?errors.password.msg: "" %> </small>
+                          <div id="errorPassword"></div>
                         </div>
   
                         <div class="form-group col-12 col-md-6">
@@ -70,14 +73,15 @@
                         <div class="form-group col-12 col-md-6">
                           <label for="email"></label>
                           <input type="email"
-                          class="form-control <%= (typeof old != 'undefined' && old.email && !errors.email)?"is-valid":(typeof errors != 'undefined' && errors.email)?"is-invalid": ""  %>"
-                          id="email" value="<%= (typeof old != 'undefined' && old.email)?old.email:'' %>" placeholder="Email" name="email"/>
+                          id="email" class="form-control <%= (typeof old != 'undefined' && old.email && !errors.email)?"is-valid":(typeof errors != 'undefined' && errors.email)?"is-invalid": ""  %>"
+                          value="<%= (typeof old != 'undefined' && old.email)?old.email:'' %>" placeholder="Email" name="email"/>
                           <small class="text-danger"><%= (typeof errors != 'undefined' && errors.email)?errors.email.msg: "" %> </small>
+                          <div id="errorEmail"></div>
                         </div>
   
                         <div class="form-group col-12 col-md-6">
                           <div class="custom-file mt-4">
-                            <input type="file" id="" name="avatar">
+                            <input type="file" id="" name="avatar" accept="image/png, image/jpg, image/jpeg, image/gif">
                             <label for="customFileLang">Seleccionar Archivo</label>
                             <small class="text-danger"><%= (typeof errorFormato != 'undefined')?errorFormato: "" %> </small>
                           </div>

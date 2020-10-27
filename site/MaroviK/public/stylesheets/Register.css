@@ -257,7 +257,26 @@ body {
     padding: 10px 30px;
     background-color: white;
 }
-
+#errorName{
+    color: rgb(225, 70, 49);
+    margin-top: 5px;
+    margin-left: 10px;
+}
+#errorLastName{
+    color: rgb(225, 70, 49);
+    margin-top: 5px;
+    margin-left: 10px;
+}
+#errorPassword{
+    color: rgb(225, 70, 49);
+    margin-top: 5px;
+    margin-left: 10px;
+}
+#errorEmail{
+    color: rgb(225, 70, 49);
+    margin-top: 5px;
+    margin-left: 10px;
+}
 .captcha{
     border: solid 1px;
     text-align: center;
