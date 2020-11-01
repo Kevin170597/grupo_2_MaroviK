@@ -28,13 +28,14 @@
             <div class="col-sm-12 col-md-6">
               <div class="card-body">
                 
-                  <form class="w-100" id='loginForm' action="" method="POST">
-            
+                  <form class="w-100" id="loginForm" action="" method="POST">
+                    <div class="errores"></div>
                     <div class="form-row">
                       <div class="form-group col-12">
                        <label for="email"></label>
                         <input class="w-100 p-2 m-2" type="email" id="email" name="email" placeholder="Email" value="<%= (typeof old != 'undefined' && old.email)?old.email:'' %>"> <br>
                         <small class="text-danger"><%= (typeof errors != 'undefined' && errors.email)?errors.email.msg: "" %> </small>
+                        <div id="errorEmail"></div>
                       </div>
                     </div>
 
@@ -43,8 +44,10 @@
                         <label for="password"></label>
                         <input class="w-100 p-2 m-2" type="password" id="password" name="password" placeholder="Contraseña" value="<%= (typeof old != 'undefined' && old.password)?old.password:'' %>">
                         <small class="text-danger"><%= (typeof errors != 'undefined' && errors.password)?errors.password.msg: "" %> </small>
+                        <div id="errorPassword"></div>
                       </div>
                     </div>
+
 
                     <div class="form row">
                       <div class="recordar">
