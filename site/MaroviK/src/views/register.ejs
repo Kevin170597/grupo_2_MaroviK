@@ -81,9 +81,10 @@
   
                         <div class="form-group col-12 col-md-6">
                           <div class="custom-file mt-4">
-                            <input type="file" id="" name="avatar" accept="image/png, image/jpg, image/jpeg, image/gif">
+                            <input type="file" id="file" name="avatar" accept="image/png, image/jpg, image/jpeg, image/gif">
                             <label for="customFileLang">Seleccionar Archivo</label>
                             <small class="text-danger"><%= (typeof errorFormato != 'undefined')?errorFormato: "" %> </small>
+                            <div id="errorFile"></div>
                           </div>
                         </div>
   

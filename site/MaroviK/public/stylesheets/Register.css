@@ -289,6 +289,14 @@ body {
 #errorEmail i{
     color: green;
 }
+#errorFile{
+    color: rgb(225, 70, 49);
+    margin-top: 5px;
+    margin-left: 10px;
+}
+#errorFile i{
+    color: green;
+}
 .captcha{
     border: solid 1px;
     text-align: center;
