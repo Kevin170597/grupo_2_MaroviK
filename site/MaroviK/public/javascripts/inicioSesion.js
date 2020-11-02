@@ -4,8 +4,8 @@ window.addEventListener('load',function(){
     let loginForm = document.getElementById('loginForm')
     let inputEmail = document.getElementById('email')
     let inputPass = document.getElementById('password')
-    let regexEmail = /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/
-
+    let regexEmail = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
+    
     loginForm.addEventListener("submit", (e) =>{
         let errorEmailMessage = [];
         let errorEmailFormat = [];
