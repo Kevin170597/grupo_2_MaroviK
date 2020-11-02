@@ -138,7 +138,7 @@ window.addEventListener("load", function(){
         let errorFileMessage = [];
         let OkFileMessage = [];
 
-        if(!(/\.(jpg|jpeg|png|gif)$/i).test(file.value)){
+        if(file.value != "" && !(/\.(jpg|jpeg|png|gif)$/i).test(file.value)){
             errorFileMessage.push("Formato incorrecto.")
         }else{
             OkFileMessage.push('<i class="far fa-check-circle"></i>')
