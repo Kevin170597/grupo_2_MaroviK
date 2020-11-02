@@ -5,7 +5,7 @@ window.addEventListener('load',function(){
     let inputEmail = document.getElementById('email')
     let inputPass = document.getElementById('password')
     let regexEmail = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
-    
+
     loginForm.addEventListener("submit", (e) =>{
         let errorEmailMessage = [];
         let errorEmailFormat = [];
@@ -24,17 +24,17 @@ window.addEventListener('load',function(){
         }
 
         if(OkEmailMesagge.length > 0){
-            errorEmail.innerHTML = OkEmailMesagge.join();
+            errorEmail.innerHTML = OkEmailMesagge;
         }
 
         if(errorEmailMessage.length > 0){
             e.preventDefault();
-            errorEmail.innerText = errorEmailMessage.join();
+            errorEmail.innerText = errorEmailMessage;
             inputEmail.style.border = "solid 1px  rgb(225, 70, 49)"
         }
         if(errorEmailFormat.length > 0){
             e.preventDefault();
-            errorEmail.innerText = errorEmailFormat.join();
+            errorEmail.innerText = errorEmailFormat;
             inputEmail.style.border = "solid 1px rgb(225, 70, 49)"
         }
       ////////////////////////////////////////////////////////////////////////////
@@ -50,17 +50,17 @@ window.addEventListener('load',function(){
         }
 
         if(OkPasswordMesagge.length > 0){
-          errorPassword.innerHTML = OkPasswordMesagge.join();
+          errorPassword.innerHTML = OkPasswordMesagge;
         }
 
         if(errorPasswordMessage.length > 0){
           e.preventDefault();
-          errorPassword.innerText = errorPasswordMessage.join();
+          errorPassword.innerText = errorPasswordMessage;
           password.style.border = "solid 1px  rgb(225, 70, 49)"
         }
         if(errorPasswordCharacter.length > 0){
           e.preventDefault();
-          errorPassword.innerText = errorPasswordCharacter.join();
+          errorPassword.innerText = errorPasswordCharacter;
           password.style.border = "solid 1px rgb(225, 70, 49)"
         }
     })
