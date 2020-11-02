@@ -99,6 +99,21 @@ section .contenido figure img {
     padding: 20px 40px 40px 40px;
 }
 
+#errorNameProduct{
+    color: #ec0101;
+    font-size: 12px;
+}
+#errorNameProduct i{
+    color: #28df99;
+}
+#errorDescription{
+    color: #ec0101;
+    font-size: 12px;
+}
+#errorDescription i{
+    color: #28df99;
+}
+
 @media(min-width:768px) {
     .addProduct .categorias2 {
         padding: 40px 20px 40px 40px;
