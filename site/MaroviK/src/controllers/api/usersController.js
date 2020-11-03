@@ -27,5 +27,19 @@ module.exports = {
         .then(result =>{
             res.json(result)
         })
+    },
+    validatorEmail: (req, res)=>{
+        let email = req.params.email;
+        db.Users.findOne({
+            where:{email:email}
+        })
+        .then(result =>{
+            let response = { meta:{ status:200}, data: result } 
+            console.log(result)
+            res.json(response) 
+        })
+        .catch(error=>{
+            console.log("Error")
+        })
     }
 }

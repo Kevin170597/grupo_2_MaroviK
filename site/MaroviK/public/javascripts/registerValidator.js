@@ -106,6 +106,21 @@ window.addEventListener("load", function(){
         let errorEmailMessage = [];
         let errorEmailFormat = [];
         let OkEmailMesagge = [];
+        let errorValidator = [];
+
+        fetch("http://localhost:3031/api/users/email/" + email.value)
+        .then(response => response.json())
+        .then(usuario => {
+            if(usuario.data.email != null){
+                errorValidator.push("El email ya está registrado.")
+            }
+            if(errorValidator.length > 0){
+                e.preventDefault();
+                errorEmail.innerText = errorValidator.join();
+                email.style.border = "solid 1px  rgb(225, 70, 49)"
+            }
+        });
+        
 
         if(email.value === "" || email.value == null){
             errorEmailMessage.push("Debe ingresar un email.")
