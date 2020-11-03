@@ -1,6 +1,8 @@
 const db = require('../database/models');
+const path = require ('path');
+const {check, validationResult, body} = require("express-validator");
 
-const {check, validationResult,body} = require("express-validator");
+//res.send (req.body)
 
 module.exports = [
     check("name")
@@ -53,6 +55,27 @@ module.exports = [
 
     check('bases')
     .isString('on')
-    .withMessage('Debe aceptar las bases y condiciones')
+    .withMessage('Debe aceptar las bases y condiciones'),
+
+    body("avatar")
+    .custom(function(value, {req}){
+        let extensiones_permitidas = [".gif", ".jpg", ".jpeg", ".png"];
+        let permitido = false;
+        
+        let ext = path.extname(req.files[0].filename);
+
+        extensiones_permitidas.forEach(extension => {
+            if(extension == ext){
+                permitido = true
+            }
+        })
+
+        if(!permitido)
+        {
+            return false;
+        }
+        return (true);
+    })
+    .withMessage('Comprueba la extensión del archivo(.png/.jpg/.jpeg/.gif)')
     
 ]

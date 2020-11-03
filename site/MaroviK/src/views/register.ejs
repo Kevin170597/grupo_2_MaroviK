@@ -81,9 +81,9 @@
   
                         <div class="form-group col-12 col-md-6">
                           <div class="custom-file mt-4">
-                            <input type="file" id="" name="avatar" accept="image/png, image/jpg, image/jpeg, image/gif">
-                            <label for="customFileLang">Seleccionar Archivo</label>
-                            <small class="text-danger"><%= (typeof errorFormato != 'undefined')?errorFormato: "" %> </small>
+                            <input type="file" id="avatar" name="avatar" accept="image/png, image/jpg, image/jpeg, image/gif" >
+                            <label for="avatar">Seleccionar Archivo</label>
+                            <small class="text-danger"><%= (typeof errors != 'undefined' && errors.avatar)?errors.avatar.msg: "" %> </small>
                           </div>
                         </div>
   
@@ -116,6 +116,7 @@
 
     </div>
     <%- include("partials/footer") %> 
+    <script src="/javascripts/registerValidator.js"></script>
 </body>
 
 </html>
