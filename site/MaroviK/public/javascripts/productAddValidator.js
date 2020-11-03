@@ -4,6 +4,7 @@ window.addEventListener("load", function(){
     //const inputs = document.querySelectorAll('#formAddProduct .form-control')
     const name = document.getElementById('nameProduct');
     const description = document.getElementById('description');
+    const image = document.getElementById("image");
 
     const errorNameProduct = document.getElementById("errorNameProduct");
     const errorDescription = document.getElementById("errorDescription");
@@ -74,6 +75,25 @@ window.addEventListener("load", function(){
             e.preventDefault();
             errorDescription.innerText = errorDescriptionCharacter.join();
             description.style.border = "2px solid #ec0101"
+        }
+
+        /*validar imagen*/
+        let errorFileMessage = [];
+        let OkFileMessage = [];
+
+        if(image.value != "" && !(/\.(jpg|jpeg|png|gif)$/i).test(image.value)){
+            errorFileMessage.push("Extensión de archivo no permitido!")
+        }else{
+            OkFileMessage.push('<i class="far fa-check-circle"></i>')
+        }
+
+        if(errorFileMessage.length > 0){
+            e.preventDefault();
+            errorImage.innerHTML = errorFileMessage.join();
+        }
+
+        if(OkFileMessage.length > 0){
+            errorImage.innerHTML = OkFileMessage.join();
         }
 
     })

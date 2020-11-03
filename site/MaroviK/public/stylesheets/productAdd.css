@@ -113,6 +113,13 @@ section .contenido figure img {
 #errorDescription i{
     color: #28df99;
 }
+#errorImage {
+    color: #ec0101;
+    font-size: 12px;
+}
+#errorImage i {
+    color: #28df99;
+}
 
 @media(min-width:768px) {
     .addProduct .categorias2 {

@@ -296,10 +296,10 @@ module.exports = {
     },
     delete_product: (req, res) => {
 
-        //borrar el archivo de imagen de perfil
-        /*if(fs.existsSync('public/images/products/'+req.body.image)&&req.body.image != "default.png"){
-            fs.unlinkSync('public/images/product/'+req.body.image)
-        }*/
+        //borrar el archivo de imagen de un producto
+        if(fs.existsSync('public/images/products/'+req.body.image)&&req.body.image != "default.png"){
+            fs.unlinkSync('public/images/products/'+req.body.image)
+        }
         db.Products.destroy({
             where:{
                 id:req.params.id

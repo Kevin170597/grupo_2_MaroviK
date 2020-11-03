@@ -47,6 +47,13 @@ body {
     background-color: var(--color-grisClaro);
 }
 
+#LoginFondo img{
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    z-index: -1;
+}
+
 h1{
     text-align: center;
     padding-top: 20px;
@@ -63,45 +70,74 @@ h1{
     scroll-padding-left: 15px;
     text-indent: -15px;
 }
-.formLogin{
-    background-color: #39b54a;
+.formLogin .card{
+    border-radius: 15px;
+    box-shadow:1px 1px 24px -7px #8f8f8f;
+    -moz-box-shadow:1px 1px 24px -7px #8f8f8f;
+    -webkit-box-shadow:1px 1px 24px -7px #8f8f8f;
 }
 .login{
     width: 70%;
     text-align: center;
     margin: 0 auto;
+    margin-top: 30px;
 }
 .login img{
-    width: 70%;
+    width: 100%;
+    border-radius: 15px;
 }
-.captcha{
-    border: solid 1px;
-    text-align: center;
-    border: solid 1px rgb(179, 179, 179);
-    width: 250px;
-    margin-bottom: 20px;
-    border-radius: 5px;
-    
+.card-body input{
+    width: 100%;
+    height: 42px;
+    padding-left: 20px;
+    border-radius: 20px;
+    border: solid 1px rgb(111, 110, 110);
 }
-.recordar{
-text-align: center;
-}
-.boton{
-    text-align: center;
-    margin-bottom: 15px;
-}
-.boton a{
-    color: rgb(0, 119, 255);
-    
+.card-body input::placeholder{
+    font-family: 'Lato', sans-serif;
+    color: rgb(145, 145, 145);
 }
 
-.boton button{
-    background-color: rgb(99, 196, 241);
-    border-style: none;
-    border-radius: 5px;
+.card-body a {
+    color: rgb(68, 136, 220);
+}
+input:focus{
+    outline: none;
+}
+.card-body h2{
+    font-family: 'Lato', sans-serif;
+    color: rgb(102, 102, 102);
+}
+
+.card-body span{
+    margin-top: 60px;
+    font-size: 80px;
+    color: rgb(134, 134, 134);
+}
+.botonLogin{
+    height: 50px;
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+.botonLogin button{
+    font-family: 'Lato', sans-serif;
+    font-size: 17px;
+    background-color: rgb(71, 184, 221);
     color: white;
-    margin-bottom: 10px;
-    padding: 15px 30px;
+    height: 42px;
+    width: 100%;
+    border-radius: 20px;
+    border-style: none;
+}
+.botonLogin button:focus{
+    outline: none;
+    background-color: rgb(79, 161, 196);
+}
+.card-body p{
+    font-family: 'Lato', sans-serif;
+}
+.card-body a{
+    font-family: 'Lato', sans-serif;
 }
 
 
@@ -140,7 +176,11 @@ text-align: center;
     color: var(--color-grisOscuro);
 }
 
-
+@media(max-width:1024px){
+    .login img{
+        display: none;
+    }
+}
 /* --- VERSION PARA TABLET --- */
 
 @media(min-width:768px) {
@@ -165,6 +205,7 @@ text-align: center;
         display: flex;
         flex-direction: column;
     }
+    
 }
 
 
@@ -190,6 +231,7 @@ text-align: center;
     .filtro{
         padding-left: 0px;
     }
+    
 }
 
 /****** ESTILOS ÚLTIMA VERSION LOGIN ********/

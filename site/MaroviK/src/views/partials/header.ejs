@@ -1,25 +1,14 @@
 <header">
 
     
-    <div id="barrasuperior">
-        <div class="superior">
-            <div class="botonesSuperiores" style="text-align: center;"><p><a href="/users/login">Inicia sesión</a> o <a href="/users/register">registrate</a></p></div>
-            <div class="botonesSuperiores" style="text-align: center;"><p>Ofertas</p></div>
-            <div class="botonesSuperiores" style="text-align: left;"><p>¡Bienvenido!</p></div>
-            <div class="botonesSuperiores"><p>Ayuda y contacto</p></div>
-            <div class="botonesSuperiores" style="text-align: right; margin-right: 10px;"><p>Español</p></div>
-
-        </div>
-    </div>
-
 
     <div id="barraprincipal">
         <div class="barprincipal">
             <div class="logo"><a href="/"><img src="/images/logomarovik2.svg" alt=""></a></div>
             <div class="botoncategorias">
                 <div class="dropdown">
-                    <button class="dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <p>Categorias</p>
+                    <button class="" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span class="material-icons">menu</span>
                     </button>
                     <div class="dropdown-menu" aria-labelledby="">
                         <a href="/products/tecnologia" class="dropdown-item"><i class="icon-tecnologia"></i>  Tecnología</a>
@@ -56,7 +45,7 @@
                     <% if (locals.user) { %>
                         <img src="/images/users/<%= locals.user.avatar %> " alt="">
                     <% }else{ %>
-                        <span class="material-icons">person</span>
+                        <span class="material-icons">account_circle</span>
                     <% } %>
                     </button>
                     <% if (locals.user) { %>
