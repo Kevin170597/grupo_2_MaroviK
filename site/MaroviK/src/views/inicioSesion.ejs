@@ -8,32 +8,35 @@
    
   <%- include("partials/header") %>
   
-    <h1>Iniciar Sesión</h1>
+    <div id="LoginFondo">
+      <img src="/images/fondoLogin.png" alt="">
+    </div>
 
 
     <div class="login">
-      <div class="formLogin   justify-content-center">
+      <div class="formLogin">
         <div class="card mb-3">
           <!--Inicio contenedor card-horizontal -->
-          <div class="row no-gutters">
+          <div class="card-horizontal row no-gutters">
             <!--Inicio contenedor imagen -->
-            <div class="col-sm-12 col-md-6">
+            <div class="imagenLoginFrom">
 
-              <figure class="row w-100 h-100 align-items-center justify-content-center">
-              <img src="/images/logomarovik2.svg" class="card-img img-fluid" alt="logo marovik">
-              </figure>
+              
+              <img src="/images/loginForm.png" class="card-img img-fluid" alt="">
+              
             </div>
 
             <!--Inicio contenedor formulario -->
-            <div class="col-sm-12 col-md-6">
+            <div class="col-sm-12 col-md-12 col-lg-6">
               <div class="card-body">
-                
+                <span class="material-icons">face</span>
+                <h2>¡Bienvenido!</h2>
                   <form class="w-100" id="loginForm" action="" method="POST">
                     <div class="errores"></div>
                     <div class="form-row">
                       <div class="form-group col-12">
-                       <label for="email"></label>
-                        <input class="w-100 p-2 m-2" type="email" id="email" name="email" placeholder="Email" value="<%= (typeof old != 'undefined' && old.email)?old.email:'' %>"> <br>
+                      <label for="email"></label>
+                        <input class="" type="email" id="email" name="email" placeholder="Email" value="<%= (typeof old != 'undefined' && old.email)?old.email:'' %>"> <br>
                         <small class="text-danger"><%= (typeof errors != 'undefined' && errors.email)?errors.email.msg: "" %> </small>
                         <div id="errorEmail"></div>
                       </div>
@@ -42,30 +45,24 @@
                     <div class="form-row">
                       <div class="form-group col-12">
                         <label for="password"></label>
-                        <input class="w-100 p-2 m-2" type="password" id="password" name="password" placeholder="Contraseña" value="<%= (typeof old != 'undefined' && old.password)?old.password:'' %>">
+                        <input class="" type="password" id="password" name="password" placeholder="Contraseña" value="<%= (typeof old != 'undefined' && old.password)?old.password:'' %>">
                         <small class="text-danger"><%= (typeof errors != 'undefined' && errors.password)?errors.password.msg: "" %> </small>
                         <div id="errorPassword"></div>
                       </div>
                     </div>
 
 
-                    <div class="form row">
-                      <div class="recordar">
-                        <label><input class="ml-4" type="checkbox" name="recordar">Recordar contraseña  </label>
-                       </div>
+                    <div class="botonLogin">
+                      <button type="submit">Ingresar</button><br>
                     </div>
 
-                    <div class="form-row boton container justify-content-center">
-                      <button type="submit">Ingresar</button><br>
-                     </div>
-
-                    <p class="text-center">¿TodavÍa no tenes una cuenta?</p>
+                    <p class="text-center">¿Todavía no tenes una cuenta?</p>
                     <div class="form-row justify-content-center">
                       <a href="/users/register">Registrate ahora</a>
                     </div>
-       
+
                   </form>
-               
+
               </div>
             </div><!--Fin contenedor formulario -->
           </div> <!-- Fin contenedor card-horizontal -->
