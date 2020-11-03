@@ -22,5 +22,10 @@ module.exports = {
           title: "MaroviK",
           user: req.session.user 
         });*/
+      
+
+    },
+    nosotros: (req, res) =>{
+      res.render('nosotros')
     }
 }

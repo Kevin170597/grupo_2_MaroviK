@@ -103,3 +103,30 @@ Adaptarnos al horario de todos los integrantes.
 Realizar retrospectiva al finalizar cada sprint.
 Organizar el tablero de trello.
 
+------------------------------------------------------------------------
+
+
+# Retrospectiva Sprint 5:
+Nos sentimos bastante seguros con los trabajos que hicimos hasta ahora, siempre dando lo mejor de cada uno y dispuestos a ayudarnos entre todos, superamos cada obstaculo de la mejor manera, aunque todavia tengamos cosas que mejorar estamos contentos porque somos un gran EQUIPO!! :)
+(El comapañerismo es lo que mas resalta) :)
+
+# HACER MAS:
+Organizar el tablero de trello.
+Reunirnos el mismo dia que no entregan el sprint para analizar y repartir las tareas.
+Actualizar el tablero de Trello individualmente en tiemporeal.
+
+# EMPEZAR A HACER:
+Implementar daily/weekly standups.
+
+# DEJAR DE HACER:
+
+
+# HACER MENOS:
+Comunicar todos los avances individuales por whatsapp.
+
+# SEGUIR HACIENDO:
+Continuar con las reuniones frecuentes y adaptarnos al horario de los integrantes.
+Adaptarnos al horario de todos los integrantes.
+Realizar retrospectiva al finalizar cada sprint.
+Organizar el tablero de trello.
+Ultimo chequeo antes de entregar el trabajo.
