@@ -108,6 +108,7 @@
                                                 <label for="image">Elija una imagen</label>
                                                 <input type="file" class="form-control" id="image" name='image' accept="image/png, image/jpg, image/jpeg, image/gif">
                                                 <small class="text-danger"><%= (typeof errors != 'undefined' && errors.image)?errors.image.msg: "" %> </small>
+                                                <div id="errorImage"></div>
                                             </div>
                                             <div class="mt-5 mr-5 d-flex justify-content-end">
                                                 <button type="reset" class="btn btn-outline-secondary mr-3">Borrar</button>

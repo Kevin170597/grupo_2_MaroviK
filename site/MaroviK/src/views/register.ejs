@@ -84,9 +84,10 @@
                             <input type="file" id="avatar" name="avatar" accept="image/png, image/jpg, image/jpeg, image/gif" >
                             <label for="avatar">Seleccionar Archivo</label>
                             <small class="text-danger"><%= (typeof errors != 'undefined' && errors.avatar)?errors.avatar.msg: "" %> </small>
+                            <div id="errorFile"></div>
                           </div>
                         </div>
-  
+                      
                     </div>
                     <div class="form-row">
                         <div class="col-12 col-md-6 mt-2">

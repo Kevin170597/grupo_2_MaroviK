@@ -1,17 +1,6 @@
 <header">
 
     
-    <div id="barrasuperior">
-        <div class="superior">
-            <div class="botonesSuperiores" style="text-align: center;"><p><a href="/users/login">Inicia sesión</a> o <a href="/users/register">registrate</a></p></div>
-            <div class="botonesSuperiores" style="text-align: center;"><p>Ofertas</p></div>
-            <div class="botonesSuperiores" style="text-align: left;"><p>¡Bienvenido!</p></div>
-            <div class="botonesSuperiores"><p>Ayuda y contacto</p></div>
-            <div class="botonesSuperiores" style="text-align: right; margin-right: 10px;"><p>Español</p></div>
-
-        </div>
-    </div>
-
 
     <div id="barraprincipal">
         <div class="barprincipal">
@@ -56,7 +45,7 @@
                     <% if (locals.user) { %>
                         <img src="/images/users/<%= locals.user.avatar %> " alt="">
                     <% }else{ %>
-                        <span class="material-icons">person</span>
+                        <span class="material-icons">account_circle</span>
                     <% } %>
                     </button>
                     <% if (locals.user) { %>

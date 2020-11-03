@@ -7,11 +7,13 @@ window.addEventListener("load", function(){
     const lastName = document.getElementById("lastName");
     const password = document.getElementById("password");
     const email = document.getElementById("email");
+    const file = document.getElementById("avatar");
 
     const errorName = document.getElementById("errorName");
     const errorLastName = document.getElementById("errorLastName");
     const errorPassword = document.getElementById("errorPassword");
     const errorEmail = document.getElementById("errorEmail");
+    const errorFile = document.getElementById("errorFile");
 
     let formatoValido = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
 
@@ -130,6 +132,25 @@ window.addEventListener("load", function(){
             e.preventDefault();
             errorEmail.innerText = errorEmailFormat.join();
             email.style.border = "solid 1px rgb(225, 70, 49)"
+        }
+
+        /*validar imagen*/
+        let errorFileMessage = [];
+        let OkFileMessage = [];
+
+        if(file.value != "" && !(/\.(jpg|jpeg|png|gif)$/i).test(file.value)){
+            errorFileMessage.push("Formato incorrecto.")
+        }else{
+            OkFileMessage.push('<i class="far fa-check-circle"></i>')
+        }
+
+        if(errorFileMessage.length > 0){
+            e.preventDefault();
+            errorFile.innerHTML = errorFileMessage.join();
+        }
+
+        if(OkFileMessage.length > 0){
+            errorFile.innerHTML = OkFileMessage.join();
         }
     })
 })

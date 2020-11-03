@@ -58,29 +58,7 @@ body {
 - CABECERA
 */
 
-#barrasuperior{
-    background-color: rgb(255, 255, 255);
-    width: 100%;
-    border-bottom: solid 1px rgb(221, 221, 221);
-}
-.superior{
-    width: 100%;
-    height: 27px;
-    display: flex;
-    background-color: rgb(65, 60, 60);
-}
-.superior p{
-    color: white;
-    padding-top: 2px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 15px;
-}
-.superior p a{
-    color: rgb(95, 184, 240);
-}
-.superior .botonesSuperiores{
-    width: 25%;
-}
+
 #barraprincipal{
     background-color: white;
     width: 100%;
@@ -193,13 +171,14 @@ body {
     outline: none;
 }
 .user .dropdown button span{
-    color: black;
-    font-size: 32px;
-    margin-top: 22px;
+    color: rgb(75, 75, 75);
+    font-size: 37px;
+    margin-top: 23px;
 }
 .user .dropdown button img{
     margin-top: 17px;
     width: 45%;
+    border-radius: 30px;
 }
 .user .dropdown span:hover{
     color: rgb(88, 186, 228);
@@ -217,9 +196,9 @@ body {
     to{opacity: 1;top: 0px;}
 }
 .user .dropdown .dropdown-menu a:hover{
-   background-color: white;
-   color: rgb(92, 198, 243);
-   transition: 1s;
+    background-color: white;
+    color: rgb(92, 198, 243);
+    transition: 1s;
 }
 
 .cart{
@@ -227,8 +206,8 @@ body {
 }
 .cart span{
     font-size: 32px;
-    margin-top: 22px;
-    color: black;
+    margin-top: 24px;
+    color: rgb(75, 75, 75);
 }
 .cart span:hover{
     color: rgb(88, 186, 228);
@@ -287,6 +266,14 @@ body {
     margin-left: 10px;
 }
 #errorEmail i{
+    color: green;
+}
+#errorFile{
+    color: rgb(225, 70, 49);
+    margin-top: 5px;
+    margin-left: 10px;
+}
+#errorFile i{
     color: green;
 }
 .captcha{
@@ -355,9 +342,6 @@ body {
 
 
 @media(max-width:480px){
-    #barrasuperior .superior .botonesSuperiores p{
-        display: none;
-    }
     #barraprincipal{
         width: 100%;
         display: flex;
@@ -409,7 +393,7 @@ body {
 
 /* --- VERSION PARA TABLET --- */
 
-@media(min-width:768px) {
+@media(min-width:480px) and (max-width:768px) {
     .buscador button span{
         color: white;
     }
@@ -419,6 +403,53 @@ body {
     .detalle .section .productos{
         display: flex;
         flex-direction: column;
+    }
+    #barraprincipal{
+        width: 100%;
+        display: flex;
+    }
+    #barraprincipal .barprincipal{
+        width: 100%;
+        display: block;
+    }
+    #barraprincipal .logo{
+        float: left;
+        width: 35%;
+    }
+    #barraprincipal .logo img{
+        width: 70%;
+        margin-top: 10px;
+    }
+    #barraprincipal .botoncategorias{
+        float: left;
+        width: 65%;
+    }
+    #barraprincipal .botoncategorias .dropdown button p{
+        color: rgb(87, 87, 87);
+        margin-top: 15px;
+    }
+    #barraprincipal .buscador{
+        float: left;
+        width: 100%;
+        margin-top: 0px;
+    }
+    #barraprincipal .user{
+        float: left;
+        width: 50%;
+    }
+    #barraprincipal .user .dropdown button img{
+        width: 25%;
+        margin-bottom: 10px;
+    }
+    #barraprincipal .user span{
+        font-size: 45px;
+    }
+    #barraprincipal .cart{
+        float: left;
+        width: 50%;
+    }
+    #barraprincipal .cart span{
+        font-size: 45px;
     }
 }
 
@@ -448,4 +479,5 @@ body {
     .filtro{
         padding-left: 0px;
     }
+    
 }
