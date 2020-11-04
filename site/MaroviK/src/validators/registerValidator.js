@@ -59,18 +59,18 @@ module.exports = [
 
     body("avatar")
     .custom(function(value, {req}){
-        let extensiones_permitidas = [".gif", ".jpg", ".jpeg", ".png"];
+        let extensionesPermitidas = [".gif", ".jpg", ".jpeg", ".png"];
         let permitido = false;
         
-        let ext = path.extname(req.files[0].filename);
+        let ext = req.files[0]?path.extname(req.files[0].filename):""; 
 
-        extensiones_permitidas.forEach(extension => {
+        extensionesPermitidas.forEach(extension => {
             if(extension == ext){
                 permitido = true
             }
         })
 
-        if(!permitido)
+        if(!permitido && ext != "")
         {
             return false;
         }
