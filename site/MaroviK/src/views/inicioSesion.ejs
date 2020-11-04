@@ -9,64 +9,56 @@
   <%- include("partials/header") %>
   
     <div id="LoginFondo">
-      <img src="/images/fondoLogin.png" alt="">
+      <img src="/images/backgroundLogin.png" alt="">
     </div>
 
+    <div id="contenedorForm">
+      <div class="iconLogin"><span class="material-icons">account_circle</span></div>
+      <div id="cuadroForm">
+        
+        <form class="w-100" id="loginForm" action="" method="POST">
+          
+          
+          <div><h4>Iniciar sesión</h4></div>
 
-    <div class="login">
-      <div class="formLogin">
-        <div class="card mb-3">
-          <!--Inicio contenedor card-horizontal -->
-          <div class="card-horizontal row no-gutters">
-            <!--Inicio contenedor imagen -->
-            <div class="imagenLoginFrom">
-
-              
-              <img src="/images/loginForm.png" class="card-img img-fluid" alt="">
-              
+            <div class="inputEmailLogin">
+              <label for="email"></label>
+              <input class="" type="email" id="email" name="email" placeholder="Email" value="<%= (typeof old != 'undefined' && old.email)?old.email:'' %>"> <br>
+              <small class="text-danger"><%= (typeof errors != 'undefined' && errors.email)?errors.email.msg: "" %> </small>
+              <div id="errorEmail"></div>
             </div>
+          
 
-            <!--Inicio contenedor formulario -->
-            <div class="col-sm-12 col-md-12 col-lg-6">
-              <div class="card-body">
-                <span class="material-icons">face</span>
-                <h2>¡Bienvenido!</h2>
-                  <form class="w-100" id="loginForm" action="" method="POST">
-                    <div class="errores"></div>
-                    <div class="form-row">
-                      <div class="form-group col-12">
-                      <label for="email"></label>
-                        <input class="" type="email" id="email" name="email" placeholder="Email" value="<%= (typeof old != 'undefined' && old.email)?old.email:'' %>"> <br>
-                        <small class="text-danger"><%= (typeof errors != 'undefined' && errors.email)?errors.email.msg: "" %> </small>
-                        <div id="errorEmail"></div>
-                      </div>
-                    </div>
-
-                    <div class="form-row">
-                      <div class="form-group col-12">
-                        <label for="password"></label>
-                        <input class="" type="password" id="password" name="password" placeholder="Contraseña" value="<%= (typeof old != 'undefined' && old.password)?old.password:'' %>">
-                        <small class="text-danger"><%= (typeof errors != 'undefined' && errors.password)?errors.password.msg: "" %> </small>
-                        <div id="errorPassword"></div>
-                      </div>
-                    </div>
+          
+            <div class="inputPasswordLogin">
+              <label for="password"></label>
+              <input class="" type="password" id="password" name="password" placeholder="Contraseña" value="<%= (typeof old != 'undefined' && old.password)?old.password:'' %>">
+              <small class="text-danger"><%= (typeof errors != 'undefined' && errors.password)?errors.password.msg: "" %> </small>
+              <div id="errorPassword"></div>
+            </div>
+          
 
 
-                    <div class="botonLogin">
-                      <button type="submit">Ingresar</button><br>
-                    </div>
+          <div class="botonLogin">
+            <button type="submit">Ingresar</button><br>
+          </div>
 
-                    <p class="text-center">¿Todavía no tenes una cuenta?</p>
-                    <div class="form-row justify-content-center">
-                      <a href="/users/register">Registrate ahora</a>
-                    </div>
+        </form>
+      </div>
 
-                  </form>
+      <div id="register">
 
-              </div>
-            </div><!--Fin contenedor formulario -->
-          </div> <!-- Fin contenedor card-horizontal -->
+        <div id="registerLink">
+
+          <div class="links">
+            <p>¿Todavía no tenes una cuenta?</p>
+          </div>
+          <div class="links">
+            <a href="/users/register">Registrate ahora</a>
+          </div>
+
         </div>
+
       </div>
     </div>
 

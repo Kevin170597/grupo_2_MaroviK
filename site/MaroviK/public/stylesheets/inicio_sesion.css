@@ -54,92 +54,83 @@ body {
     z-index: -1;
 }
 
-h1{
+#contenedorForm{
+    width: 100%;
     text-align: center;
-    padding-top: 20px;
 }
-.formulario{
-    text-align: center;
-    padding: 20px;
-    font-weight: bold;
-    margin-top: 120px;
+#cuadroForm{
+    width: 35%;
+    margin: auto;
+    padding-top: 40px;
+    padding-bottom: 20px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
+    margin-top: 0px;
+    margin-bottom: 40px;
 }
-
-.formulario label{
-    display: block;
-    scroll-padding-left: 15px;
-    text-indent: -15px;
+#contenedorForm .iconLogin span{
+    position: relative;
+    top: 45px;
+    color:  #32bbb9;
+    font-size: 80px;
 }
-.formLogin .card{
-    border-radius: 15px;
-    box-shadow:1px 1px 24px -7px #8f8f8f;
-    -moz-box-shadow:1px 1px 24px -7px #8f8f8f;
-    -webkit-box-shadow:1px 1px 24px -7px #8f8f8f;
+#cuadroForm form h4{
+    color: rgb(127, 127, 127);
 }
-.login{
-    width: 70%;
-    text-align: center;
-    margin: 0 auto;
+#cuadroForm form .inputEmailLogin input{
+    width: 50%;
+    border: none;
+    border-radius: 20px;
+    padding-left: 15px;
+    height: 38px;
+}
+#cuadroForm form .inputPasswordLogin input{
+    width: 50%;
+    border: none;
+    border-radius: 20px;
+    padding-left: 15px;
+    height: 38px;
     margin-top: 30px;
 }
-.login img{
-    width: 100%;
-    border-radius: 15px;
-}
-.card-body input{
-    width: 100%;
-    height: 42px;
-    padding-left: 20px;
+#cuadroForm form .botonLogin button{
+    background-color: #32bbb9;
+    border-style: none;
+    height: 38px;
+    width: 50%;
     border-radius: 20px;
-    border: solid 1px rgb(111, 110, 110);
+    color: white;
+    margin-top: 30px;
 }
-.card-body input::placeholder{
-    font-family: 'Lato', sans-serif;
-    color: rgb(145, 145, 145);
+#cuadroForm form .botonLogin button:focus{
+    outline: none;
+    background-color: #298786;
 }
 
-.card-body a {
-    color: rgb(68, 136, 220);
+#register{
+    width: 100%;
+    margin-bottom: 30px;
 }
+#register #registerLink{
+    width: 35%;
+    display: flex;
+    margin: auto;
+    border-top: solid 3px white;
+}
+#register #registerLink .links{
+    width: 50%;
+    text-align: center;
+    color: rgb(83, 83, 83);
+}
+#register #registerLink .links a{
+    color: rgb(83, 83, 83);
+}
+#register #registerLink .links a:hover{
+    color: var(--color-azul);
+}
+
 input:focus{
     outline: none;
 }
-.card-body h2{
-    font-family: 'Lato', sans-serif;
-    color: rgb(102, 102, 102);
-}
-
-.card-body span{
-    margin-top: 60px;
-    font-size: 80px;
-    color: rgb(134, 134, 134);
-}
-.botonLogin{
-    height: 50px;
-    margin-top: 20px;
-    margin-bottom: 15px;
-}
-.botonLogin button{
-    font-family: 'Lato', sans-serif;
-    font-size: 17px;
-    background-color: rgb(71, 184, 221);
-    color: white;
-    height: 42px;
-    width: 100%;
-    border-radius: 20px;
-    border-style: none;
-}
-.botonLogin button:focus{
-    outline: none;
-    background-color: rgb(79, 161, 196);
-}
-.card-body p{
-    font-family: 'Lato', sans-serif;
-}
-.card-body a{
-    font-family: 'Lato', sans-serif;
-}
-
 
 .footer {
     padding: 20px;
@@ -176,9 +167,20 @@ input:focus{
     color: var(--color-grisOscuro);
 }
 
-@media(max-width:1024px){
-    .login img{
-        display: none;
+@media(max-width:480px){
+    #cuadroForm{
+        width: 90%;
+    }
+    #register #registerLink{
+        width: 90%;
+    }
+}
+@media(max-width:768px){
+    #cuadroForm{
+        width: 90%;
+    }
+    #register #registerLink{
+        width: 90%;
     }
 }
 /* --- VERSION PARA TABLET --- */
