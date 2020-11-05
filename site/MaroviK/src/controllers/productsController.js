@@ -303,8 +303,8 @@ module.exports = {
                 }
             )
             .then( result => {
-                console.log(result)
-                return res.redirect('/users/profile')
+                
+                return res.redirect('/products/show/'+ req.params.id)
             })
             .catch( errors => {
                 console.log(errors)

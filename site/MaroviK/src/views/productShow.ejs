@@ -100,17 +100,17 @@
                                     <form action="/products/edit/<%= producto.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
                                         <div class="row p-3">
                                             <div class="form-group col-12">
-                                                <input class="form-control" type="text" value="<%= producto.name%>" name="name" value="<%= (typeof old != 'undefined' && old.name)?old.name:'' %>">
+                                                <input class="form-control" type="text" value="<%= producto.name%>" id="name" name="name" value="<%= (typeof old != 'undefined' && old.name)?old.name:'' %>">
                                                 <small class="text-danger"><%= (typeof errors != 'undefined' && errors.name)?errors.name.msg: "" %> </small>
                                             </div>
                                             <div class="col-12 col-md-4 col-xl-4 mt-3">
                                                 <figure class="text-center">
                                                     <img src="/images/products/<%= producto.image %> " alt="" class="img-fluid">
                                                 </figure>
-                                                <input type="file" class="form-control" name="image" accept="image/png, image/jpg, image/jpeg, image/gif">
+                                                <input type="file" class="form-control" name="image" id="image" accept="image/png, image/jpg, image/jpeg, image/gif">
                                             </div>
                                             <div class="form-group col-12 col-md-8 col-xl-8 mt-3">
-                                                <textarea class="form-control" rows="7" name="description" id=""><%= producto.description %></textarea>
+                                                <textarea class="form-control" rows="7" name="description" id="description"><%= producto.description %></textarea>
                                                 <small class="text-danger"><%= (typeof errors != 'undefined' && errors.description)?errors.description.msg: "" %> </small>
                                                 <p>
                                                 </p>

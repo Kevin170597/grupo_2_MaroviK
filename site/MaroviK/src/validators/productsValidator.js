@@ -1,8 +1,7 @@
 const db = require('../database/models');
 const path = require ('path');
-//const {check, validationResult, body} = require("express-validator");
 
-const {check, validationResult,body} = require("express-validator");
+const {check, validationResult, body} = require("express-validator");
 
 module.exports = [
     check("name")
@@ -11,11 +10,11 @@ module.exports = [
     })
     .withMessage("Debes ingresar un titulo  de mas de 5 caracteres"),
 
-    check("mark")
+    /*check("mark")
     .isLength({
         min:2
     })
-    .withMessage("Debe ingresar una marca de mas de 2 caracteres"),
+    .withMessage("Debe ingresar una marca de mas de 2 caracteres"),*/
 
     check("description")
     .isLength({
@@ -25,18 +24,18 @@ module.exports = [
 
     body("image")
     .custom(function(value, {req}){
-        let extensiones_permitidas = [".gif", ".jpg", ".jpeg", ".png"];
+        let extensionesPermitidas = [".gif", ".jpg", ".jpeg", ".png"];
         let permitido = false;
         
-        let ext = path.extname(req.files[0].filename);
-    
-        extensiones_permitidas.forEach(extension => {
+        let ext = req.files[0]?path.extname(req.files[0].filename):"";
+
+        extensionesPermitidas.forEach(extension => {
             if(extension == ext){
                 permitido = true
             }
         })
 
-        if(!permitido)
+        if(!permitido && ext != "")
         {
             return false;
         }
