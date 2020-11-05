@@ -62,7 +62,7 @@ module.exports = [
         let extensionesPermitidas = [".gif", ".jpg", ".jpeg", ".png"];
         let permitido = false;
         
-        let ext = req.files[0]?path.extname(req.files[0].filename):""; 
+        let ext = req.files[0]?path.extname(req.files[0].filename):"";
 
         extensionesPermitidas.forEach(extension => {
             if(extension == ext){
