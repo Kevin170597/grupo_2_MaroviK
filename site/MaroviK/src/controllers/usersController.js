@@ -131,6 +131,46 @@ module.exports = {
             return (res.redirect('/'));
         }
     },
+    updatePasswordView: function(req, res){
+        if(req.session.user){
+            db.Users.findByPk(req.session.user.id)
+            .then(user => {
+                res.render("updatePassword", {
+                    user: user
+                })
+            })
+        }
+    },
+    updatePassword: function(req, res){
+        let errors = validationResult(req);
+
+        if(errors.isEmpty()){
+            db.Users.update(
+                {
+                    password: bcrypt.hashSync(req.body.password,10)
+                },
+                {
+                    where: {id: req.params.id}
+                }
+            )
+            .then(result =>{
+                return res.redirect("/")
+            })
+            .catch(error =>{
+                console.log(error)
+            })
+        }else {
+            db.Users.findByPk(req.session.user.id)
+            .then(user => {
+                res.render("updatePassword", {
+                    user: user,
+                    errors: errors.mapped(),
+                    old: req.body,
+                    user: req.session.user
+                })
+            })
+        }
+    },
     updateProfile:function(req, res){
 
         db.Users.update(

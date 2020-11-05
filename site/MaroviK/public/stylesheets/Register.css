@@ -192,8 +192,10 @@ body {
 }
 .user .dropdown button img{
     margin-top: 9px;
-    width: 45%;
-    border-radius: 30px;
+    width: 42px;
+    height: 42px;
+    object-fit: cover;
+    border-radius: 40px;
 }
 .user .dropdown span:hover{
     color:#32bbb9;
@@ -391,7 +393,9 @@ body {
         width: 50%;
     }
     #barraprincipal .user .dropdown button img{
-        width: 25%;
+        width: 45px;
+        height: 45px;
+        object-fit: cover;
         margin-bottom: 10px;
     }
     #barraprincipal .user span{
@@ -453,7 +457,9 @@ body {
         width: 50%;
     }
     #barraprincipal .user .dropdown button img{
-        width: 25%;
+        width: 45px;
+        height: 45px;
+        object-fit: cover;
         margin-bottom: 10px;
     }
     #barraprincipal .user span{

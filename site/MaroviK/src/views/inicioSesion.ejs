@@ -32,7 +32,7 @@
           
             <div class="inputPasswordLogin">
               <label for="password"></label>
-              <input class="" type="password" id="password" name="password" placeholder="Contraseña" value="<%= (typeof old != 'undefined' && old.password)?old.password:'' %>">
+              <input class="" type="password" id="password" name="password" placeholder="Contraseña" value="<%= (typeof old != 'undefined' && old.password)?old.password:'' %>"><br>
               <small class="text-danger"><%= (typeof errors != 'undefined' && errors.password)?errors.password.msg: "" %> </small>
               <div id="errorPassword"></div>
             </div>
