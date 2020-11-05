@@ -40,44 +40,86 @@ module.exports = {
             })
         }
     },
-    view_for_category: (req, res) => {
+    viewForCategory: (req, res) => {
         let categoria = req.params.categoria
         db.Categories.findOne({
-            include:{association:"subcategories"},
-            where: {namePath: categoria}
+            where: {namePath: categoria},
+            include:{association:"subcategories"}
+            
         })
-        .then(categories => {
+        .then(category => {
+            
             res.render("categoria", {
                 user: req.session.user,
-                titulo: categories.title,
-                imagen: categories.image,
-                subcategory: categories.subcategories
+                category: category
             })
         })
         .catch(errors => {
             console.log(errors)
         })
     },
-    view_for_subcategory: (req, res) => {
+    viewForSubcategory: (req, res) => {
+
+        let categoria = req.params.categoria;
         let subcategoria = req.params.subcategoria
-        db.Subcategories.findOne({
-            include:{association: "products"},
-            where:{name_path:subcategoria}
+
+        db.Categories.findOne({
+            where: {namePath: categoria},
+            include:{association:"subcategories"}
+            
         })
-        .then(producto => {
-            db.Subcategories.findAll({where: {id_category: producto.id_category}})
-            .then(subcategorias => {
-                res.render("subcategoria",{
-                    user: req.session.user,
-                    productos: producto.products,
-                    subcategorias: subcategorias
+        .then(category => {
+
+            db.Subcategories.findOne({
+                where:{
+                    name_path: subcategoria
+                }
+            })
+            .then(subcategory => {
+
+                db.Products.findAll({
+                    where: {
+                        id_subcategory: subcategory.id
+                    }
+                })
+                .then(productsForSubcategory => {
+                    let marks = [];
+                    productsForSubcategory.forEach(product => {
+
+                        if(marks == ""){
+                            marks.push(product.mark)
+                        }else{
+                            if(marks.indexOf(product.mark) == -1){
+                                marks.push(product.mark)
+                            }
+                        }
+                    
+                    })
+                    res.render('subcategoria', {
+
+                        user: req.session.user,
+                        category:category,
+                        products: productsForSubcategory,
+                        marks:marks
+                        
+                    })
+                })
+                .catch(errors => {
+                    console.log(errors);
                 })
             })
-            .catch(errors => {console.log(errors)})
+            .catch(errors => {
+                console.log(errors);
+            })
+
+
         })
-        .catch(errors => {console.log(errors)})
+        .catch(errors => {
+            console.log(errors);
+        })
+
     },
-    view_product_detail:(req, res) => {
+    viewProductDetail:(req, res) => {
         let idproduct = req.params.idproduct;
   
         db.Products.findOne({where: {id: idproduct}})
@@ -116,7 +158,7 @@ module.exports = {
             })
         })
         .catch(errores => {
-            res.send(errores)
+            console.log(errores)
         })
     },
     publicProduct: (req, res, next) => {
@@ -162,21 +204,24 @@ module.exports = {
                     res.send(error);
                 }) 
             })
+            .catch(errors => {
+                console.log(errros);
+            })
         }else {
-        let categoria;
-        let subcategoria;
+            let categoria;
+            let subcategoria;
 
-        if(req.query.categoria){
-            categoria = req.query.categoria;
-            subcategoria = req.query.subcategoria;
-        }
+            if(req.query.categoria){
+                categoria = req.query.categoria;
+                subcategoria = req.query.subcategoria;
+            }
 
-        db.Categories.findAll({
-            include:[{association:'subcategories'}]
-        })
-        .then(categorias => {
+            db.Categories.findAll({
+                include:[{association:'subcategories'}]
+            })
+            .then(categorias => {
 
-            res.render('productAdd', {
+                res.render('productAdd', {
 
                 title: "Agregar Producto",
                 categoria:categoria,
@@ -185,14 +230,14 @@ module.exports = {
                 user: req.session.user,
                 errors: errors.mapped(),
                 old: req.body
+                })
             })
-        })
-        .catch(errores => {
-            res.send(errores)
-        })
+            .catch(errores => {
+                console.log(errores)
+            })
         }
     },
-    view_product_show: (req, res) => {
+    viewProductShow: (req, res) => {
         
         db.Products.findOne({
             where:{
@@ -215,7 +260,7 @@ module.exports = {
                     include:[{association:'subcategory'}]
                 })
                 .then(productos => {
-                    //res.send(productos)
+                    
                     res.render('productShow', {
                         title: "Ver/Editar Producto",
                         producto: product,
@@ -225,10 +270,19 @@ module.exports = {
         
                     })
                 })
+                .catch(errors => {
+                    console.log(errors);
+                })
             })
+            .catch(errors => {
+                console.log(errors);
+            })
+        })
+        .catch(errors => {
+            console.log(errors)
         })    
     },
-    update_product: (req, res) => {
+    updateProduct: (req, res) => {
         let errors = validationResult(req);
         
         if(errors.isEmpty()){
@@ -277,7 +331,7 @@ module.exports = {
                         include:[{association:'subcategory'}]
                     })
                     .then(productos => {
-                        //res.send(productos)
+                        
                         res.render('productShow', {
                             title: "Ver/Editar Producto",
                             producto: product,
@@ -289,12 +343,21 @@ module.exports = {
             
                         })
                     })
+                    .catch(errors => {
+                        console.log(errors);
+                    })
                 })
+                .catch(errors => {
+                    console.log(errors);
+                })
+            })
+            .catch(errors => {
+                console.log(errors);
             })
         }
         
     },
-    delete_product: (req, res) => {
+    deleteProduct: (req, res) => {
 
         //borrar el archivo de imagen de un producto
         if(fs.existsSync('public/images/products/'+req.body.image)&&req.body.image != "default.png"){
@@ -305,6 +368,10 @@ module.exports = {
                 id:req.params.id
             }
         })
+        .catch(errors => {
+            console.log(errors);
+        })
+
         return res.redirect('/users/profile')
     }
 }

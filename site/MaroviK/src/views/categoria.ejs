@@ -17,11 +17,11 @@
                 <div class="collapse navbar-collapse row" id="navbarSupportedContent">
                 
                     <ul>
-                        <h4><%= titulo%></h4>
+                        <h4><%= category.title %></h4>
 
                         
-                            <% subcategory.forEach(subcategoria => { %>
-                            <li><a href="/products/categorias/<%= subcategoria.name_path%> "><%= subcategoria.title %> </a></li>
+                            <% category.subcategories.forEach(subcategory => { %>
+                            <li><a href="/products/<%= category.namePath%>/<%= subcategory.name_path%> "><%= subcategory.title %> </a></li>
                             <% }) %>
                         
                     </ul>
@@ -35,20 +35,20 @@
                 
                 <div class="productos">
                     <div class="banner">
-                        <img src="/images/categories/<%= imagen %> " alt="" class="img-fluid">
+                        <img src="/images/categories/<%= category.image %> " alt="" class="img-fluid">
                     </div>
                     <div class="subcategorias row col-12">
                         <!--<div class="col-12 col-md-6 col-lg-4">-->
     
-                            <% subcategory.forEach(imagenes => { %>
+                            <% category.subcategories.forEach(subcategory => {%>
                             <div class="contenidos">
         
                                 <figure>
-                                    <a href="/products/categorias/<%= imagenes.name_path%>"><img src="/images/categories/<%= imagenes.image %> " alt=" "></a>
+                                    <a href="/products/<%= category.namePath %>/<%= subcategory.name_path %>"><img src="/images/categories/<%= subcategory.image %> " alt=" "></a>
                                 </figure>
                                 <ul> 
-                                    <li><a href="/products/categorias/<%= imagenes.name_path%>"><h5><%= imagenes.title %></h5> </a></li>
-                                    <li><a href="/products/categorias/<%= imagenes.name_path%>">Ver más</a></li>
+                                    <li><a href="/products/<%= category.namePath %>/<%= subcategory.name_path %>"><h5><%= subcategory.title %></h5> </a></li>
+                                    <li><a href="/products/<%= category.namePath %>/<%= subcategory.name_path %>">Ver más</a></li>
                                 </ul>
                             </div>
                             <% }) %>

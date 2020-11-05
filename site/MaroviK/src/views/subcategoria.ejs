@@ -17,14 +17,24 @@
                 <div class="collapse navbar-collapse row" id="navbarSupportedContent">
                 
                     <ul>
+
+                        <h4><%= category.title %></h4>
                         
-                            <% subcategorias.forEach(subcategoria => {  %>
-                            <li><a href="/products/categorias/<%= subcategoria.name_path %>"><%= subcategoria.title %> </a></li>
-                            <% }) %>
+                        <% category.subcategories.forEach(subcategory => { %>
+                            <li><a href="/products/<%= category.namePath%>/<%= subcategory.name_path%> "><%= subcategory.title %> </a></li>
+                        <% }) %>
+
                     </ul>
                     
                     <ul>
                         <h4>Marcas</h4>
+                        
+                        <% marks.forEach(mark => { %>
+
+                            <li><a href="#"><%= mark %> </a></li>
+
+                        <% }) %>
+                        
 
                     </ul>
                 </div>
@@ -39,21 +49,21 @@
                 <div class="productos">
     
                     <div class="subcategorias row col-12">
-                        <% productos.forEach(producto => {%>
+                        <% products.forEach(product => {%>
                         <div class="contenidos">
     
                             <figure>
-                                <a href="/products/detail/<%= producto.id %>"><img src="/images/products/<%= producto.image %> " alt=" "></a>
+                                <a href="/products/detail/<%= product.id %>"><img src="/images/products/<%= product.image %> " alt=" "></a>
                             </figure>
     
                             <article>
 
-                                <p><a href="/products/detail/<%= producto.id %>"><%= producto.name %></a> </p>
+                                <p><a href="/products/detail/<%= product.id %>"><%= product.name %></a> </p>
 
-                                <h2> <%= (producto.price -producto.price * producto.discount /100).toFixed(0).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".") %></h2>
+                                <h2> <%= (product.price -product.price * product.discount /100).toFixed(0).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".") %></h2>
 
-                                <% if (producto.discount!=0) { %>
-                                    <span> <strike>$<%= producto.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".") %></strike><strong> // <%- producto.discount %> % OFF</strong></span>
+                                <% if (product.discount!=0) { %>
+                                    <span> <strike>$<%= product.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".") %></strike><strong> // <%- product.discount %> % OFF</strong></span>
                                 <% } %>
 
                             </article>

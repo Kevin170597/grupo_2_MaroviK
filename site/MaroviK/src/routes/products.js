@@ -21,15 +21,15 @@ const productsValidator = require('../validators/productsValidator');
 router.get('/add', sessionUserCheck, controller.viewProductAdd);
 router.get("/search", controller.search);
 router.get('/add/form', sessionUserCheck, controller.viewProductAdd);
-router.get("/detail/:idproduct", controller.view_product_detail);
+router.get("/detail/:idproduct", controller.viewProductDetail);
 
-router.get('/show/:id', sessionUserCheck, controller.view_product_show);
-router.put('/edit/:id', multerProduct.any(), sessionUserCheck, productsValidator, controller.update_product);
-router.delete('/delete/:id', sessionUserCheck, controller.delete_product);
+router.get('/show/:id', sessionUserCheck, controller.viewProductShow);
+router.put('/edit/:id', multerProduct.any(), sessionUserCheck, productsValidator, controller.updateProduct);
+router.delete('/delete/:id', sessionUserCheck, controller.deleteProduct);
 
 
-router.get('/:categoria', controller.view_for_category);
-router.get("/categorias/:subcategoria", controller.view_for_subcategory);
+router.get('/:categoria', controller.viewForCategory);
+router.get("/:categoria/:subcategoria", controller.viewForSubcategory);
 
 
 router.post('/add/form', multerProduct.any(), sessionUserCheck, productsValidator, controller.publicProduct);
