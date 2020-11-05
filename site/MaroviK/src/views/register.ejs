@@ -81,7 +81,7 @@
   
                         <div class="form-group col-12 col-md-6">
                           <div class="custom-file mt-4">
-                            <input type="file" id="avatar" name="avatar" accept="image/png, image/jpg, image/jpeg, image/gif" >
+                            <input type="file" id="avatar" name="avatar" accept="image/png, image/jpg, image/jpeg, image/gif" value="<%= (typeof old != 'undefined' && old.avatar)?old.avatar:'' %>">
                             <label for="avatar">Seleccionar Archivo</label>
                             <small class="text-danger"><%= (typeof errors != 'undefined' && errors.avatar)?errors.avatar.msg: "" %> </small>
                             <div id="errorFile"></div>

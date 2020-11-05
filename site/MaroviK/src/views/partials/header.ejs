@@ -4,7 +4,7 @@
 
     <div id="barraprincipal">
         <div class="barprincipal">
-            <div class="logo"><a href="/"><img src="/images/logomarovik2.svg" alt=""></a></div>
+            <div class="logo"><a href="/"><img src="/images/logomarovik5.png" alt=""></a></div>
             <div class="botoncategorias">
                 <div class="dropdown">
                     <button class="" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -52,13 +52,13 @@
                         <div class="dropdown-menu" aria-labelledby="">
                             <% if ((typeof locals.user != "undefined") && (locals.user.rol == "user")){ %>
                                 <a class="dropdown-item" href="/users/profile">Mi perfil</a>
-                                <a class="dropdown-item" href="/">Cambiar contraseña</a>
+                                <a class="dropdown-item" href="/users/password">Cambiar contraseña</a>
                                 <a class="dropdown-item" href="/users/logout">Cerrar sesión</a>
                             <% } %>
         
                             <% if ((typeof locals.user != "undefined") && (locals.user.rol == "admin")){ %>
                                 <a class="dropdown-item" href="/users/profile">Mi perfil</a>
-                                <a class="dropdown-item" href="/">Cambiar contraseña</a>
+                                <a class="dropdown-item" href="/users/password">Cambiar contraseña</a>
                                 <a class="dropdown-item" href="/products/add">Publicar</a>
                                 <a class="dropdown-item" href="/users/profile/admin">Perfil de publicaciones</a>
                                 <a class="dropdown-item" href="/users/logout">Cerrar sesión</a>

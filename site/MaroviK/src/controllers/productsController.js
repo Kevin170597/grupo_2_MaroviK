@@ -20,7 +20,7 @@ module.exports = {
         }else{
             db.Products.findAll({
                 where: {
-                    [Op.or]: [{name:{[Op.like]: ["%" + search + "%"]}}, {price:{[Op.like]: ["%" + search + "%"]}}, {mark:{[Op.like]: ["%" + search + "%"]}}]
+                    [Op.or]: [{name:{[Op.like]: ["%" + search + "%"]}}, {mark:{[Op.like]: ["%" + search + "%"]}}]
                 }
             })
             .then(productos => {

@@ -11,6 +11,7 @@ let controller = require("../controllers/usersController");
 
 let registerValidator = require("../validators/registerValidator");
 let loginValidator = require("../validators/loginValidator");
+let updatePasswordValidator = require("../validators/updatePasswordValidator");
 
 /******************   MIDDLEWARES   *******************/
 
@@ -26,6 +27,9 @@ router.post("/register", multerAvatar.any(), registerValidator, controller.proce
 
 router.get("/login", controller.login);
 router.post("/login", loginValidator, controller.processLogin);
+
+router.get("/password", controller.updatePasswordView);
+router.put("/updatepassword/:id", updatePasswordValidator, controller.updatePassword);
 
 router.get("/profile", sessionUserCheck, controller.viewProfile)
 router.get('/profile/admin',  sessionUserCheck, controller.viewAdminProfile);
