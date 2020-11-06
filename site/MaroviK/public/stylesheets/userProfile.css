@@ -157,6 +157,26 @@
     color: rgb(16, 189, 189);
     font-size: 33px;
 }
+#productos .publicButton button{
+    background-color: rgb(16, 189, 189);
+    border-style: none;
+    color: white;
+    border-radius: 20px;
+    height: 42px;
+    width: 10%;
+    box-shadow:3px 3px 20px -4px #c4c4c4;
+    -moz-box-shadow:3px 3px 20px -4px #c4c4c4;
+    -webkit-box-shadow:3px 3px 20px -4px #c4c4c4;
+    margin-bottom: 20px;
+}
+#productos .publicButton button:hover{
+    box-shadow:3px 3px 20px -4px #488780;
+    -moz-box-shadow:3px 3px 20px -4px #488780;
+    -webkit-box-shadow:3px 3px 20px -4px #488780;
+}
+#productos .publicButton button:focus{
+    outline: none;
+}
 
 @media(max-width:480px){
     .productosEditar .cajaEditar .cajasProductos{

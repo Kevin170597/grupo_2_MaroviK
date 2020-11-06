@@ -57,10 +57,9 @@
                             <% } %>
         
                             <% if ((typeof locals.user != "undefined") && (locals.user.rol == "admin")){ %>
-                                <a class="dropdown-item" href="/users/profile">Mi perfil</a>
-                                <a class="dropdown-item" href="/users/password">Cambiar contraseña</a>
+                                <a class="dropdown-item" href="/users/profile/admin">My perfil y publicaciones</a>
                                 <a class="dropdown-item" href="/products/add">Publicar</a>
-                                <a class="dropdown-item" href="/users/profile/admin">Perfil de publicaciones</a>
+                                <a class="dropdown-item" href="/users/password">Cambiar contraseña</a>
                                 <a class="dropdown-item" href="/users/logout">Cerrar sesión</a>
                             <% } %>
                             </div>
