@@ -28,11 +28,14 @@ router.post("/register", multerAvatar.any(), registerValidator, controller.proce
 router.get("/login", controller.login);
 router.post("/login", loginValidator, controller.processLogin);
 
-router.get("/password", controller.updatePasswordView);
+router.get("/password", sessionUserCheck, controller.updatePasswordView);
 router.put("/updatepassword/:id", updatePasswordValidator, controller.updatePassword);
 
 router.get("/profile", sessionUserCheck, controller.viewProfile)
+
 router.get('/profile/admin',  sessionUserCheck, controller.viewAdminProfile);
+router.get("/searchupdate", sessionUserCheck, controller.search);
+
 router.put('/updateProfile/:id', multerAvatar.any(),  sessionUserCheck, controller.updateProfile);
 router.delete('/delete/:id',  sessionUserCheck, controller.delete);
 router.get('/logout', controller.logout);

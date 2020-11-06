@@ -1,0 +1,254 @@
+#datos .datosList{
+    width: 100%;
+    display: flex;
+}
+#datos .datoAvatar{
+    width: 20%;
+    background-color:  #32bbb9;
+}
+#datos .datoAvatar img{
+    margin-top: 30px;
+    margin-bottom: 30px;
+    position: relative;
+    left: 100px;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 100px;
+    box-shadow:3px 3px 24px 1px #8f8f8f;
+    -moz-box-shadow:3px 3px 24px 1px #8f8f8f;
+    -webkit-box-shadow:3px 3px 24px 1px #8f8f8f;
+}
+#datos .datoAvatar a button{
+    background-color: rgb(238, 238, 238);
+    border-style: none;
+    color: #299d9b;
+    border-radius: 20px;
+    padding: 10px;
+    margin-bottom: 15px;
+}
+#datos .datoAvatar a button:hover{
+    box-shadow:3px 3px 24px 1px #8f8f8f;
+    -moz-box-shadow:3px 3px 24px 1px #8f8f8f;
+    -webkit-box-shadow:3px 3px 24px 1px #8f8f8f;
+}
+#datos .datoAvatar a button:focus{
+    outline: none;
+}
+#datos .datosPersonales{
+    padding-top: 30px;
+    text-align: center;
+    width: 80%;
+    background-color: rgb(238, 238, 238);
+}
+#datos .datosPersonales div{
+    margin: auto;
+    width: 30%;
+    text-align: left;
+}
+#datos .datosPersonales .nameUser{
+    font-size: 30px;
+    color: teal;
+    margin-bottom: 20px;
+}
+#datos .datosPersonales .emailUser{
+    color: rgb(137, 137, 137);
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+#actualizar .tituloActualizar h3{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: rgb(132, 132, 132);
+}
+#actualizar .buscadorActualizar form input{
+    height: 40px;
+    border-radius: 20px 0px 0px 20px;
+    border: solid 1px rgb(167, 167, 167);
+    padding-left: 12px;
+    margin-left: 20px;
+    margin-right: 3px;
+}
+#actualizar .buscadorActualizar form button{
+    border-radius: 0px 20px 20px 0px;
+    width: 10%;
+    background-color: #32bbb9;
+    border-style: none;
+    color: white;
+}
+#actualizar .buscadorActualizar form button:focus{
+    background-color: #2a8a89;
+    outline: none;
+}
+
+.productosEditar{
+    margin-top: 15px;
+    width: 100%;
+    text-align: center;
+}
+.productosEditar .cajaEditar{
+    width: 100%;
+    margin: 0px auto;
+    background-color: rgb(228, 227, 227);
+    padding-bottom: 10px;
+    border-radius: 10px;
+}
+.productosEditar .cajaEditar .cajasProductos{
+    width: 100%;
+}
+.productosEditar .cajaEditar figure{
+    background-color: white;
+    margin-bottom: 0px;
+    padding: 5px;
+    border-radius: 5px 5px 0px 0px;
+    border-bottom: solid 1px grey;
+    box-shadow:3px 3px 20px -4px #c4c4c4;
+    -moz-box-shadow:3px 3px 20px -4px #c4c4c4;
+    -webkit-box-shadow:3px 3px 20px -4px #c4c4c4;
+}
+.productosEditar .cajaEditar figure img{
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+.productosEditar .cajaEditar .infoEditar{
+    background-color: white;
+    border-radius: 0px 0px 5px 5px;
+    height: 180px;
+    box-shadow:3px 3px 20px -4px #c4c4c4;
+    -moz-box-shadow:3px 3px 20px -4px #c4c4c4;
+    -webkit-box-shadow:3px 3px 20px -4px #c4c4c4;
+}
+.productosEditar .cajaEditar .infoEditar p{
+    height: 43%;
+    margin: 0px;
+}
+.productosEditar .cajaEditar .infoEditar h5{
+    height: 15%;
+    margin: 0px;
+}
+.productosEditar .cajaEditar .infoEditar .descuento{
+    font-size: 14px;
+    height: 12%;
+    margin: 0px;
+}
+.productosEditar .cajaEditar .infoEditar .descuento strike{
+    color: rgb(112, 112, 112);
+}
+.productosEditar .cajaEditar .infoEditar .descuento strong{
+    color: rgb(38, 161, 87);
+}
+.productosEditar .cajaEditar .infoEditar .botonesEditar{
+    height: 30%;
+    margin: 0px;
+}
+.productosEditar .cajaEditar .infoEditar .botonesEditar button{
+    border-style: none;
+    margin: 0px;
+    padding: 0px;
+}
+.productosEditar .cajaEditar .infoEditar .botonesEditar button span{
+    font-size: 30px;
+    color: rgb(71, 117, 255);
+    margin-top: 15px;
+}
+.productosEditar .cajaEditar .infoEditar .botonesEditar button span:hover{
+    color: rgb(16, 189, 189);
+    font-size: 33px;
+}
+
+@media(max-width:480px){
+    .productosEditar .cajaEditar .cajasProductos{
+        margin-top: 15px;
+    }
+    #actualizar .buscadorActualizar form input{
+        width: 70%;
+    }
+    #actualizar .buscadorActualizar form button{
+        margin-right: 15px;
+        width: 30%;
+    }
+    .productosEditar .cajaEditar figure img{
+        width: 220px;
+        height: 200px;
+        object-fit: cover;
+    }
+    .productosEditar .cajaEditar .infoEditar p{
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    #datos .datoAvatar{
+        width: 40%;
+    }
+    #datos .datosPersonales{
+        width: 60%;
+    }
+    #datos .datoAvatar img{
+        position: relative;
+        left: 3px;
+        width: 150px;
+        height: 150px;
+        object-fit: cover;
+        border-radius: 100px;
+    }
+    #datos .datosPersonales div{
+        margin-left: 10px ;
+        width: 30%;
+        text-align: left;
+    }
+    #datos .datosPersonales .emailUser{
+        font-size: 15px;
+    }
+}
+
+@media(max-width:768px){
+    .productosEditar .cajaEditar .cajasProductos{
+        margin-top: 15px;
+    }
+    #actualizar .buscadorActualizar form input{
+        width: 70%;
+    }
+    #actualizar .buscadorActualizar form button{
+        margin-right: 15px;
+        width: 30%;
+    }
+    .productosEditar .cajaEditar figure img{
+        width: 220px;
+        height: 200px;
+        object-fit: cover;
+    }
+    #datos .datoAvatar{
+        width: 40%;
+    }
+    #datos .datosPersonales{
+        width: 60%;
+    }
+    #datos .datoAvatar img{
+        position: relative;
+        left: 3px;
+        width: 150px;
+        height: 150px;
+        object-fit: cover;
+        border-radius: 100px;
+    }
+    #datos .datosPersonales div{
+        margin-left: 10px ;
+        width: 30%;
+        text-align: left;
+    }
+    #datos .datosPersonales .emailUser{
+        font-size: 15px;
+    }
+}
+
+@media(max-width:380px){
+    #datos .datoAvatar img{
+        position: relative;
+        left: 3px;
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+        border-radius: 100px;
+    }
+}

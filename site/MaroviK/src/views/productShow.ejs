@@ -131,10 +131,10 @@
                                                     <div class="form-group col-12 col-lg-4">
 
                                                         <select name="subcategory" id="" class="form-control">
-                                                            <option value=" <%= producto.subcategory.name_path %>" selected> <%= producto.subcategory.name_path %></option>
+                                                            <option value=" <%= producto.subcategory.id %>" selected> <%= producto.subcategory.name_path %></option>
                                                             <% categorias.forEach(categoria => { %>
                                                                 <% categoria.subcategories.forEach(subcategoria => { %>
-                                                                    <option value=" <%= subcategoria.name_path %>"> <%= subcategoria.name_path %></option>
+                                                                    <option id="subcategoryId" value=" <%= subcategoria.id%>"> <%= subcategoria.name_path%></option>
                                                                 <% }) %>
                                                                 <% }) %>
                                                             
@@ -154,7 +154,7 @@
 
                                                         <div class="input-group mb-2 mr-sm-2">
                                                             <div class="input-group-prepend">
-                                                                <div class="input-group-text"></div>
+                                                                <div class="input-group-text">Marca</div>
                                                             </div>
                                                             <input type="text" class="form-control" value="<%=producto.mark%>" name="mark" value="<%= (typeof old != 'undefined' && old.mark)?old.mark:'' %>">
                                                             <small class="text-danger"><%= (typeof errors != 'undefined' && errors.mark)?errors.mark.msg: "" %> </small>
@@ -174,7 +174,7 @@
 
                                                         <div class="input-group mb-2 mr-sm-2">
                                                             <div class="input-group-prepend">
-                                                                <div class="input-group-text">$</div>
+                                                                <div class="input-group-text">Stock</div>
                                                             </div>
                                                             <input type="text" class="form-control" value="<%=producto.stock%>" name="stock">
                                                         </div>
