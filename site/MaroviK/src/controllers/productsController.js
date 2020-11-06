@@ -294,7 +294,8 @@ module.exports = {
                     discount: Number(req.body.discount),
                     description: req.body.description.trim(),
                     stock: Number(req.body.stock),
-                    image: (req.files[0])?req.files[0].filename:req.body.image
+                    image: (req.files[0])?req.files[0].filename:req.body.image,
+                    id_subcategory: req.body.subcategory
                 },
                 {
                     where:{

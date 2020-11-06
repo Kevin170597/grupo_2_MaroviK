@@ -22,18 +22,93 @@
                                     <li class="nav-item " role="presentation">
                                         <a class="nav-link " id="home-tab" data-toggle="tab" href="#datos" role="tab" aria-controls="home" aria-selected="true">Mis Datos</a>
                                     </li>
+                                    
                                     <li class="nav-item " role="presentation">
-                                        <a class="nav-link active" id="profile-tab" data-toggle="tab" href="#productos" role="tab" aria-controls="profile" aria-selected="false">Mis Productos</a>
+                                        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#productos" role="tab" aria-controls="profile" aria-selected="false">Mis Productos</a>
+                                    </li>
+
+                                    <li class="nav-item " role="presentation">
+                                        <a class="nav-link active" id="update-tab" data-toggle="tab" href="#actualizar" role="tab" aria-controls="profile" aria-selected="false">Actualizar productos</a>
                                     </li>
                                 </ul>
                                 <div class="tab-content" id="myTabContent">
 
-                                  <div class="tab-pane fade " id="datos" role="tabpanel" aria-labelledby="home-tab">
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, ut. Magni esse doloremque ipsum, ut asperiores deleniti laudantium sapiente veritatis debitis reiciendis soluta quis corporis deserunt odit beatae suscipit perspiciatis.
-                                  </div>
+                                <div class="tab-pane fade " id="datos" role="tabpanel" aria-labelledby="home-tab">
+                                    <div class="datosList">
+                                        <div class="datoAvatar">
+                                            <img src="/images/users/<%= userInfo.avatar%>" alt="">
+                                            <a href="/users/profile"><button>Actualizar datos</button></a>
+                                        </div>
+
+                                        <div class="datosPersonales">
+                                            <div class="nameUser"><%= userInfo.name + " " + userInfo.last_name%></div>
+                                            <div class="emailUser"><%= userInfo.email%></div>
+                                            <div class="adressUser"><%= userInfo.address%></div>
+                                            <div class="cityUser"><%= userInfo.city%></div>
+                                            <div class="provinceUser"><%= userInfo.province%></div>
+                                            <div class="cpUser"><%= userInfo.cp%></div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+
+                                <div class="tab-pane fade show active" id="actualizar" role="tabpanel" aria-labelledby="home-tab">
+                                    <div class="tituloActualizar"><h3>Actualizar productos</h3></div>
+                                    <div class="buscadorActualizar">
+                                        <form action="/users/searchupdate/" method="get" class="search-form">
+                                            <div style="display: flex;">
+                                                <input type="text" name="search" placeholder="Buscar articulos" class="search-form_input">
+                                                <button type="submit" class="search-form_button">Buscar</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="productosEditar">
+                                        <% if(typeof actualizarProductos != "undefined"){ %>
+                                            <div class="cajaEditar col-12 row">
+                                                <% actualizarProductos.forEach(producto => { %>
+                                                
+                                                    <div class="cajasProductos col-12 col-sm-12 col-md-6 col-lg-4 col-xl-2">
+                                                        <figure>
+                                                            <img src="/images/products/<%- producto.image%>" alt="">
+                                                        </figure>
+                                                        <div class="infoEditar">
+                                                            <%if (producto.name.length > 10) {%>
+                                                                <p>
+                                                                    <%- producto.name.slice(0,40) + '...'%>
+                                                                </p>
+                                                            <%} else{ %>
+                                                                    <%- producto.name %>
+                                                            <% } %>
+                                                                <h5>
+                                                                    $<%= (producto.price -producto.price * producto.discount /100).toFixed(0).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".") %>
+                                                                </h5>
+                                                                <% if (producto.discount!=0) { %>
+                                                                    <div class="descuento"><span> <strike>$<%= producto.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".") %></strike><strong> // <%- producto.discount %> % OFF</strong></span></div>
+                                                                <% }else{ %>
+                                                                    <div class="descuento"></div>
+                                                                <% } %>
+    
+                                                                <div class="botonesEditar d-flex justify-content-around">
+                                                                    <form action="/products/show/<%= producto.id %>" method="GET">
+                                                                        <button class="btn btn-outline-light"><span class="material-icons">create</span></button>
+                                                                    </form>
+                                                                    <form action="/products/delete/<%= producto.id %>?_method=DELETE" method="POST">
+                                                                        <button class="btn btn-outline-light"> <h4 class="fas fa-trash-alt text-danger"></h4></button>
+                                                                    </form>
+                                                                </div>
+                                                            
+                                                        </div>
+                                                    </div>
+                                                    
+                                                <% }) %>
+                                            </div>
+                                        <% }%>
+
+                                    </div>
+                                </div>
                         
 
-                                    <div class="tab-pane fade show active " id="productos" role="tabpanel" aria-labelledby="profile-tab">
+                                    <div class="tab-pane fade show" id="productos" role="tabpanel" aria-labelledby="profile-tab">
 
                                         <div class="row productos p-4">
                                             <% productos.forEach(producto => { %>
@@ -50,7 +125,7 @@
                                                             <p>
                                                                 <%- producto.name.slice(0,20) + '...'%>
                                                             </p>
-                                                            <%}%>
+                                                        <%}%>
 
                                                                 <div class="d-flex justify-content-around">
                                                                     <form action="/products/show/<%= producto.id %>" method="GET">

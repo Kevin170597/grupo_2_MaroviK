@@ -7,6 +7,8 @@ const {validationResult, body} = require("express-validator");
 const bcrypt = require('bcrypt');
 const fs = require("fs");
 const path = require("path");
+const Sequelize = require("sequelize");
+const Op = Sequelize.Op;
 
 module.exports = {
     register: function(req, res){
@@ -95,6 +97,49 @@ module.exports = {
         }
         res.redirect('/');
     },
+    search: (req,res) => {
+        let search = req.query.search;
+        if(search == ""){
+            res.redirect("/")
+        }else{
+            db.Products.findAll({
+                where: {
+                    [Op.or]: [{name:{[Op.like]: ["%" + search + "%"]}}, {mark:{[Op.like]: ["%" + search + "%"]}}]
+                }
+            })
+            .then(productos => {
+                db.Subcategories.findAll({include: {association: "category"}, where:{}})
+                .then(subcategorias => {
+                    db.Users.findOne({
+                        where: {
+                            id: req.session.user.id
+                        },
+                        include:[{association:'products_public'}]
+                    
+                    })
+                    .then(user => {
+            
+                        res.render('userProfile', {
+                            title: "Perfil de Publicaciones",
+                            user: req.session.user,
+                            userInfo: user,
+                            productos:user.products_public,
+                            actualizarProductos: productos,
+                        })    
+                    })
+                    .catch(errores => {
+                        console.log(errores);
+                    })
+                })
+                .catch(errors => {
+                    console.log(errors)
+                })
+            })
+            .catch(errors => {
+                console.log(errors)
+            })
+        }
+    },
     viewAdminProfile: (req, res) => {
 
         db.Users.findOne({
@@ -107,8 +152,8 @@ module.exports = {
         .then(user => {
 
             res.render('userProfile', {
-                
                 title: "Perfil de Publicaciones",
+                userInfo: user,
                 user: req.session.user,
                 productos:user.products_public
             })    
