@@ -272,6 +272,35 @@ module.exports = {
             }
         })
         return res.redirect('/');
+    },
+    viewCart: (req, res) => {
+        db.Users.findOne({
+            where: {
+                id: req.session.user.id
+            },
+            include:[{association:'product_u'}]
+        })
+        .then(result => {
+            res.render("productCart",{
+                productos: result.product_u,
+                user: result
+            })
+        })
+        .catch(error => {
+            res.send(error)
+        })
+    },
+    deleteAddProduct: (req, res) => {
+        db.Cart.destroy({
+            where: {
+                id_product: req.params.id,
+            }
+        })
+        .then(result => {
+            res.redirect("/users/add/cart")
+        })
+        .catch(error => {
+            res.send(error)
+        })
     }
-    
 }

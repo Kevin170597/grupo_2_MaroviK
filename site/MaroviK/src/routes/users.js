@@ -40,4 +40,7 @@ router.put('/updateProfile/:id', multerAvatar.any(),  sessionUserCheck, controll
 router.delete('/delete/:id',  sessionUserCheck, controller.delete);
 router.get('/logout', controller.logout);
 
+router.get('/add/cart', sessionUserCheck, controller.viewCart);
+router.delete('/add/cart/:id', sessionUserCheck, controller.deleteAddProduct);
+
 module.exports = router;

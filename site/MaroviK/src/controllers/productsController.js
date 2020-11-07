@@ -374,5 +374,17 @@ module.exports = {
         })
 
         return res.redirect('/users/profile')
+    },
+    addCart: (req, res) => {
+        db.Cart.create(
+            {
+                id_user: req.session.user.id,
+                id_product: req.params.idproduct,
+                quantity: 2
+            }
+        )
+        .then(result => {
+            res.redirect("/users/add/cart")
+        })
     }
 }

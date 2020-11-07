@@ -8,92 +8,61 @@
 
     <%- include("partials/header") %> 
 
-    <div class="col-2 cont-burger dropdown">
-        <botton class="btn" type="button" id="burger-menu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"><i class="fas fa-bars"></i></botton>
-
-        <div class="dropdown-menu cont-menu-categorias" aria-labelledby="burger-menu">
-
-            <a href="./categoria.html" class="dropdown-item"><i class="icon-tecnologia"></i>Tecnología</a>
-            <a href="./categoria.html" class="dropdown-item"><i class="icon-electrodomesticos"></i>Electrodomésticos</a>
-            <a href="./categoria.html" class="dropdown-item"><i class="icon-bebes"></i>Bebés y Niños</a>
-            <a href="./categoria.html" class="dropdown-item"><i class="icon-libreria"></i>Librería</a>
-            <a href="./categoria.html" class="dropdown-item"><i class="icon-almacen"></i>Almacén</a>
-            <a href="./categoria.html" class="dropdown-item"><i class="icon-bebidas"></i>Bebidas</a>
-            <a href="./categoria.html" class="dropdown-item"><i class="icon-frutas"></i>Frutas y Verduras</a>
-            <a href="./categoria.html" class="dropdown-item"><i class="icon-carnes"></i>Carnes</a>
-            <a href="./categoria.html" class="dropdown-item"><i class="icon-pescados"></i>Pescados y Mariscos</a>
-            <a href="./categoria.html" class="dropdown-item"><i class="icon-queso"></i>Quesos y Fiambres</a>
-            <a href="./categoria.html" class="dropdown-item"><i class="icon-lacteos"></i>Lácteos</a>
-            <a href="./categoria.html" class="dropdown-item"><i class="icon-congelados"></i>Congelados</a>
-            <a href="./categoria.html" class="dropdown-item"><i class="icon-perfumeria"></i>Perfumería</a>
-            <a href="./categoria.html" class="dropdown-item"><i class="icon-limpieza"></i>Limpieza</a>
-            <a href="./categoria.html" class="dropdown-item"><i class="icon-mascotas"></i>Mascotas</a>
+    <div id="contenedorCarrito">
+        <div id="barCarrito">
+            <img src="/images/users/<%=user.avatar%>" alt="">
+            <p><%= user.name%></p>
         </div>
-
-    </div>
-    
-    <div class="container titulo">
-        <h2>Mi carrito</h2>
-
-    </div>
-    
-    <div class="container menucarrito col-12 col-md-4 col-lg-4">
-        <div class="row">
-            <div class="col-6">
-                <button><a href="#"><img width="30" src="https://img.icons8.com/cotton/64/000000/clock--v1.png"/> Seguir agregando productos</a></button>
+        <div id="infoCarrito">
+            <div id="productosCarrito">
+                <% productos.forEach(producto => { %>
+                    <div class="articulosCarrito">
+                        <figure>
+                            <img src="/images/products/<%= producto.image%>" alt="">
+                        </figure>
+                        <%if (producto.name.length > 10) {%>
+                            <p class="nombreProducto">
+                                <%- producto.name.slice(0,30) + '...'%>
+                            </p>
+                        <%} else{ %>
+                            <p class="nombreProducto">
+                                <%- producto.name %>
+                            </p>
+                        <% } %>
+                        <h4>$<%= producto.price%> </h4>
+                        <form action="/users/add/cart/<%= producto.id%>?_method=DELETE" method="POST">
+                            <button type="submit">
+                                <span class="material-icons">delete</span>
+                            </button>
+                        </form>
+                        
+                    </div>
+                <% }) %>
             </div>
-            <div class="iconcarrito col-6">
-                <img width="45" src="https://img.icons8.com/dusk/64/000000/shopping-cart-loaded.png"/>
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="row">
-                <div class="en-mi-carrito">
-                    <div class="producto row">
-                        <figure>
-                            <a href="producto.html"><img width="70" src="../public/images/img-cafetera-moulinex.jpg" alt=" "></a>
-                        </figure>
-                        <article>
-                            <h2>$6.770</h2>
-                            <p>Cafetera Moulinex Dolce Gusto</p>
-                        </article>
-                    </div>
 
-                    <div class="producto row">
-                        <figure>
-                                <a href="producto.html"><img width="70" src="../public/images/img-cafetera-moulinex.jpg" alt=" "></a>
-                        </figure>
-                        <article>
-                            <h2>$6.770</h2>
-                        <p>Cafetera Moulinex Dolce Gusto</p>
-                        </article>
-                    </div>
-
-                    <div class="producto row">
-                        <figure>
-                            <a href="producto.html"><img width="70" src="../public/images/img-cafetera-moulinex.jpg" alt=" "></a>
-                        </figure>
-                        <article>
-                            <h2>$6.770</h2>
-                            <p>Cafetera Moulinex Dolce Gusto</p>
-                        </article>
-                    </div>
+            <div id="contenedorTotal">
+                <div id="sumarioCarrito">
+                    <h4>Sumario</h4>
+                    <% total = 0; %>
+                    <% productos.forEach(producto => { %>
+                    <% total += producto.price %>
+                    <% }) %>
+                    <p>Total de la orden $<%= (total).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".") %></p>
+                    <p>Envio $0</p>
+                </div>
+                <div id="totalCarrito">
+                    <% total = 0; %>
+                    <% productos.forEach(producto => { %>
+                    <% total += producto.price %>
+                    <% }) %>
+                    Total $<%= (total).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".") %>
+                </div>
+                <div id="comprarCarrito">
+                    <a href="#"><button>Comprar</button></a>
                 </div>
             </div>
+        </div>
         
-        </div>
-        <div class="total">
-            <div class="pago">
-                Total: $$$$
-            </div>
-        </div>
-    
-    </div>
-    <div class="container col-12 col-md-4 col-lg-4">
-        <div class="boton-comprar">
-            <a href="#"><button>Comprar</button></a>
-        </div>
     </div>
 
     <%- include("partials/footer") %> 
