@@ -11,5 +11,6 @@ var controller = require('../controllers/mainController');
 /******************   RUTAS   *******************/
 router.get('/', cookieCheck, controller.index);
 router.get('/nosotros', controller.nosotros);
+router.get('/mediosDePago', controller.medios);
 
 module.exports = router;

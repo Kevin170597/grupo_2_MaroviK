@@ -27,5 +27,8 @@ module.exports = {
     },
     nosotros: (req, res) =>{
       res.render('nosotros')
+    },
+    medios: (req, res) =>{
+      res.render('mediosDePago')
     }
 }
