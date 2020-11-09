@@ -13,7 +13,7 @@ module.exports = {
             user: req.session.user
         });
     },
-    search: (req,res) => {
+    /*search: (req,res) => {
         let search = req.query.search;
         if(search == ""){
             res.redirect("/")
@@ -39,7 +39,7 @@ module.exports = {
                 console.log(errors)
             })
         }
-    },
+    },*/
     viewForCategory: (req, res) => {
         let categoria = req.params.categoria
         db.Categories.findOne({

@@ -19,7 +19,7 @@ const productsValidator = require('../validators/productsValidator');
 //router.get('/', controller.view_products);
 
 router.get('/add', sessionUserCheck, controller.viewProductAdd);
-router.get("/search", controller.search);
+//router.get("/search", controller.search);
 router.get('/add/form', sessionUserCheck, controller.viewProductAdd);
 router.get("/detail/:idproduct", controller.viewProductDetail);
 

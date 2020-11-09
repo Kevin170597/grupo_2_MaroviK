@@ -123,6 +123,7 @@ body {
     margin-top: 10px;
 }
 .buscador input{
+    color: rgb(117, 117, 117);
     border: solid 1px rgb(134, 134, 134);
     padding-left: 12px;
     border-radius: 45px 0px 0px 45px / 42px 0px 0px 42px;

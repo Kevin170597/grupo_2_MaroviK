@@ -42,6 +42,31 @@ body {
     background-color: var(--color-grisClaro);
 }
 
+#resultadosBusqueda #listado{
+    width: 46%;
+    text-align: left;
+    position: absolute;
+    left: 24%;
+    z-index: 2;
+    box-shadow:3px 1px 17px -10px #000000;
+-moz-box-shadow:3px 1px 17px -10px #000000;
+-webkit-box-shadow:3px 1px 17px -10px #000000;
+}
+#resultadosBusqueda #listado p{
+    color: rgb(111, 111, 111);
+    background-color: #fffffff8;
+    width: 100%;
+    margin: auto;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    padding-left: 15px;
+    border-bottom: solid 1px rgba(167, 167, 167, 0.211);
+    border-width: 80%;
+}
+#resultadosBusqueda #listado p:hover{
+    background-color: #e9e9e9;
+}
+
 #carrusel{
     width: 100%;
     text-align: center;
