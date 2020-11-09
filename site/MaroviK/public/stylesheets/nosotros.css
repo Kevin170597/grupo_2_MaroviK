@@ -41,7 +41,12 @@ li {
     list-style: none;
 }
 
-
+body{
+    background-image: url("../images/backgroundLogin.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    width: 100%;
+}
 
 .proy-mar{
     display: flex;
