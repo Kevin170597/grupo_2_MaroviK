@@ -42,9 +42,7 @@ li {
 }
 
 body{
-    background-image: url("../images/backgroundLogin.png");
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+
     width: 100%;
 }
 
