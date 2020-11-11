@@ -10,102 +10,63 @@
     <%- include("partials/header") %> 
     <%- include('partials/search') %>
 
-
-    <div class="container-fluid detalle">
-        <section>
-    
-            
-            <div class="productos">
-                
-                    <div class="contenido">
-                        <figure>
-                            <img src="/images/products/<%= producto.image %> " alt=" ">
-                        </figure>
-                    </div>
-                    
-                    <div class="column precio">
-                        
-                        <h2><%= producto.name %> </h2>
-
+    <div id="productDetail">
+        <div id="containerDetail">
+            <div id="imageDetail">
+                <img src="/images/products/<%= producto.image %>" alt="">
+            </div>
+            <div id="infoDetail">
+                <h2><%= producto.name%></h2>
+                <h1>$<%= (producto.price -producto.price * producto.discount /100).toFixed(0).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".") %></h1>
+                <% if (producto.discount!=0) { %>
+                    <span> <strike>$<%= producto.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".") %></strike><strong> // <%- producto.discount %> % OFF</strong></span>
+                <% } %>
+                <div class="pagaEnCuotas">
+                    <span class="material-icons">credit_card</span>
+                    <p>Pagá en cuotas</p>
+                </div>
+                <a href="/mediosdepago"><p>Ver medios de pago</p></a>
+                <div class="shipping">
+                    <span class="material-icons">local_shipping</span>
+                    <p>Recibilo en tu casa</p>
+                </div>
+                <div class="retiroSucursal">
+                    <span class="material-icons">storefront</span>
+                    <p>Retiralo en la sucursal</p>
+                </div>
+                <a href="#"><p>Ver en el mapa</p></a>
+                <p>Stock disponible</p>
+                <p><%= producto.stock%> unidades.</p>
+                <button class="comprar">Comprar</button>
+                <form action="/products/detail/<%= producto.id%>" method="POST">
+                    <button type="submit" class="agregar">Agregar al carrito</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div id="productDescription">
+        <div id="containerDescription">
+            <div id="description">
+                <h1>Descripción</h1>
+                <p><%= producto.description%></p>
+            </div>
+            <div id="relacionados">
+                <h1>Productos promocionados</h1>
+                <% ofertas.forEach(producto => { %>
+                <div class="productoRelacionado">
+                    <a href="/products/detail/<%=producto.id%>"><img src="/images/products/<%= producto.image %>" alt=""></a>
+                    <div class="infoRelacionado">
+                        <h4>$<%= (producto.price -producto.price * producto.discount /100).toFixed(0).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".") %></h4>
                         <% if (producto.discount!=0) { %>
-                            <span> <strike>$<%= producto.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".") %></strike> / <strong><%- producto.discount %> % OFF</strong>
-                            </span>
+                            <span> <strike>$<%= producto.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".") %></strike><strong> // <%- producto.discount %> % OFF</strong></span>
                         <% } %>
-                        <h3>$
-                            <%- (producto.price -producto.price * producto.discount /100).toFixed(0).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".") %> 
-                        </h3>
-
-                        <a href="/mediosDePago"><i class="fas fa-credit-card"></i> Ver formas de pago</a>
-                        
-                        <button class="comprar">Comprar</button>
-                        <form action="" method="POST">
-                            <button type="submit" class="agregar">Agregar al carrito</button>
-                        </form>
-                        
-
-                        <p><i class="icon-truck"></i> Envío a domicilio  ->  <a href="#">Calcular costo de envío</a> </p>
-                        <p><i class="icon-tienda"></i> Retirá GRATIS en sucursal  ->  <a href="#">Ver sucursales disponibles</a> </p>
-
-                        <!--<p><img width="50" alt="Credit-card-1369111" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Credit-card-1369111.svg/128px-Credit-card-1369111.svg.png"></a> Pagá hasta en 12 cuotas</p><br>
-                        <div class="cards">
-                            <a><img width="50" alt="Visa Inc. logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Visa_Inc._logo.svg/512px-Visa_Inc._logo.svg.png"></a>
-                            <a><img width="50" alt="HSBC logo (2018)" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/HSBC_logo_%282018%29.svg/512px-HSBC_logo_%282018%29.svg.png"></a>
-                            <a><img width="50" alt="MasterCard Logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/MasterCard_Logo.svg/256px-MasterCard_Logo.svg.png"></a>
-                        </div>-->
-                        
+                        <p><a href=""><%= producto.name %></a></p>
                     </div>
-                
+                </div>
+                <% }) %>
             </div>
-        </section>
+        </div>
     </div>
-    
-    
-    <div class="container-fluid col-12 descripcion">
-        <section>
-            <div class="container">
-                <h2>Descripcion</h2>
-                <p>
-                    <%= producto.description %> 
-                </p>
-            </div>
-        </section>
-    </div>
-    
-    <!--<div class="col-12 envios">
-        <section>
-            <div class="row envioyretiro">
-                
-                <div class="col-12 col-md-6 col-lg-6">
-                    <img src="https://img.icons8.com/cotton/64/000000/drop-shipping--v1.png"/><br> Compra ahora y recibí tus productos en tu casa! <br>
-                    <a href="">Calcular costos aquí</a>
-                </div>
-                
-                <div class="col-12 col-md-6 col-lg-6">
-                    <img src="https://img.icons8.com/cotton/64/000000/online-store.png"/></i><br> Retirar en sucursal <br>
-                    <a href="">Ver sucursales en el mapa</a>
-                    
-                </div>
-                
-            </div>
-        </section>
-    </div>-->
-    <div class="col-12 dudas">
-        <section>
-            <div class="row telefono">
-                
-                <div class="col-12 col-md-6 col-lg-6">
-                    <h4>Tenes alguna pregunta?</h4><img src="https://img.icons8.com/dusk/64/000000/questions.png"/><p>No dudes en contactarnos.</p>
-                </div>
-                
-                <div class="col-12 col-md-6 col-lg-6">
-                    <img src="https://img.icons8.com/color/48/000000/email.png"/> MaroviK@gmail.com <br> <br>
-                    <img src="https://img.icons8.com/wired/64/000000/phone.png"/>0800-000-000
-                </div>
-                
-            </div>
-        </section>
-    </div>
-
     
     <%- include("partials/footer") %> 
 </body>

@@ -31,7 +31,7 @@ router.delete('/delete/:id', sessionUserCheck, controller.deleteProduct);
 router.get('/:categoria', controller.viewForCategory);
 router.get("/:categoria/:subcategoria", controller.viewForSubcategory);
 
-router.post('/detail/:idproduct', controller.addCart);
+router.post('/detail/:idproduct', sessionUserCheck, controller.addCart);
 router.post('/add/form', multerProduct.any(), sessionUserCheck, productsValidator, controller.publicProduct);
 
 module.exports = router;

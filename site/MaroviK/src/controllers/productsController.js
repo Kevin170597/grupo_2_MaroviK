@@ -124,9 +124,23 @@ module.exports = {
   
         db.Products.findOne({where: {id: idproduct}})
         .then(producto => {
-            res.render("productDetail", {
-                user: req.session.user,
-                producto: producto
+            db.Products.findAll({
+                where: {
+                    id_subcategory: producto.id_subcategory,
+                    discount:{[Op.not]:0}
+                },
+                order:[["discount", "DESC"]],
+                limit: 4
+            })
+            .then(productoSubcategory => {
+                res.render("productDetail", {
+                    user: req.session.user,
+                    producto: producto,
+                    ofertas: productoSubcategory
+                })
+            })
+            .catch(error => {
+                console.log(error)
             })
         })
         .catch(error => {
