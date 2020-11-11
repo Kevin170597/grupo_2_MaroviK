@@ -208,6 +208,16 @@ body {
     .productosOfertas .ofertas{
         width: 100%;
     }
+    #resultadosBusqueda #listado{
+        width: 100%;
+        left: 0%;
+    }
+}
+@media(max-width:768px){
+    #resultadosBusqueda #listado{
+        width: 100%;
+        left: 0%;
+    }
 }
 
 /* --- VERSION PARA TABLET --- */
