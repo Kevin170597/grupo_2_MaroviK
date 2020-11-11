@@ -18,7 +18,7 @@
                 
                     <ul>
 
-                        <h4><%= category.title %></h4>
+                        <h4 class="category"><%= category.title %></h4>
                         
                         <% category.subcategories.forEach(subcategory => { %>
                             <li><a href="/products/<%= category.namePath%>/<%= subcategory.name_path%> "><%= subcategory.title %> </a></li>
@@ -26,20 +26,19 @@
 
                     </ul>
                     
-                    <ul>
+                    <ul class="list-marks">
                         <h4>Marcas</h4>
                         
                         <% marks.forEach(mark => { %>
 
-                            <form >
-                               <a> <input type="checkbox"/><%= mark %> </a>
-
-                            <!--<li><a href="#"><%= mark %> </a></li>-->
-                            </form>
-
+                            <% if (mark != '' && mark != 's/especificar' && mark != null) { %>
+                             
+                            <li class="mark">
+                               <input class="check-mark" name="<%= mark %>" type="checkbox"/> <%= mark %>
+                            </li>  
+                            <% } %>  
                         <% }) %>
                         
-
                     </ul>
                 </div>
             </nav>
@@ -54,7 +53,7 @@
     
                     <div class="subcategorias row col-12">
                         <% products.forEach(product => {%>
-                        <div class="contenidos">
+                        <div class="contenidos" title="<%= product.mark %>">
     
                             <figure>
                                 <a href="/products/detail/<%= product.id %>"><img src="/images/products/<%= product.image %> " alt=" "></a>
@@ -87,9 +86,8 @@
     </div>
 
     <%- include("partials/footer") %> 
-
-
     
+    <script src="/javascripts/filter.js"></script>
 </body>
 
 </html>

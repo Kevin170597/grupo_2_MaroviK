@@ -98,6 +98,9 @@ section .titulo h2 {
     padding: 30px;
 }
 
+.list-marks .mark{
+    background-color: transparent;;
+}
 .subcategorias{
     display: flex;
     box-sizing: border-box;
