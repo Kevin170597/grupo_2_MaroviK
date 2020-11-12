@@ -1,0 +1,69 @@
+footer{
+    width: 100%;
+    background-color: rgb(55, 62, 61);
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+#containerFooter{
+    width: 70%;
+    margin: auto;
+    display: flex;
+}
+#containerFooter #ayudaFooter{
+    width: 33%;
+}
+#containerFooter #ayudaFooter h1{
+    color: white;
+    font-size: 20px;
+}
+#containerFooter #ayudaFooter .ayuda{
+    margin-top: 20px;
+}
+#containerFooter #ayudaFooter .ayuda a {
+    color: rgb(177, 177, 177);
+}
+#containerFooter #ayudaFooter .ayuda a:hover {
+    text-decoration: underline;
+}
+
+
+#containerFooter #nosotrosFooter{
+    width: 33%;
+}
+#containerFooter #nosotrosFooter h1{
+    color: white;
+    font-size: 20px;
+}
+#containerFooter #nosotrosFooter .nosotros{
+    margin-top: 20px;
+}
+#containerFooter #nosotrosFooter .nosotros a {
+    color: rgb(177, 177, 177);
+}
+#containerFooter #nosotrosFooter .nosotros a:hover {
+    text-decoration: underline;
+}
+
+
+#containerFooter #contactoFooter{
+    width: 33%;
+}
+#containerFooter #contactoFooter h1{
+    color: white;
+    font-size: 20px;
+}
+#containerFooter #contactoFooter .contacto{
+    margin-top: 20px;
+    width: 100%;
+}
+#containerFooter #contactoFooter .contacto p{
+    color: rgb(177, 177, 177);
+}
+#containerFooter #contactoFooter .contacto .iconsMedia{
+    width: 100%;
+    display: flex;
+}
+#containerFooter #contactoFooter .contacto .iconsMedia img{
+    width: 13%;
+    margin-right: 10px;
+}
