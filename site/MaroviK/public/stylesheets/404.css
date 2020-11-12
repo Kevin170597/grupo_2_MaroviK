@@ -1,18 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
 *{
     box-sizing: border-box;
     margin: 0px;
     padding: 0px;
 }
 
-img{
+#fondo404 img{
     width: 100%;
+    height: 100vh;
+    position: absolute;
+    z-index: -1;
 }
 
-@media(max-width: 640px) {
-    img{
-        display: none;
-    }
-    body{
-        background-image: url("/images/404/404V.gif");
-    }
+#container404{
+    text-align: center;
+    padding-top: 70px;
+}
+#container404 .caja404{
+    background-color: white;
+    width: 90%;
+    height: 80vh;
+    margin: auto;
+    border-radius: 5px;
+    padding-top: 150px;
+    box-shadow: 4px 3px 12px -1px rgba(125,125,125,0.62);
+    -webkit-box-shadow: 4px 3px 12px -1px rgba(125,125,125,0.62);
+    -moz-box-shadow: 4px 3px 12px -1px rgba(125,125,125,0.62);
+}
+#container404 .caja404 h1{
+    font-size: 150px;
+    font-family: 'Lato', sans-serif;
+    color: rgb(86, 115, 115);
+}
+#container404 .caja404 h2{
+    font-size: 30px;
+    font-family: 'Lato', sans-serif;
+    color: rgb(105, 105, 105);
 }

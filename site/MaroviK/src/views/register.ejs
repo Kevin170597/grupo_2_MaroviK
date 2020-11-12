@@ -12,6 +12,9 @@
 
     <!--SECCIONES: registrate-->
 
+    <div id="fondoRegister">
+      <img src="/images/backgroundLogin.png" alt="">
+    </div>
     <div class="container">
 
         <div class="row productos">
@@ -21,11 +24,7 @@
                 <h3>Registro de Usuario</h3>
     
             </div>
-            <div class="col-12">
-                <figure class="cont_logo">
-                    <img src="/images/logomarovik2.svg" alt="">
-                </figure>
-            </div>
+            
 
             <div class="col-12 cont_form">
 
@@ -69,6 +68,19 @@
                           <small class="text-danger"><%= (typeof errors != 'undefined' && errors.password2)?errors.password2.msg: "" %> </small>
   
                         </div>
+                        
+                    </div>
+                    <div class="form-row">
+                      <div class="form-group col-12 col-md-6">
+                        <select name="provincias" id="provincias">
+                          <option value="">Provincia</option>
+                        </select>
+                      </div>
+                      <div class="form-group col-12 col-md-6">
+                        <select name="municipios" id="municipios">
+                          <option value="">Ciudad</option>
+                        </select>
+                      </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group col-12 col-md-6">
@@ -79,11 +91,12 @@
                           <small class="text-danger"><%= (typeof errors != 'undefined' && errors.email)?errors.email.msg: "" %> </small>
                           <div id="errorEmail"></div>
                         </div>
+                        
   
                         <div class="form-group col-12 col-md-6">
                           <div class="custom-file mt-4">
-                            <input type="file" id="avatar" name="avatar" accept="image/png, image/jpg, image/jpeg, image/gif" value="<%= (typeof old != 'undefined' && old.avatar)?old.avatar:'' %>">
-                            <label for="avatar">Seleccionar Archivo</label>
+                            <input id="inputAvatar" type="file" id="avatar" name="avatar" accept="image/png, image/jpg, image/jpeg, image/gif" value="<%= (typeof old != 'undefined' && old.avatar)?old.avatar:'' %>">
+                            <label for="avatar"></label>
                             <small class="text-danger"><%= (typeof errors != 'undefined' && errors.avatar)?errors.avatar.msg: "" %> </small>
                             <div id="errorFile"></div>
                           </div>
@@ -101,7 +114,7 @@
                           </div>
                         </div>
                         <div class="col-12 col-md-6 mt-2">
-                            <button type="submit" class="btn btn-primary">
+                            <button type="submit" class="registerButton btn btn-primary">
                               Registrarse
                             </button>
                             <label for="">¿Ya tenés una cuenta?</label>
