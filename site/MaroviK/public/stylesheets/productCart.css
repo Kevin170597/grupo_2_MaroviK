@@ -32,6 +32,30 @@
 #contenedorCarrito #infoCarrito #productosCarrito{
    width: 70%;
 }
+#contenedorCarrito #infoCarrito #productosCarrito #cartEmpty{
+   width: 100%;
+   text-align: center;
+}
+#contenedorCarrito #infoCarrito #productosCarrito #imageCartEmpty{
+   width: 30%;
+   height: 90%;
+}
+#contenedorCarrito #infoCarrito #productosCarrito #agregarCart{
+   width: 100%;
+   text-align: center;
+}
+#contenedorCarrito #infoCarrito #productosCarrito #agregarCart button{
+   border-style: none;
+   background-color: #32bbb9;
+   height: 38px;
+   color: white;
+   border-radius: 20px;
+   width: 30%;
+   margin-top: 20px;
+}
+#contenedorCarrito #infoCarrito #productosCarrito #agregarCart button:focus{
+   outline: none;
+}
 #contenedorCarrito #infoCarrito #contenedorTotal{
    padding: 10px;
    margin-top: 10px;

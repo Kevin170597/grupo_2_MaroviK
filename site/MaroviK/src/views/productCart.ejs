@@ -16,29 +16,38 @@
         </div>
         <div id="infoCarrito">
             <div id="productosCarrito">
-                <% productos.forEach(producto => { %>
-                    <div class="articulosCarrito">
-                        <figure>
-                            <img src="/images/products/<%= producto.image%>" alt="">
-                        </figure>
-                        <%if (producto.name.length > 10) {%>
-                            <p class="nombreProducto">
-                                <%- producto.name.slice(0,30) + '...'%>
-                            </p>
-                        <%} else{ %>
-                            <p class="nombreProducto">
-                                <%- producto.name %>
-                            </p>
-                        <% } %>
-                        <h4>$<%= producto.price%> </h4>
-                        <form action="/users/add/cart/<%= producto.id%>?_method=DELETE" method="POST">
-                            <button type="submit">
-                                <span class="material-icons">delete</span>
-                            </button>
-                        </form>
-                        
+                <% if(productos == "") { %> 
+                    <div id="cartEmpty">
+                        <img id="imageCartEmpty" src="/images/cartempty.png" alt="">
                     </div>
-                <% }) %>
+                    <div id="agregarCart">
+                        <a href="/"><button>Agregar productos</button></a>
+                    </div>
+                <%} else { %> 
+                    <% productos.forEach(producto => { %>
+                        <div class="articulosCarrito">
+                            <figure>
+                                <img src="/images/products/<%= producto.image%>" alt="">
+                            </figure>
+                            <%if (producto.name.length > 10) {%>
+                                <p class="nombreProducto">
+                                    <%- producto.name.slice(0,30) + '...'%>
+                                </p>
+                            <%} else{ %>
+                                <p class="nombreProducto">
+                                    <%- producto.name %>
+                                </p>
+                            <% } %>
+                            <h4>$<%= producto.price%> </h4>
+                            <form action="/users/add/cart/<%= producto.id%>?_method=DELETE" method="POST">
+                                <button type="submit">
+                                    <span class="material-icons">delete</span>
+                                </button>
+                            </form>
+                            
+                        </div>
+                    <% }) %>
+                <% } %>
             </div>
 
             <div id="contenedorTotal">
