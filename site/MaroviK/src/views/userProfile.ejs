@@ -54,7 +54,7 @@
                                 </div>
 
                                 <div class="tab-pane fade show active" id="actualizar" role="tabpanel" aria-labelledby="home-tab">
-                                    <div class="tituloActualizar"><h3>Actualizar productos</h3></div>
+                                    
                                     <div class="buscadorActualizar">
                                         <form action="/users/searchupdate/" method="get" class="search-form">
                                             <div style="display: flex;">
@@ -103,14 +103,23 @@
                                                     
                                                 <% }) %>
                                             </div>
-                                        <% }%>
-
+                                        <% } else { %>
+                                            <div id="actualizarProducto">
+                                                <img id="imageActualizarProducto" src="/images/actualizar.png" alt="">
+                                                <h1>Busca y actualizá productos</h1>
+                                            </div>
+                                        <% } %>
                                     </div>
                                 </div>
                         
 
                                     <div class="tab-pane fade show" id="productos" role="tabpanel" aria-labelledby="profile-tab">
-
+                                        <% if(productos == ""){ %>
+                                            <div id="sinPublicar">
+                                                <img id="imageSinPublicar" src="/images/sinPublicaciones.png" alt="">
+                                                <h1>Todavia no publicaste</h1>
+                                            </div> 
+                                        <% } %>
                                         <div class="row productos p-4">
                                             <% productos.forEach(producto => { %>
 
