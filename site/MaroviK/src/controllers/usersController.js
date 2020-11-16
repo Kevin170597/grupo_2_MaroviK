@@ -222,6 +222,8 @@ module.exports = {
 
         db.Users.update(
             {
+                name: req.body.name,
+                last_name: req.body.last_name,
                 avatar:(req.files[0])?req.files[0].filename:req.session.user.avatar,
                 address: (req.body.address != ' ')?req.body.address.trim():null,
                 city: (req.body.city != ' ')?req.body.city.trim():null,

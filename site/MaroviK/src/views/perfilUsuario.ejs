@@ -6,10 +6,7 @@
     <%- include('partials/header') %>
     <%- include('partials/search') %>
 
-
-    <h1>Perfil de Usuario</h1>
-
-    <div class="container-fluid contenedor_form_userProfile">
+    <div class="container-fluid contenedor_form_userProfile" style="margin-top: 30px;">
 
       <div class="row justify-content-center">
         <form action="/users/updateProfile/<%= user.id %> ?_method=PUT" method="POST" enctype="multipart/form-data">
@@ -24,12 +21,11 @@
               <div class="form-row mt-3 ml-2 mr-2">
                 <div class="form-group col-12 col-md-6 ">
                   <label for="name"></label>
-                  <input type="text" name="name" class="form-control" id="name" value=<%= user.name %> disabled >
+                  <input type="text" name="name" class="form-control" id="name" value=<%= user.name %>>
                 </div>
                 <div class="form-group col-12 col-md-6">
                   <label for="last_name"></label>
-                  <input type="text" name="last_name" class="form-control" id="last_name" value=<%= user.last_name %>
-                    disabled>
+                  <input type="text" name="last_name" class="form-control" id="last_name" value=<%= user.last_name %>>
                 </div>
                 <div class="form-group col-12">
                   <label for="email"></label>

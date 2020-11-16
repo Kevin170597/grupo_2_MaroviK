@@ -38,7 +38,10 @@
                                     <%- producto.name %>
                                 </p>
                             <% } %>
-                            <h4>$<%= producto.price%> </h4>
+                            <% if (producto.discount!=0) { %>
+                                <strike>$<%= producto.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".") %></strike><strong> // <%- producto.discount %> % OFF</strong>
+                                <% } %>
+                            <h4>$<%= (producto.price -producto.price * producto.discount /100).toFixed(0).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".") %></h4>
                             <form action="/users/add/cart/<%= producto.id%>?_method=DELETE" method="POST">
                                 <button type="submit">
                                     <span class="material-icons">delete</span>
@@ -55,7 +58,7 @@
                     <h4>Sumario</h4>
                     <% total = 0; %>
                     <% productos.forEach(producto => { %>
-                    <% total += producto.price %>
+                    <% total += (producto.price -producto.price * producto.discount /100)%>
                     <% }) %>
                     <p>Total de la orden $<%= (total).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".") %></p>
                     <p>Envio $0</p>
@@ -63,7 +66,7 @@
                 <div id="totalCarrito">
                     <% total = 0; %>
                     <% productos.forEach(producto => { %>
-                    <% total += producto.price %>
+                    <% total += (producto.price -producto.price * producto.discount /100)%>
                     <% }) %>
                     Total $<%= (total).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".") %>
                 </div>

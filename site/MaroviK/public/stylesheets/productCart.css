@@ -114,6 +114,16 @@
    border-radius: 6px;
    display: flex;
 }
+#contenedorCarrito #infoCarrito #productosCarrito .articulosCarrito strike{
+   margin-top: 40px;
+   font-size: 15px;
+   color: rgb(161, 161, 161);
+}
+#contenedorCarrito #infoCarrito #productosCarrito .articulosCarrito strong{
+   margin-top: 40px;
+   font-size: 15px;
+   color: #32bbb9;
+}
 #contenedorCarrito #infoCarrito #productosCarrito .articulosCarrito form button{
    border-style: none;
 }
@@ -211,6 +221,12 @@
    #contenedorCarrito #infoCarrito #productosCarrito #agregarCart button{
       width: 70%;
    }
+   #contenedorCarrito #infoCarrito #productosCarrito .articulosCarrito strike{
+      text-align: center;
+   }
+   #contenedorCarrito #infoCarrito #productosCarrito .articulosCarrito strong{
+      text-align: center;
+   }
 }
 
 
@@ -268,5 +284,11 @@
    }
    #contenedorCarrito #infoCarrito #productosCarrito #agregarCart button{
       width: 70%;
+   }
+   #contenedorCarrito #infoCarrito #productosCarrito .articulosCarrito strike{
+      text-align: center;
+   }
+   #contenedorCarrito #infoCarrito #productosCarrito .articulosCarrito strong{
+      text-align: center;
    }
 }
