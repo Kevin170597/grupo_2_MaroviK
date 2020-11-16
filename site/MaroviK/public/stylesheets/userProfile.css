@@ -62,6 +62,9 @@
     margin-bottom: 20px;
     color: rgb(132, 132, 132);
 }
+#actualizar .buscadorActualizar{
+    margin-top: 25px;
+}
 #actualizar .buscadorActualizar form input{
     height: 40px;
     border-radius: 20px 0px 0px 20px;
@@ -86,6 +89,17 @@
     margin-top: 15px;
     width: 100%;
     text-align: center;
+}
+.productosEditar #actualizarProducto{
+    width: 100%;
+}
+.productosEditar #actualizarProducto #imageActualizarProducto{
+    width: 15%;
+}
+.productosEditar #actualizarProducto h1{
+    color: rgb(162, 162, 162);
+    font-size: 30px;
+    margin-bottom: 30px;
 }
 .productosEditar .cajaEditar{
     width: 100%;
