@@ -1,6 +1,6 @@
 footer{
     width: 100%;
-    background-color: rgb(55, 62, 61);
+    background-color: rgb(255, 255, 255);
     padding-top: 40px;
     padding-bottom: 40px;
 }
@@ -13,14 +13,14 @@ footer{
     width: 33%;
 }
 #containerFooter #ayudaFooter h1{
-    color: white;
+    color: rgb(81, 81, 81);
     font-size: 20px;
 }
 #containerFooter #ayudaFooter .ayuda{
     margin-top: 20px;
 }
 #containerFooter #ayudaFooter .ayuda a {
-    color: rgb(177, 177, 177);
+    color: rgb(140, 140, 140);
 }
 #containerFooter #ayudaFooter .ayuda a:hover {
     text-decoration: underline;
@@ -31,14 +31,14 @@ footer{
     width: 33%;
 }
 #containerFooter #nosotrosFooter h1{
-    color: white;
+    color: rgb(98, 98, 98);
     font-size: 20px;
 }
 #containerFooter #nosotrosFooter .nosotros{
     margin-top: 20px;
 }
 #containerFooter #nosotrosFooter .nosotros a {
-    color: rgb(177, 177, 177);
+    color: rgb(140, 140, 140);
 }
 #containerFooter #nosotrosFooter .nosotros a:hover {
     text-decoration: underline;
@@ -49,7 +49,7 @@ footer{
     width: 33%;
 }
 #containerFooter #contactoFooter h1{
-    color: white;
+    color: rgb(98, 98, 98);
     font-size: 20px;
 }
 #containerFooter #contactoFooter .contacto{
@@ -57,7 +57,7 @@ footer{
     width: 100%;
 }
 #containerFooter #contactoFooter .contacto p{
-    color: rgb(177, 177, 177);
+    color: rgb(140, 140, 140);
 }
 #containerFooter #contactoFooter .contacto .iconsMedia{
     width: 100%;
