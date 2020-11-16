@@ -96,6 +96,7 @@
 }
 .productosEditar .cajaEditar .cajasProductos{
     width: 100%;
+    margin-top: 20px;
 }
 .productosEditar .cajaEditar figure{
     background-color: white;
@@ -156,6 +157,17 @@
 .productosEditar .cajaEditar .infoEditar .botonesEditar button span:hover{
     color: rgb(16, 189, 189);
     font-size: 33px;
+}
+#productos #sinPublicar{
+    width: 100%;
+    margin-top: 30px;
+}
+#productos #sinPublicar #imageSinPublicar{
+    width: 10%;
+}
+#productos #sinPublicar h1{
+    color: rgb(177, 177, 177);
+    margin-top: 15px;
 }
 #productos .publicButton button{
     background-color: rgb(16, 189, 189);
