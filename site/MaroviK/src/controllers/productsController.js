@@ -13,7 +13,7 @@ module.exports = {
             user: req.session.user
         });
     },
-    /*search: (req,res) => {
+    search: (req,res) => {
         let search = req.query.search;
         if(search == ""){
             res.redirect("/")
@@ -21,25 +21,74 @@ module.exports = {
             db.Products.findAll({
                 where: {
                     [Op.or]: [{name:{[Op.like]: ["%" + search + "%"]}}, {mark:{[Op.like]: ["%" + search + "%"]}}]
-                }
+                },
+                include:[{
+                    association:'subcategory',
+                    include:[{
+                        association:'category'
+                    }]
+                }]
             })
             .then(productos => {
-                db.Subcategories.findAll({include: {association: "category"}, where:{}})
-                .then(subcategorias => {
-                    res.render("subcategoria", {
-                        productos: productos,
-                        subcategorias:subcategorias
-                    })
+
+                let marks = [];
+                let subcategorias = [];
+                let subcategories = [];
+                let categorias = [];
+                let categories = [];
+
+                productos.forEach(product => {
+
+                        if(marks == ""){
+                            marks.push(product.mark)
+                        }else{
+                            if(marks.indexOf(product.mark) == -1){
+                                marks.push(product.mark)
+                            }
+                        }
+                    
                 })
-                .catch(errors => {
-                    console.log(errors)
+                productos.forEach(product => {
+
+                    if(categorias == ""){
+                        categorias.push(product.subcategory.category.title);
+                        categories.push(product.subcategory.category)
+                    }else{
+                        if(categorias.indexOf(product.subcategory.category.title) == -1){
+                            categorias.push(product.subcategory.category.title);
+                            categories.push(product.subcategory.category)
+                        }
+                    }
+
+                })
+                productos.forEach(product => {
+
+                    if(subcategorias == ""){
+                        subcategorias.push(product.subcategory.title)
+                        subcategories.push(product.subcategory)
+                    }else{
+                        if(subcategorias.indexOf(product.subcategory.title) == -1){
+                            subcategorias.push(product.subcategory.title);
+                            subcategories.push(product.subcategory)
+                        }
+                    }
+
+                })
+                
+                res.render("search", {
+                    user: req.session.user,
+                    productos: productos,
+                    categorias: categories,
+                    marks: marks,
+                    subcategorias:subcategories
                 })
             })
+
             .catch(errors => {
-                console.log(errors)
+                    console.log(errors)
             })
         }
-    },*/
+    },
     viewForCategory: (req, res) => {
         let categoria = req.params.categoria
         db.Categories.findOne({
@@ -207,7 +256,7 @@ module.exports = {
                     .then(result => {
                         console.log(result);
                         
-                        let ruta = "/products/categorias/" + req.body.subcategory
+                        let ruta = "/products/" + req.body.category + "/" + req.body.subcategory
                         res.redirect(ruta);
                     })
                     .catch(error => {

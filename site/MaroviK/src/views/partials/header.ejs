@@ -32,10 +32,12 @@
 
             <div class="buscador">
                 
-                    <div style="display: flex;">
-                        <input id="search" type="text" name="search" placeholder="Buscar articulos" class="search-form_input" autocomplete="off" value="">
-                        <button id="searchbutton" type="submit" class="search-form_button"><p>Buscar</p></button>
-                    </div>
+                    <!--<div style="display: flex;">-->
+                        <form action="/products/search" method="GET" style="display: flex;" >
+                            <input id="search" type="text" name="search" placeholder="Buscar articulos" class="search-form_input" autocomplete="off" value="">
+                            <button id="searchbutton" type="submit" class="search-form_button"><p>Buscar</p></button>
+                        </form>
+                   <!-- </div>-->
                 
             </div>
 
