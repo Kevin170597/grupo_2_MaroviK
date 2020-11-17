@@ -1,0 +1,46 @@
+#imgAvatar{
+    width: 220px;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 200px;
+}
+#avatarImput[type="file"]{
+    display: none;
+}
+#labelAvatar{
+    background-color: #32bbb9;
+    color: white;
+    width: 100%;
+    text-align: center;
+    height: 38px;
+    /*padding-top: 5px;*/
+    border-radius: 20px;
+}
+#labelAvatar span{
+    position: relative;
+    top: 5px;
+}
+#formUpdateUser #municipios{
+    width: 100%;
+    background-color: white;
+    color: rgb(103, 103, 103);
+    border: solid 1px rgb(184, 184, 184);
+    border-radius: 2px;
+    height: 38px;
+    margin-top: 0px;
+}
+#formUpdateUser #municipios:focus{
+    outline: none;
+}
+#formUpdateUser #provincias{
+    width: 100%;
+    background-color: white;
+    color: rgb(103, 103, 103);
+    border: solid 1px rgb(184, 184, 184);
+    border-radius: 2px;
+    height: 38px;
+    margin-top: 0px;
+}
+#formUpdateUser #provincias:focus{
+    outline: none;
+}

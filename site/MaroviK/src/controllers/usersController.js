@@ -226,8 +226,8 @@ module.exports = {
                 last_name: req.body.last_name,
                 avatar:(req.files[0])?req.files[0].filename:req.session.user.avatar,
                 address: (req.body.address != ' ')?req.body.address.trim():null,
-                city: (req.body.city != ' ')?req.body.city.trim():null,
-                province: (req.body.province != ' ')?req.body.province.trim():null,
+                province: req.body.provincias,
+                city: req.body.municipios,
                 cp: (req.body.cp)?(Number(req.body.cp)):null
             },
             {

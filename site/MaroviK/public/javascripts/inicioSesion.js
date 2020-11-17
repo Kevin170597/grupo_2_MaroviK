@@ -6,6 +6,21 @@ window.addEventListener('load',function(){
     let inputPass = document.getElementById('password')
     let regexEmail = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
 
+    let errorEmail = document.getElementById("errorEmail");
+    let errorPassword = document.getElementById("errorPassword");
+    
+
+    /*loginForm.addEventListener("keyup", function(){
+      fetch("http://localhost:3031/api/users/email/" + inputEmail.value )
+        .then(response => response.json())
+        .then(result => {
+          console.log(result)
+          if(result.data != null){
+            errorEmail.innerHTML = "Ok"
+          }
+        })
+    })*/
+
     loginForm.addEventListener("submit", (e) =>{
         let errorEmailMessage = [];
         let errorEmailFormat = [];
@@ -58,11 +73,13 @@ window.addEventListener('load',function(){
           errorPassword.innerText = errorPasswordMessage;
           password.style.border = "solid 1px  rgb(225, 70, 49)"
         }
-        if(errorPasswordCharacter.length > 0){
+        /*if(errorPasswordCharacter.length > 0){
           e.preventDefault();
           errorPassword.innerText = errorPasswordCharacter;
           password.style.border = "solid 1px rgb(225, 70, 49)"
-        }
+        }*/
+
+
     })
 
 })

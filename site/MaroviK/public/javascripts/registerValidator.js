@@ -33,40 +33,6 @@ window.addEventListener("load", function(){
 
     let formatoValido = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
 
-    const provincias = document.getElementById("provincias");
-    const municipios = document.getElementById("municipios");
-
-    fetch("https://apis.datos.gob.ar/georef/api/provincias?campos=id,nombre")
-    .then(response => response.json())
-    .then(result => {
-        //console.log(result.provincias)
-        result.provincias.forEach(provincia => {
-            provincias.innerHTML += "<option id='" + provincia.nombre + "' value='" + provincia.nombre + "'>" + provincia.nombre + "</option>"
-        })
-    })
-
-    provincias.addEventListener("change", function(e){
-        municipios.innerHTML = " "
-        //console.log(e.target.value)
-        fetch("https://apis.datos.gob.ar/georef/api/municipios?provincia="+ e.target.value +"&campos=id,nombre&max=200")
-        .then(response => response.json())
-        .then(result => {
-        //console.log(result.municipios)
-        result.municipios.sort((a, b) => {
-            if(a.nombre < b.nombre) {
-                return -1;
-            }
-            if(a.nombre > b.nombre){
-                return 1;
-            }
-            return 0;
-        })
-        result.municipios.forEach(municipio => {
-            municipios.innerHTML += "<option value='" + municipio.nombre + "'>" + municipio.nombre + "</option>"
-        })
-    })
-    })
-    
 
     form.addEventListener("submit", (e)=>{
         /*Validar que el input nombre no esté vacío y contenga al menos 2 caracteres*/

@@ -62,23 +62,12 @@
                         </div>
                         
                     </div>
-                    <div class="form-row">
-                      <div class="form-group col-12 col-md-6">
-                        <select name="provincias" id="provincias">
-                          <option value="">Provincia</option>
-                        </select>
-                      </div>
-                      <div class="form-group col-12 col-md-6">
-                        <select name="municipios" id="municipios">
-                          <option value="">Ciudad</option>
-                        </select>
-                      </div>
-                    </div>
+                    
                     <div class="form-row">
                       <div class="form-group col-12 col-md-6">
                         <div class="mt-4">
                           <input id="inputAvatar" type="file" id="avatar" name="avatar" accept="image/png, image/jpg, image/jpeg, image/gif" value="<%=(typeof old != 'undefined' && old.avatar)?old.avatar:'' %>">
-                          <label for="avatar"></label>
+                          <label id="labelAvatarRegister" for="inputAvatar"><span class="material-icons">add_photo_alternate</span>Seleccioná una imágen</label>
                           <small class="text-danger"><%= (typeof errors != 'undefined' && errors.avatar)?errors.avatar.msg: "" %> </small>
                           <div id="errorFile"></div>
                         </div>

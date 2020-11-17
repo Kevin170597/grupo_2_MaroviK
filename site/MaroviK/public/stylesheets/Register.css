@@ -96,20 +96,7 @@ body {
 .cont_form .formulario_register input:focus{
     outline: none;
 }
-.cont_form .formulario_register select{
-    border-style: none;
-    background-color: white;
-    color: rgb(103, 103, 103);
-    height: 38px;
-    width: 100%;
-    border-radius: 20px;
-    padding-left: 10px;
-    margin-top: 25px;
-    margin-bottom: 10px;
-}
-.cont_form .formulario_register select:focus{
-    outline: none;
-}
+
 #avatarPreview {
     text-align: center;
     margin-bottom: 20px;
@@ -126,23 +113,23 @@ body {
 #registerButton{
     padding-top: 40px;
 }
-.cont_form .formulario_register #inputAvatar{
-    background-color: rgb(232, 232, 232);
-    color: rgb(96, 96, 96);
-    width: 100%;
+.cont_form .formulario_register #inputAvatar[type="file"]{
+    display: none;
 }
-.cont_form .formulario_register #inputAvatar::-webkit-file-upload-button{
+.cont_form .formulario_register #labelAvatarRegister{
     background-color: #32bbb9;
-    border-style: none;
-    height: 38px;
     color: white;
-    border-radius: 20px 0px 0px 20px;
-    width: 30%;
+    width: 100%;
+    text-align: center;
+    height: 38px;
+    /*padding-top: 5px;*/
+    border-radius: 20px;
 }
-.cont_form .formulario_register #inputAvatar::-webkit-file-upload-button:focus{
-    outline: none;
-    background-color: #2f7b7a;
+.cont_form .formulario_register #labelAvatarRegister span{
+    position: relative;
+    top: 5px;
 }
+
 .cont_form .formulario_register .registerButton{
     background-color: #32bbb9;
     border-style: none;
