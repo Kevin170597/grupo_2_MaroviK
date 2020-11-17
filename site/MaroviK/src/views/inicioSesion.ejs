@@ -25,8 +25,7 @@
             <div class="inputEmailLogin">
               <label for="email"></label>
               <input class="" type="email" id="email" name="email" placeholder="Email" value="<%= (typeof old != 'undefined' && old.email)?old.email:'' %>"> <br>
-              <small class="text-danger"><%= (typeof errors != 'undefined' && errors.email)?errors.email.msg: "" %> </small>
-              <div id="errorEmail"></div>
+              <div id="errorEmail"><%= (typeof errors != 'undefined' && errors.email)?errors.email.msg: "" %></div>
             </div>
           
 
@@ -34,8 +33,7 @@
             <div class="inputPasswordLogin">
               <label for="password"></label>
               <input class="" type="password" id="password" name="password" placeholder="Contraseña" value="<%= (typeof old != 'undefined' && old.password)?old.password:'' %>"><br>
-              <small class="text-danger"><%= (typeof errors != 'undefined' && errors.password)?errors.password.msg: "" %> </small>
-              <div id="errorPassword"></div>
+              <div id="errorPassword"><%= (typeof errors != 'undefined' && errors.password)?errors.password.msg: "" %></div>
             </div>
           
 

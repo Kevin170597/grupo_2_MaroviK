@@ -60,7 +60,7 @@
                     <% productos.forEach(producto => { %>
                     <% total += (producto.price -producto.price * producto.discount /100)%>
                     <% }) %>
-                    <p>Total de la orden $<%= (total).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".") %></p>
+                    <p>Total de la orden $<%= (total).toFixed(0).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".") %></p>
                     <p>Envio $0</p>
                 </div>
                 <div id="totalCarrito">
@@ -68,7 +68,7 @@
                     <% productos.forEach(producto => { %>
                     <% total += (producto.price -producto.price * producto.discount /100)%>
                     <% }) %>
-                    Total $<%= (total).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".") %>
+                    Total $<%= (total).toFixed(0).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".") %>
                 </div>
                 <div id="comprarCarrito">
                     <a href="#"><button>Comprar</button></a>
