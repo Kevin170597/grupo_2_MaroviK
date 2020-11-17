@@ -7,7 +7,23 @@ window.addEventListener("load", function(){
     const lastName = document.getElementById("lastName");
     const password = document.getElementById("password");
     const email = document.getElementById("email");
-    const file = document.getElementById("avatar");
+    const file = document.getElementById("inputAvatar");
+    const avatarPreview = document.getElementById("avatarPreview")
+
+    function readURL(file){
+        if (file.files && file.files[0]) {
+            var reader = new FileReader();
+            console.log(reader)
+
+            reader.onload = function(e) {
+            avatarPreview.innerHTML = "<img src='" + e.target.result + "'>"
+            }
+            reader.readAsDataURL(file.files[0]);
+        }
+    }
+    file.addEventListener("change", function(){
+        readURL(this);
+    })
 
     const errorName = document.getElementById("errorName");
     const errorLastName = document.getElementById("errorLastName");
@@ -36,6 +52,15 @@ window.addEventListener("load", function(){
         .then(response => response.json())
         .then(result => {
         //console.log(result.municipios)
+        result.municipios.sort((a, b) => {
+            if(a.nombre < b.nombre) {
+                return -1;
+            }
+            if(a.nombre > b.nombre){
+                return 1;
+            }
+            return 0;
+        })
         result.municipios.forEach(municipio => {
             municipios.innerHTML += "<option value='" + municipio.nombre + "'>" + municipio.nombre + "</option>"
         })

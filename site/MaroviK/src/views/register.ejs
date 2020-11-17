@@ -18,12 +18,6 @@
     <div class="container">
 
         <div class="row productos">
-
-            <div class="title_register col-12">
-
-                <h3>Registro de Usuario</h3>
-    
-            </div>
             
 
             <div class="col-12 cont_form">
@@ -83,6 +77,16 @@
                       </div>
                     </div>
                     <div class="form-row">
+                      <div class="form-group col-12 col-md-6">
+                        <div class="mt-4">
+                          <input id="inputAvatar" type="file" id="avatar" name="avatar" accept="image/png, image/jpg, image/jpeg, image/gif" value="<%=(typeof old != 'undefined' && old.avatar)?old.avatar:'' %>">
+                          <label for="avatar"></label>
+                          <small class="text-danger"><%= (typeof errors != 'undefined' && errors.avatar)?errors.avatar.msg: "" %> </small>
+                          <div id="errorFile"></div>
+                        </div>
+                        
+                      </div>
+
                         <div class="form-group col-12 col-md-6">
                           <label for="email"></label>
                           <input type="email"
@@ -91,37 +95,30 @@
                           <small class="text-danger"><%= (typeof errors != 'undefined' && errors.email)?errors.email.msg: "" %> </small>
                           <div id="errorEmail"></div>
                         </div>
-                        
-  
-                        <div class="form-group col-12 col-md-6">
-                          <div class="mt-4">
-                            <input id="inputAvatar" type="file" id="avatar" name="avatar" accept="image/png, image/jpg, image/jpeg, image/gif" value="<%=(typeof old != 'undefined' && old.avatar)?old.avatar:'' %>">
-                            <label for="avatar"></label>
-                            <small class="text-danger"><%= (typeof errors != 'undefined' && errors.avatar)?errors.avatar.msg: "" %> </small>
-                            <div id="errorFile"></div>
-                          </div>
-                        </div>
                       
                     </div>
-                    <div class="form-row">
-                        <div class="col-12 col-md-6 mt-2">
-                          <div class="custom-control custom-checkbox">
-                            <input type="checkbox" class="custom-control-input <%= (typeof old != 'undefined' && old.bases)?"is-valid":(typeof errors != 'undefined' && errors.bases)?"is-invalid": ""  %>" id="customCheck1" name="bases" required>
-                            <label class="custom-control-label" for="customCheck1">acepto las bases y condiciones</label><br>
-                            <a href="" class="text-info">ver bases y condiciones</a><br>
-                          
-                            <small class="text-danger"><%= (typeof errors != 'undefined' && errors.bases)?errors.bases.msg: "" %> </small>
-                          </div>
-                        </div>
-                        <div class="col-12 col-md-6 mt-2">
-                            <button type="submit" class="registerButton btn btn-primary">
-                              Registrarse
-                            </button>
-                            <label for="">¿Ya tenés una cuenta?</label>
-                            <a href="/users/login">Iniciar Sesión</a>
 
+                    <div class="form-row">
+                      <div class="col-12 col-md-3" id="avatarPreview">
+                        <img src="/images/users/default.png" alt="">
+                      </div>
+                      <div class="col-12 col-md-3 mt-2">
+                        <div class="checkboxRegister custom-control custom-checkbox">
+                          <input type="checkbox" class="custom-control-input <%= (typeof old != 'undefined' && old.bases)?"is-valid":(typeof errors != 'undefined' && errors.bases)?"is-invalid": ""  %>" id="customCheck1" name="bases" required>
+                          <label class="custom-control-label" for="customCheck1">acepto las bases y condiciones</label><br>
+                          <a href="" class="text-info">ver bases y condiciones</a><br>
+                          <small class="text-danger"><%= (typeof errors != 'undefined' && errors.bases)?errors.bases.msg: "" %> </small>
                         </div>
+                      </div>
+                      <div id="registerButton" class="col-12 col-md-6 mt-2">
+                        <button type="submit" class="registerButton btn btn-primary">
+                          Registrarse
+                        </button>
+                        <label for="">¿Ya tenés una cuenta?</label>
+                        <a href="/users/login">Iniciar Sesión</a>
                     </div>
+                    </div>
+
                 
                 
                 </form>
