@@ -10,7 +10,7 @@
 
     
     <div class="container-fluid categorias">
-        <div class="column col-12 col-md-2 col-lg-2  filtro">
+        <div class="column col-4 col-lg-3 col-xl-2  filtro">
             <nav class="navbar-expand-md">
             
                 <button class="navbar-toggler burger" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><i class="fas fa-bars "></i></button>
@@ -44,7 +44,7 @@
                 </div>
             </nav>
         </div>
-        <div class="container col-10">
+        <div class="container col-8 col-lg-9 col-xl-10">
 
             
             <section>
@@ -52,17 +52,20 @@
                 
                 <div class="productos">
     
-                    <div class="subcategorias row col-12">
+                    <div class="subcategorias row">
                         <% products.forEach(product => {%>
-                        <div class="contenidos" title="<%= product.mark %>">
+                        <div class=" card contenidos" title="<%= product.mark %>">
     
                             <figure>
                                 <a href="/products/detail/<%= product.id %>"><img src="/images/products/<%= product.image %> " alt=" "></a>
                             </figure>
     
-                            <article>
+                            <!--<article>-->
 
-                                <p><a href="/products/detail/<%= product.id %>"><%= product.name %></a> </p>
+                                <%if (product.name.length > 10) {%>
+                                    
+                                <p><a href="/products/detail/<%= product.id %>"><%= product.name.slice(0,50) + '...'%></a> </p>
+                                <%}%>
 
                                 <h2> <%= (product.price -product.price * product.discount /100).toFixed(0).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".") %></h2>
 
@@ -70,7 +73,7 @@
                                     <span> <strike>$<%= product.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".") %></strike><strong> // <%- product.discount %> % OFF</strong></span>
                                 <% } %>
 
-                            </article>
+                            <!--</article>-->
     
                             
                         </div>

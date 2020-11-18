@@ -13,6 +13,7 @@
 * {
     box-sizing: border-box;
     margin: 0;
+    padding: 0;
 }
 
 a {
@@ -48,13 +49,14 @@ body {
     width: 100%;
     
 }
-
-
 .filtro{
     background-image: url("/images/fondocart1.png");
     padding-left: 30px;
     margin-top: 10px;
     border-right: solid 1px rgb(179, 178, 178);
+    font-size: 1em;
+    display: flex;
+    flex-direction: row;
 }
 
 .filtro .burger{
@@ -131,11 +133,9 @@ section .contenidos ul{
     margin-right: 15px;
 }
 
-
-
 section .contenidos figure img {
-    width: 90%;
-    margin-top: 10px;
+    width: 100%;
+    margin-top: 5px;
 }
 
 section article {
@@ -147,14 +147,15 @@ section article {
     height: 150px;
 }
 
-section article span {
+.contenidos span {
     color: var(--color-verde);
-    display: flex;
-    align-items: center;
+    /*display: flex;
+    align-items: center;*/
+    text-align: center;
     margin-left: 10px;
 }
 
-section article i {
+.contenidos i {
     color: var(--color-verde);
     background-color: white;
     border: 1px solid var(--color-verde);
@@ -186,7 +187,7 @@ section article i {
 
 /* --- VERSION PARA ESCRITORIO --- */
 
-@media(min-width:1024px) {
+@media(min-width:768px) {
     section article h2 {
         font-size: 1.9rem;
     }
