@@ -6,6 +6,8 @@ window.addEventListener("load", function(){
     const provincias = document.getElementById("provincias");
     const municipios = document.getElementById("municipios");
 
+    const CABA = ["Agronomía","Almagro","Balvanera","Barracas","Belgrano","Boedo","Caballito","Chacarita","Coghlan","Colegiales","Constitución","Flores","Floresta","La Boca","La Paternal","Liniers","Mataderos","Monte Castro","Monserrat","Nueva Pompeya","Nuñez","Palermo","Parque Avellaneda","Parque Chacabuco","Parque Chas","Parque Patricios","Puerto Madero","Recoleta","Retiro","Saavedra","San Cristóbal","San Nicolás","San Telmo","Vélez Sársfield","Versalles","Villa Crespo","Villa del Parque","Villa Devoto","Villa General Mitre","Villa Lugano","Villa Luro","Villa Ortúzar","Villa Pueyrredón","Villa Real","Villa Riachuelo","Villa Santa Rita","Villa Soldati","Villa Urquiza"];
+
     fetch("https://apis.datos.gob.ar/georef/api/provincias?campos=id,nombre")
     .then(response => response.json())
     .then(result => {
@@ -18,11 +20,16 @@ window.addEventListener("load", function(){
     provincias.addEventListener("change", function(e){
         municipios.innerHTML = " "
         //console.log(e.target.value)
-        fetch("https://apis.datos.gob.ar/georef/api/municipios?provincia="+ e.target.value +"&campos=id,nombre&max=200")
-        .then(response => response.json())
-        .then(result => {
-        //console.log(result.municipios)
-        result.municipios.sort((a, b) => {
+        if(e.target.value == "Ciudad Autónoma de Buenos Aires"){
+            CABA.forEach(barrio => {
+                municipios.innerHTML += "<option value='" + barrio + "'>" + barrio+ "</option>"
+            })
+        }else {
+            fetch("https://apis.datos.gob.ar/georef/api/municipios?provincia="+ e.target.value +"&campos=id,nombre&max=200")
+            .then(response => response.json())
+            .then(result => {
+            //console.log(result.municipios)
+            result.municipios.sort((a, b) => {
             if(a.nombre < b.nombre) {
                 return -1;
             }
@@ -35,6 +42,8 @@ window.addEventListener("load", function(){
             municipios.innerHTML += "<option value='" + municipio.nombre + "'>" + municipio.nombre + "</option>"
         })
     })
+        }
+        
     })
 
     function readURL(file){
