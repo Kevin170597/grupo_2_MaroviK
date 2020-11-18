@@ -13,10 +13,17 @@ window.addEventListener("load", function(){
     function readURL(file){
         if (file.files && file.files[0]) {
             var reader = new FileReader();
-            console.log(reader)
 
             reader.onload = function(e) {
-            avatarPreview.innerHTML = "<img src='" + e.target.result + "'>"
+            console.log(e.target.result)
+            console.log(e.target.result.indexOf("image"))
+            if(e.target.result.indexOf("image") == -1){
+                //alert("no es una imagen amiguito, a mi no me engañas")
+                avatarPreview.innerHTML = "<img src='/images/imageInvalid.png' alt=''>"
+            }else {
+                avatarPreview.innerHTML = "<img src='" + e.target.result + "'>"
+            }
+            
             }
             reader.readAsDataURL(file.files[0]);
         }

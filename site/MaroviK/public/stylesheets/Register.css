@@ -96,7 +96,12 @@ body {
 .cont_form .formulario_register input:focus{
     outline: none;
 }
-
+.form-control.is-invalid, was-validated .form-control:invalid{
+    background-image: none;
+}
+.form-control.is-valid, was-validated .form-control:valid{
+    background-image: none;
+}
 #avatarPreview {
     text-align: center;
     margin-bottom: 20px;

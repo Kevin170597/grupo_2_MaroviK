@@ -176,7 +176,8 @@ module.exports = {
             db.Products.findAll({
                 where: {
                     id_subcategory: producto.id_subcategory,
-                    discount:{[Op.not]:0}
+                    discount:{[Op.not]:0},
+                    id: {[Op.not]: idproduct}
                 },
                 order:[["discount", "DESC"]],
                 limit: 4
