@@ -180,21 +180,14 @@ window.addEventListener("load", function(){
 
         /*validar imagen*/
         let errorFileMessage = [];
-        let OkFileMessage = [];
 
         if(file.value != "" && !(/\.(jpg|jpeg|png|gif)$/i).test(file.value)){
             errorFileMessage.push("Formato incorrecto.")
-        }else{
-            OkFileMessage.push('<i class="far fa-check-circle"></i>')
         }
 
         if(errorFileMessage.length > 0){
             e.preventDefault();
             errorFile.innerHTML = errorFileMessage.join();
-        }
-
-        if(OkFileMessage.length > 0){
-            errorFile.innerHTML = OkFileMessage.join();
         }
     })
 })
