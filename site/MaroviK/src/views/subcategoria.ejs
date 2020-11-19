@@ -19,23 +19,24 @@
                 
                     <ul>
 
-                        <h4 class="category"><%= category.title %></h4>
+                        <h2 style="color: rgb(93, 93, 93); font-size: 20px;"><%= category.title %></h2>
                         
                         <% category.subcategories.forEach(subcategory => { %>
-                            <li><a href="/products/<%= category.namePath%>/<%= subcategory.name_path%> "><%= subcategory.title %> </a></li>
+                            <li><a style="color: rgb(110, 110, 110);" href="/products/<%= category.namePath%>/<%= subcategory.name_path%> "><%= subcategory.title %> </a></li>
                         <% }) %>
 
                     </ul>
                     
                     <ul class="list-marks">
-                        <h4>Marcas</h4>
+                        <h2 style="color: rgb(93, 93, 93); font-size: 20px;">Filtrar por marcas</h2>
                         
                         <% marks.forEach(mark => { %>
 
                             <% if (mark != '' && mark != 's/especificar' && mark != null) { %>
-                             
-                            <li class="mark">
-                               <input class="check-mark" name="<%= mark %>" type="checkbox"/> <%= mark %>
+                            
+                            <li class="mark" style="color: rgb(110, 110, 110);">
+                                <input id="check<%=mark%>" class="check-mark" name="<%= mark %>" type="checkbox"/> 
+                                <label for="check<%=mark%>"><span></span></label><%= mark %>
                             </li>  
                             <% } %>  
                         <% }) %>
@@ -54,7 +55,7 @@
     
                     <div class="subcategorias row">
                         <% products.forEach(product => {%>
-                        <div class=" card contenidos" title="<%= product.mark %>">
+                        <div class="contenidos" title="<%= product.mark %>">
     
                             <figure>
                                 <a href="/products/detail/<%= product.id %>"><img src="/images/products/<%= product.image %> " alt=" "></a>

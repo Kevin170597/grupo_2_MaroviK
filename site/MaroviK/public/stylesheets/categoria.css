@@ -50,48 +50,36 @@ body {
     
 }
 .filtro{
-    background-image: url("/images/fondocart1.png");
-    padding-left: 30px;
-    margin-top: 10px;
-    border-right: solid 1px rgb(179, 178, 178);
-    font-size: 1em;
-    display: flex;
-    flex-direction: row;
+    border: solid 1px rgb(203, 203, 203);
+    background-color: white;
+    border-radius: 5px;
+    margin-top: 30px;
 }
-
 .filtro .burger{
-    background-color: rgb(99, 196, 241);
     margin-left: 20px;
     padding: 3px 15px;
 }
-
+.filtro .burger i{
+    color: #32bbb9;
+    font-size: 25px;
+}
 .filtro ul {
-    margin-top: 20px;
+    margin-top: 5px;
     margin-left: 50px;
 }
-
-.filtro .burger i{
-    color: white;
-}
-
 .filtro .burger:focus{
     outline: white;
 }
-
-h4{
+h2{
     padding-top: 20px;
 }
-
-
 
 .productos {
     display: flex;
     flex-wrap: wrap;
-    
     padding: 0px;
     margin-top: 30px;
 }
-
 
 section .titulo h2 {
     text-align: center;
@@ -118,7 +106,6 @@ section .contenidos {
     border-radius: 5px;
     padding: 5px;
     text-align: center;
-    width: 100%;
 }
 
 section .contenidos:hover{
@@ -135,7 +122,8 @@ section .contenidos ul{
 
 section .contenidos figure img {
     width: 100%;
-    margin-top: 5px;
+    object-fit: cover;
+    margin-top: 10px;
 }
 
 section article {
