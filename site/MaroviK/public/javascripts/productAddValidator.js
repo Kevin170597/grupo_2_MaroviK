@@ -5,6 +5,7 @@ window.addEventListener("load", function(){
     const name = document.getElementById('nameProduct');
     const description = document.getElementById('description');
     const image = document.getElementById("image");
+    const imageProductPreview = document.getElementById("imageProductPreview");
 
     const errorNameProduct = document.getElementById("errorNameProduct");
     const errorDescription = document.getElementById("errorDescription");
@@ -13,6 +14,21 @@ window.addEventListener("load", function(){
         name: /^[a-zA-Z0-9À-ÿ._-\s]{5,100}$/, // Letras y espacios, pueden llevar acentos.Mínimo de 5 caracteres y máximo de 100
         description: /^[a-zA-Z0-9À-ÿ.*?¡!¿$%&#"',:@;_-\s]{20,2500}$/, // Letras y espacios, pueden llevar acentos.Mínimo de 20 caracteres y máximo de 100
     }
+
+    /*vista previa de la imagen*/
+    function readURL(image){
+        if (image.files && image.files[0]) {
+            var reader = new FileReader();
+    
+            reader.onload = function(e) {
+                imageProductPreview.innerHTML = "<img src='" + e.target.result + "'>"
+            }
+            reader.readAsDataURL(image.files[0]);
+        }
+    }
+    image.addEventListener("change", function(){
+        readURL(this);
+    })
 
     formAddProduct.addEventListener("submit", (e)=>{
 

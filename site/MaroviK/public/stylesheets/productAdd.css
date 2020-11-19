@@ -98,6 +98,31 @@ section .contenido figure img {
 .addProduct .formulario {
     padding: 20px 40px 40px 40px;
 }
+.addProduct .formulario #image[type="file"]{
+    display: none;
+}
+.addProduct .formulario #labelPublicImage{
+    background-color: #32bbb9;
+    text-align: center;
+    width: 50%;
+    height: 38px;
+    color: white;
+    border-radius: 20px;
+    padding-left: 10px;
+    padding-top: 1px;
+}
+.addProduct .formulario #labelPublicImage span{
+    position: relative;
+    top: 5px;
+}
+.addProduct .formulario #imageProductPreview{
+    text-align: center;
+}
+.addProduct .formulario #imageProductPreview img{
+    width: 300px;
+    height: 250px;
+    object-fit: cover;
+}
 
 #errorNameProduct{
     color: #ec0101;
