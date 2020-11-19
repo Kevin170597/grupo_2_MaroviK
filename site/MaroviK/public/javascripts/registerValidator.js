@@ -18,10 +18,10 @@ window.addEventListener("load", function(){
             console.log(e.target.result)
             console.log(e.target.result.indexOf("image"))
             if(e.target.result.indexOf("image") == -1){
-                //alert("no es una imagen amiguito, a mi no me engañas")
                 avatarPreview.innerHTML = "<img src='/images/imageInvalid.png' alt=''>"
             }else {
                 avatarPreview.innerHTML = "<img src='" + e.target.result + "'>"
+                errorFile.innerHTML = ""
             }
             
             }
@@ -39,6 +39,44 @@ window.addEventListener("load", function(){
     const errorFile = document.getElementById("errorFile");
 
     let formatoValido = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
+
+
+    name.addEventListener("keyup", function(){
+        if(name.value.length >= 2){
+            errorName.innerHTML = '<i class="far fa-check-circle"></i>'
+            name.style.border = "solid 1px green"
+        }else if(name.value.length == 0){
+            errorName.innerHTML = ""
+            name.style.border = ""
+        }
+    })
+    lastName.addEventListener("keyup", function(){
+        if(lastName.value.length >= 2){
+            errorLastName.innerHTML = '<i class="far fa-check-circle"></i>'
+            lastName.style.border = "solid 1px green"
+        }else if(lastName.value.length == 0){
+            errorLastName.innerHTML = ""
+            lastName.style.border = ""
+        }
+    })
+    password.addEventListener("keyup", function(){
+        if(password.value.length >= 8){
+            errorPassword.innerHTML = '<i class="far fa-check-circle"></i>'
+            password.style.border = "solid 1px green"
+        }else if(password.value.length == 0){
+            errorPassword.innerHTML = ""
+            password.style.border = ""
+        }
+    })
+    email.addEventListener("keyup", function(){
+        if(formatoValido.test(email.value)){
+            errorEmail.innerHTML = '<i class="far fa-check-circle"></i>'
+            email.style.border = "solid 1px green"
+        }else if(email.value.length == 0){
+            errorEmail.innerHTML = ""
+            email.style.border = ""
+        }
+    })
 
 
     form.addEventListener("submit", (e)=>{

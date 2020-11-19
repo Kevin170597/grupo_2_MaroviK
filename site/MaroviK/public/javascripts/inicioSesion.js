@@ -21,6 +21,27 @@ window.addEventListener('load',function(){
         })
     })*/
 
+
+    inputPass.addEventListener("keyup", function(){
+        if(inputPass.value.length >= 8){
+            errorPassword.innerHTML = '<i class="far fa-check-circle"></i>'
+            inputPass.style.border = "solid 1px green"
+        }else if(inputPass.value.length == 0){
+            errorPassword.innerHTML = ""
+            inputPass.style.border = ""
+        }
+    })
+    inputEmail.addEventListener("keyup", function(){
+      if(regexEmail.test(inputEmail.value)){
+          errorEmail.innerHTML = '<i class="far fa-check-circle"></i>'
+          email.style.border = "solid 1px green"
+      }else if(inputEmail.value.length == 0){
+          errorEmail.innerHTML = ""
+          inputEmail.style.border = ""
+      }
+  })
+
+
     loginForm.addEventListener("submit", (e) =>{
         let errorEmailMessage = [];
         let errorEmailFormat = [];
@@ -59,7 +80,9 @@ window.addEventListener('load',function(){
 
         if(inputPass.value === "" || inputPass.value == null){
           errorPasswordMessage.push("Debe ingresar una contraseña.")
-        }else if(inputPass.value != "" && inputPass.value.length > 0){
+        }else if(inputPass.value != "" && inputPass.value.length < 8){
+          errorPasswordMessage.push("La contraseña contiene al menos 8 caracteres")
+        }else if(inputPass.value != "" && inputPass.value.length >= 8){
           inputPass.style.border = "solid 1px green"
           OkPasswordMesagge.push('<i class="far fa-check-circle"></i>')
         }
