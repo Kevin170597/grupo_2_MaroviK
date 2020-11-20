@@ -437,7 +437,7 @@ module.exports = {
             console.log(errors);
         })
 
-        return res.redirect('/users/profile')
+        return res.redirect('/users/profile/admin');
     },
     addCart: (req, res) => {
         db.Cart.create(

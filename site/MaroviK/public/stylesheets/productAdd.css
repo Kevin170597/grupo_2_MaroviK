@@ -82,6 +82,18 @@ section .contenido figure img {
     text-transform: uppercase;
     margin-top: 30px;
 }
+.btn-volver{
+    margin-bottom: 5px;
+    border: none;
+    background-color:  #32bbb9;
+    border-radius: 15px;
+    
+}
+.btn-volver a{
+    color: white;
+    padding: 5px;
+    
+}
 .contenido2{
     background-color: white;
     border-radius: 5px;
