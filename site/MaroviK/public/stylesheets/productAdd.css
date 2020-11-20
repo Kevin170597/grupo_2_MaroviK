@@ -33,7 +33,7 @@ a {
 }
 
 a:hover {
-    color: rgb(52, 183, 235);
+    color: #32bbb9;
     text-decoration: none;
 }
 
@@ -91,8 +91,11 @@ section .contenido figure img {
 }
 .btn-volver a{
     color: white;
-    padding: 5px;
-    
+    padding: 10px; 
+}
+.btn-volver a:hover{
+    color: white;
+    font-weight: bold;
 }
 .contenido2{
     background-color: white;

@@ -23,7 +23,7 @@
                                     <li class="nav-item " role="presentation">
                                         <a class="nav-link" id="home-tab" data-toggle="tab" href="#datos" role="tab" aria-controls="home" aria-selected="true">Mis Datos</a>
                                     </li>
-                                    
+
                                     <li class="nav-item " role="presentation">
                                         <a class="nav-link" id="profile-tab" data-toggle="tab" href="#productos" role="tab" aria-controls="profile" aria-selected="false">Mis Productos</a>
                                     </li>
@@ -31,6 +31,7 @@
                                     <li class="nav-item " role="presentation">
                                         <a class="nav-link active" id="update-tab" data-toggle="tab" href="#actualizar" role="tab" aria-controls="profile" aria-selected="false">Actualizar productos</a>
                                     </li>
+
                                 </ul>
                                 <div class="tab-content" id="myTabContent">
 
@@ -94,7 +95,7 @@
                                                                         <button class="btn btn-outline-light"><span class="material-icons">create</span></button>
                                                                     </form>
                                                                     <form action="/products/delete/<%= producto.id %>?_method=DELETE" method="POST">
-                                                                        <button class="btn btn-outline-light"> <h4 class="fas fa-trash-alt text-danger"></h4></button>
+                                                                        <button class="btn btn-outline-light" type="submit"> <h4 class="fas fa-trash-alt text-danger"></h4></button>
                                                                     </form>
                                                                 </div>
                                                             
@@ -138,14 +139,11 @@
                                                         <%}%>
 
                                                                 <div class="d-flex justify-content-around">
-                                                                    <!--<form action="/products/show/<%= producto.id %>" method="GET">
-                                                                        <button class="btn btn-outline-light"> <h4 class="fas fa-info-circle text-info"></h4></button>
-                                                                    </form>-->
                                                                     <form action="/products/show/<%= producto.id %>" method="GET">
                                                                         <button class="btn btn-outline-light"> <h4 class="fas fa-edit text-primary"></h4></button>
                                                                     </form>
                                                                     <form action="/products/delete/<%= producto.id %>?_method=DELETE" method="POST">
-                                                                        <button class="btn btn-outline-light"> <h4 class="fas fa-trash-alt text-danger"></h4></button>
+                                                                        <button class="btn btn-outline-light" type="submit"> <h4 class="fas fa-trash-alt text-danger"></h4></button>
                                                                     </form>
                                                                 </div>
                                                     </div>

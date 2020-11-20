@@ -22,7 +22,7 @@
                         <h2 style="color: rgb(93, 93, 93); font-size: 20px;"><%= category.title %></h2>
                         
                         <% category.subcategories.forEach(subcategory => { %>
-                            <li><a style="color: rgb(110, 110, 110);" href="/products/<%= category.namePath%>/<%= subcategory.name_path%> "><%= subcategory.title %> </a></li>
+                            <li><a class="enlace-sub" style="color: rgb(110, 110, 110);" href="/products/<%= category.namePath%>/<%= subcategory.name_path%> "><%= subcategory.title %> </a></li>
                         <% }) %>
 
                     </ul>
