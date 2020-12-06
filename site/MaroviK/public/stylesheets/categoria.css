@@ -47,11 +47,10 @@ body {
     margin-left: 10px;
     margin-bottom: 20px;
     width: 100%;
-    
 }
 .filtro{
-    border: solid 1px rgb(203, 203, 203);
-    background-color: white;
+    width: 30%;
+    border: none;
     border-radius: 5px;
     margin-top: 30px;
 }
@@ -66,6 +65,15 @@ body {
 .filtro ul {
     margin-top: 25px;
     margin-left: 50px;
+}
+.filtro ul li{
+    margin-bottom: 10px;
+}
+.filtro ul li a{
+    color: rgb(108, 108, 108);
+}
+.filtro ul li a:hover{
+    color: #32bbb9;
 }
 .filtro .burger:focus{
     outline: white;
@@ -121,7 +129,7 @@ section .contenidos ul{
 }
 
 section .contenidos figure img {
-    width: 100%;
+    width: 90%;
     object-fit: cover;
     margin-top: 10px;
 }
@@ -156,7 +164,11 @@ section article {
 }
 
 
-
+@media(max-width:480px) {
+    .filtro{
+        width: 100%;
+    }
+}
 /* --- VERSION PARA TABLET --- */
 
 @media(min-width:768px) {

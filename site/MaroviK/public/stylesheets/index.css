@@ -81,6 +81,7 @@ body {
 
 }
 #ofertas h1{
+    margin-top: 15px;
     text-align: center;
     font-size: 35px;
     color: rgb(122, 122, 123);
@@ -166,6 +167,12 @@ body {
 
 
 @media(max-width:480px){
+    #carrusel{
+        margin-top: 4px;
+    }
+    #carouselExampleIndicators{
+        width: 100%;
+    }
     .productosOfertas .ofertas{
         width: 100%;
     }

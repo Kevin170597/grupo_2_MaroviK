@@ -67,3 +67,12 @@ footer{
     width: 13%;
     margin-right: 10px;
 }
+
+@media(max-width:480px) {
+    #containerFooter{
+        flex-direction: column;
+    }
+    #containerFooter #contactoFooter .contacto .iconsMedia img{
+        width: 40%;
+    }
+}

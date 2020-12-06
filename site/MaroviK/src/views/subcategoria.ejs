@@ -10,7 +10,7 @@
 
     
     <div class="container-fluid categorias">
-        <div class="column col-4 col-lg-3 col-xl-2  filtro">
+        <div class="column filtro">
             <nav class="navbar-expand-md">
             
                 <button class="navbar-toggler burger" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><i class="fas fa-bars "></i></button>
@@ -22,7 +22,7 @@
                         <h2 style="color: rgb(93, 93, 93); font-size: 20px;"><%= category.title %></h2>
                         
                         <% category.subcategories.forEach(subcategory => { %>
-                            <li><a class="enlace-sub" style="color: rgb(110, 110, 110);" href="/products/<%= category.namePath%>/<%= subcategory.name_path%> "><%= subcategory.title %> </a></li>
+                            <li><a class="enlace-sub" style="color: rgb(110, 110, 110); margin-left: 10px;" href="/products/<%= category.namePath%>/<%= subcategory.name_path%> "><%= subcategory.title %> </a></li>
                         <% }) %>
 
                     </ul>
@@ -45,7 +45,7 @@
                 </div>
             </nav>
         </div>
-        <div class="container col-8 col-lg-9 col-xl-10">
+        <div class="">
 
             
             <section>

@@ -230,8 +230,8 @@ body {
         width: 35%;
     }
     #barraprincipal .logo img{
-        width: 100%;
-        margin-top: 10px;
+        width: 70%;
+        margin-top: 8px;
     }
     #barraprincipal .botoncategorias{
         float: left;
@@ -257,14 +257,14 @@ body {
         margin-bottom: 10px;
     }
     #barraprincipal .user span{
-        font-size: 45px;
+        font-size: 38px;
     }
     #barraprincipal .cart{
         float: left;
         width: 50%;
     }
     #barraprincipal .cart span{
-        font-size: 45px;
+        font-size: 38px;
     }
     #fondoRegister img{
         height: 150vh;
